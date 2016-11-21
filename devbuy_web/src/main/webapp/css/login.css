@@ -1,0 +1,27 @@
+body{
+	background-color: #178ee0;
+}
+#contain_border{
+	width: 630px;
+	height: 270px;
+	background-color: #3d6eb3;
+}
+#contain{
+	width: 600px;
+	height: 240px;
+	background-color: #d1f2f9;
+	border: #94e8f5 5px solid;
+}
+#loginFooter{
+	width: 400px;
+	height: 20px;
+	margin-left: -200px;
+}
+#loginImg{
+	margin-top: 10px;
+}
+#loginHeader{
+	font-family: "微软雅黑";
+font-size: 24px;
+color: #178EE0;
+}

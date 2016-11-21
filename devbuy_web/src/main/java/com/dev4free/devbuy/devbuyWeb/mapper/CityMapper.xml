@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dev4free.devbuy.devbuyWeb.mapper.CityMapper">
+  <resultMap id="BaseResultMap" type="com.dev4free.devbuy.devbuyWeb.po.City">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="initial" jdbcType="VARCHAR" property="initial" />
+    <result column="cityName" jdbcType="VARCHAR" property="cityname" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, initial, cityName
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from city
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from city
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.dev4free.devbuy.devbuyWeb.po.City">
+    insert into city (id, initial, cityName
+      )
+    values (#{id,jdbcType=INTEGER}, #{initial,jdbcType=VARCHAR}, #{cityname,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.dev4free.devbuy.devbuyWeb.po.City">
+    insert into city
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="initial != null">
+        initial,
+      </if>
+      <if test="cityname != null">
+        cityName,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="initial != null">
+        #{initial,jdbcType=VARCHAR},
+      </if>
+      <if test="cityname != null">
+        #{cityname,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.dev4free.devbuy.devbuyWeb.po.City">
+    update city
+    <set>
+      <if test="initial != null">
+        initial = #{initial,jdbcType=VARCHAR},
+      </if>
+      <if test="cityname != null">
+        cityName = #{cityname,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.dev4free.devbuy.devbuyWeb.po.City">
+    update city
+    set initial = #{initial,jdbcType=VARCHAR},
+      cityName = #{cityname,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

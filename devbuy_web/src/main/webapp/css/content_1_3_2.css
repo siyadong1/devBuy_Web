@@ -1,0 +1,67 @@
+#publishBannerGoodsHeader{
+	float: left;
+	width: 1000px;
+	height: 60px;
+	background-color: #178EE0;
+}
+
+
+#publishBannerGoodsHeader p{
+	font-family: "微软雅黑";
+	font-size: 18px;
+	color: #FFFFFF;
+	margin-left: 16px;
+	margin-top: 16px;
+}
+
+#pusblishBannerGoods table p {
+	font-family: "微软雅黑";
+	font-size: 16px;
+	color: #464646;
+}
+
+
+#pusblishBannerGoods input[type = "text"]{
+	width: 305px;
+	height: 30px;
+	font-family: "微软雅黑";
+	font-size: 16px;
+	color: #464646;
+}
+
+#pusblishBannerGoods textarea{
+	
+	width: 305px;
+	height: 164px;
+}
+
+#selectContent_1_3_2{
+	width: 305px;
+	height: 30px;
+	font-family: "微软雅黑";
+	font-size: 16px;
+	color: #464646;
+}
+
+
+#pusblishBannerGoods img{
+	
+	width: 160px;
+	height: 131px;
+		margin-left: 440px;
+		margin-top: 16px;
+}
+
+#pusblishBannerGoods input[type = "submit"]{
+	
+	width: 152px;
+	height: 30px;
+	background-color: #178EE0;
+	font-family: "微软雅黑";
+	font-size: 16px;
+	color: #FFFFFF;
+	border: none;
+	margin-left: 440px;
+	margin-bottom: 16px;
+	margin-top: 16px;
+}

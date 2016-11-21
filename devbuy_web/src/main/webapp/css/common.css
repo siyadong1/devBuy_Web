@@ -1,0 +1,238 @@
+
+/*这里是一个公共类库*/
+
+*{
+	margin: 0;
+}
+
+
+/*margin   &&  padding    &&dimens*/
+/*padding*/
+.padding16{
+	padding: 16px;
+}
+
+.paddingLeft16{
+	padding-left: 16px;
+}
+
+.paddingRight16{
+	padding-right: 16px;
+}
+
+.paddingTop16{
+	padding-top: 16px;
+}
+
+.paddingBottom16{
+	padding-bottom: 16px;
+}
+
+/*margin*/
+.margin16px{
+	margin: 16px;
+}
+
+.marginLeft16px{
+	margin-left: 16px;
+}
+
+
+.marginRight16px{
+	margin-right: 16px;
+}
+
+.marginTop16px{
+	margin-top: 16px;
+}
+
+.marginBottom16px{
+	margin-bottom: 16px;
+}
+
+
+
+
+
+/*position*/
+.positionRelative{
+	position: relative;	
+}
+.positionAbsolute{
+	position: absolute;
+}
+.positionFixed{
+	position: fixed;
+}
+.positionStatic{
+	position: static;
+}
+
+
+.positionRight16px{
+	right: 16px;
+}
+.positionTpo16px{
+	top: 16px;
+}
+.positionLeft16px{
+	left: 16px;
+}
+.positionBottom16px{
+	bottom: 16px;
+}
+
+.positionRight50{
+	right: 50%;
+}
+.positionLeft50{
+	left: 50%;
+}
+
+
+
+/*button*/
+
+
+.redButton{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 16px;
+	padding-right: 16px;
+	font-family: "微软雅黑";
+font-size: 16px;
+color: #FFFFFF;
+border: none;
+background-color: #fa162a;
+}
+
+.blueButton{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 16px;
+	padding-right: 16px;
+	font-family: "微软雅黑";
+font-size: 16px;
+color: #FFFFFF;
+border: none;
+background-color: #178ee0;
+}
+
+
+.contentButton{
+background-color: #FFFFFF;
+font-family: "微软雅黑";
+font-size: 18px;
+color: #178EE0;
+}
+
+
+
+/*float*/
+
+
+.inline-block{
+	display: inline-block;
+	
+}
+
+.inline{
+	display: inline;
+}
+
+
+
+.floatLeft{
+	
+	float: left;
+}
+
+.floatRight{
+	
+	float: right;
+}
+
+.cleanBoth{
+	clear: both;
+}
+
+
+
+
+
+
+
+.centerMarginAuto{
+	margin: 0px auto;
+}
+
+.centerPaddingAuto{
+	padding: 0px auto;
+}
+
+
+.centerCommon{
+	margin: auto;
+  	position: absolute;
+  	top: 0; left: 0; bottom: 0; right: 0;
+}
+
+
+
+/**
+ * dimession
+ */
+.div16px{
+	width: 16px;
+	height: 16px;
+}
+
+.width1200{
+	width: 1200px;
+}
+
+
+/*text*/
+.text16px{
+	
+	
+	font-family: "微软雅黑";
+	font-size: 16px;
+	color: #464646;
+	line-height: 16px;
+	
+}
+
+
+.text16pxWhite{
+	
+	
+	font-family: "微软雅黑";
+	font-size: 16px;
+	color: #FFFFFF;
+	line-height: 16px;
+	
+}
+
+.textCenter{
+	text-align: center;
+}
+
+
+
+/**
+ * 
+ */
+.hoverCursorPointer{
+	
+	cursor: pointer;
+}
+
+
+
+/**
+ * color
+ */
+.blueColor{
+	background-color: #178ee0;
+}

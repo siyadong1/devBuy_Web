@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dev4free.devbuy.devbuyWeb.mapper.ItemsMapper">
+  <resultMap id="BaseResultMap" type="com.dev4free.devbuy.devbuyWeb.po.Items">
+    <id column="items_id" jdbcType="VARCHAR" property="itemsId" />
+    <result column="itemsname" jdbcType="VARCHAR" property="itemsname" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="category" jdbcType="VARCHAR" property="category" />
+    <result column="items_lb" jdbcType="VARCHAR" property="itemsLb" />
+    <result column="price" jdbcType="VARCHAR" property="price" />
+    <result column="current_price" jdbcType="VARCHAR" property="currentPrice" />
+    <result column="image" jdbcType="VARCHAR" property="image" />
+    <result column="inventory" jdbcType="VARCHAR" property="inventory" />
+    <result column="sales_volume" jdbcType="VARCHAR" property="salesVolume" />
+    <result column="area" jdbcType="VARCHAR" property="area" />
+    <result column="express_fee" jdbcType="VARCHAR" property="expressFee" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    items_id, itemsname, description, category, items_lb, price, current_price, image, 
+    inventory, sales_volume, area, express_fee
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from items
+    where items_id = #{itemsId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from items
+    where items_id = #{itemsId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.dev4free.devbuy.devbuyWeb.po.Items">
+    insert into items (items_id, itemsname, description, 
+      category, items_lb, price, 
+      current_price, image, inventory, 
+      sales_volume, area, express_fee
+      )
+    values (#{itemsId,jdbcType=VARCHAR}, #{itemsname,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
+      #{category,jdbcType=VARCHAR}, #{itemsLb,jdbcType=VARCHAR}, #{price,jdbcType=VARCHAR}, 
+      #{currentPrice,jdbcType=VARCHAR}, #{image,jdbcType=VARCHAR}, #{inventory,jdbcType=VARCHAR}, 
+      #{salesVolume,jdbcType=VARCHAR}, #{area,jdbcType=VARCHAR}, #{expressFee,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.dev4free.devbuy.devbuyWeb.po.Items">
+    insert into items
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="itemsId != null">
+        items_id,
+      </if>
+      <if test="itemsname != null">
+        itemsname,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+      <if test="category != null">
+        category,
+      </if>
+      <if test="itemsLb != null">
+        items_lb,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="currentPrice != null">
+        current_price,
+      </if>
+      <if test="image != null">
+        image,
+      </if>
+      <if test="inventory != null">
+        inventory,
+      </if>
+      <if test="salesVolume != null">
+        sales_volume,
+      </if>
+      <if test="area != null">
+        area,
+      </if>
+      <if test="expressFee != null">
+        express_fee,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="itemsId != null">
+        #{itemsId,jdbcType=VARCHAR},
+      </if>
+      <if test="itemsname != null">
+        #{itemsname,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="category != null">
+        #{category,jdbcType=VARCHAR},
+      </if>
+      <if test="itemsLb != null">
+        #{itemsLb,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=VARCHAR},
+      </if>
+      <if test="currentPrice != null">
+        #{currentPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="image != null">
+        #{image,jdbcType=VARCHAR},
+      </if>
+      <if test="inventory != null">
+        #{inventory,jdbcType=VARCHAR},
+      </if>
+      <if test="salesVolume != null">
+        #{salesVolume,jdbcType=VARCHAR},
+      </if>
+      <if test="area != null">
+        #{area,jdbcType=VARCHAR},
+      </if>
+      <if test="expressFee != null">
+        #{expressFee,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.dev4free.devbuy.devbuyWeb.po.Items">
+    update items
+    <set>
+      <if test="itemsname != null">
+        itemsname = #{itemsname,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="category != null">
+        category = #{category,jdbcType=VARCHAR},
+      </if>
+      <if test="itemsLb != null">
+        items_lb = #{itemsLb,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        price = #{price,jdbcType=VARCHAR},
+      </if>
+      <if test="currentPrice != null">
+        current_price = #{currentPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="image != null">
+        image = #{image,jdbcType=VARCHAR},
+      </if>
+      <if test="inventory != null">
+        inventory = #{inventory,jdbcType=VARCHAR},
+      </if>
+      <if test="salesVolume != null">
+        sales_volume = #{salesVolume,jdbcType=VARCHAR},
+      </if>
+      <if test="area != null">
+        area = #{area,jdbcType=VARCHAR},
+      </if>
+      <if test="expressFee != null">
+        express_fee = #{expressFee,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where items_id = #{itemsId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.dev4free.devbuy.devbuyWeb.po.Items">
+    update items
+    set itemsname = #{itemsname,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      category = #{category,jdbcType=VARCHAR},
+      items_lb = #{itemsLb,jdbcType=VARCHAR},
+      price = #{price,jdbcType=VARCHAR},
+      current_price = #{currentPrice,jdbcType=VARCHAR},
+      image = #{image,jdbcType=VARCHAR},
+      inventory = #{inventory,jdbcType=VARCHAR},
+      sales_volume = #{salesVolume,jdbcType=VARCHAR},
+      area = #{area,jdbcType=VARCHAR},
+      express_fee = #{expressFee,jdbcType=VARCHAR}
+    where items_id = #{itemsId,jdbcType=VARCHAR}
+  </update>
+  
+  
+  
+  <select id="selectAllItems" resultType="com.dev4free.devbuy.devbuyWeb.poCustom.ItemsCustom">
+  	select * from items
+  </select>
+  
+  
+</mapper>

@@ -1,0 +1,579 @@
+
+
+#maskLayer {
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: #000000;
+	opacity: 0.5;
+	z-index: 100;
+}
+
+
+/****************************************商品管理开始***********************************/
+/*类别列表开始*/
+#deleteCategory{
+	display: none;	
+	width: 600px;
+	height: 200px;
+	background-color: #FFFFFF;
+	margin: auto;
+	z-index:101 ;position: fixed;top: 0; left: 0; bottom: 0; right: 0;
+}
+#addCategory{
+	display: none;	
+	float: left;
+	width: 700px;
+	height: 362px;
+	background-color: #FFFFFF;
+	margin: auto;
+	z-index: 101;
+	position: fixed;
+	top: 0;left: 0;bottom: 0;right: 0;	
+}
+#addCategory div {
+	float: left;
+	width: 700px;
+	height: 46px;
+	background-color: #178EE0;
+}
+#addCategory div p{
+	float: left;
+	margin-top: 10px;
+	margin-left: 312px;
+	font-family: "微软雅黑";
+	font-size: 18px;
+	color: #FFFFFF;
+}
+#addCategory textarea{
+	width: 390px;
+	height: 139px;
+}
+#addCategory input[type="text"]{
+	width: 350px;
+	height: 30px;
+}
+#editCategory{
+	display: none;	
+	float: left;
+	width: 700px;
+	height: 362px;
+	background-color: #FFFFFF;
+	margin: auto;
+	z-index: 101;
+	position: fixed;
+	top: 0;left: 0;bottom: 0;right: 0;	
+}
+#editCategory div {
+	float: left;
+	width: 700px;
+	height: 46px;
+	background-color: #178EE0;
+}
+
+#editCategory div p{
+	float: left;
+	margin-top: 10px;
+	margin-left: 312px;
+	font-family: "微软雅黑";
+	font-size: 18px;
+	color: #FFFFFF;
+}
+#editCategory textarea{
+	width: 390px;
+	height: 139px;
+}
+#editCategory input[type="text"]{
+	width: 350px;
+	height: 30px;
+}
+/*类别列表结束*/
+/*商品列表开始*/
+
+#deleteGoods{
+	display: none;	
+	width: 600px;
+	height: 200px;
+	background-color: #FFFFFF;
+	margin: auto;
+	z-index:101 ;position: fixed;top: 0; left: 0; bottom: 0; right: 0;
+}
+/*商品列表结束*/
+/*轮播列表开始*/
+#deleteBannerGoods{
+	display: none;	
+	width: 600px;
+	height: 200px;
+	background-color: #FFFFFF;
+	margin: auto;
+	z-index:101 ;position: fixed;top: 0; left: 0; bottom: 0; right: 0;
+}
+#addBannerGoods{
+	display: none;	
+	float: left;
+	width: 700px;
+	height: 499px;
+	background-color: #FFFFFF;
+	margin: auto;
+	z-index: 101;
+	position: fixed;
+	top: 0;left: 0;bottom: 0;right: 0;	
+}
+#addBannerGoods div {
+	float: left;
+	width: 700px;
+	height: 46px;
+	background-color: #178EE0;
+}
+
+#addBannerGoods div p{
+	float: left;
+	margin-top: 10px;
+	margin-left: 312px;
+	font-family: "微软雅黑";
+	font-size: 18px;
+	color: #FFFFFF;
+}
+
+#addBannerGoods textarea{
+	width: 390px;
+	height: 139px;
+}
+#addBannerGoods input[type="text"]{
+	width: 350px;
+	height: 30px;
+}
+/*轮播列表结束*/
+/*导航列表开始*/
+#deleteNavigator{
+	display: none;	
+	width: 600px;
+	height: 200px;
+	background-color: #FFFFFF;
+	margin: auto;
+	z-index:101 ;position: fixed;top: 0; left: 0; bottom: 0; right: 0;
+}
+#addNavigator{
+	display: none;	
+	float: left;
+	width: 700px;
+	height: 499px;
+	background-color: #FFFFFF;
+	margin: auto;
+	z-index: 101;
+	position: fixed;
+	top: 0;left: 0;bottom: 0;right: 0;	
+}
+#addNavigator div {
+	float: left;
+	width: 700px;
+	height: 46px;
+	background-color: #178EE0;
+}
+
+#addNavigator div p{
+	float: left;
+	margin-top: 10px;
+	margin-left: 312px;
+	font-family: "微软雅黑";
+	font-size: 18px;
+	color: #FFFFFF;
+}
+#addNavigator textarea{
+	width: 390px;
+	height: 139px;
+}
+#addNavigator input[type="text"]{
+	width: 350px;
+	height: 30px;
+}
+/*导航列表结束*/
+/*推荐列表开始*/
+#deleteRecommend{
+	display: none;	
+	width: 600px;
+	height: 200px;
+	background-color: #FFFFFF;
+	margin: auto;
+	z-index:101 ;position: fixed;top: 0; left: 0; bottom: 0; right: 0;
+}
+#addRecommend{
+	display: none;	
+	float: left;
+	width: 700px;
+	height: 499px;
+	background-color: #FFFFFF;
+	margin: auto;
+	z-index: 101;
+	position: fixed;
+	top: 0;left: 0;bottom: 0;right: 0;	
+}
+#addRecommend div {
+	float: left;
+	width: 700px;
+	height: 46px;
+	background-color: #178EE0;
+}
+
+#addRecommend div p{
+	float: left;
+	margin-top: 10px;
+	margin-left: 312px;
+	font-family: "微软雅黑";
+	font-size: 18px;
+	color: #FFFFFF;
+}
+#addRecommend textarea{
+	width: 390px;
+	height: 139px;
+}
+#addRecommend input[type="text"]{
+	width: 350px;
+	height: 30px;
+}
+#addRecommend select{
+	
+	width: 350px;
+	height: 30px;
+	font-family: "微软雅黑";
+	font-size: 16px;
+}
+/*推荐列表结束*/
+/****************************************商品管理结束***********************************/
+
+
+
+
+
+
+
+
+
+
+
+/****************************************订单管理开始***********************************/
+
+/*全部订单开始*/
+
+#deleteAllOrder{
+	display: none;	
+	width: 600px;
+	height: 200px;
+	background-color: #FFFFFF;
+	margin: auto;
+	z-index:101 ;position: fixed;top: 0; left: 0; bottom: 0; right: 0;
+}
+
+/*全部订单结束*/
+
+
+
+
+
+
+
+/****************************************订单管理结束***********************************/
+
+
+
+
+
+
+
+
+
+/****************************************购物车管理开始***********************************/
+
+/*全部订单开始*/
+
+#deleteShoppingCar{
+	display: none;	
+	width: 600px;
+	height: 200px;
+	background-color: #FFFFFF;
+	margin: auto;
+	z-index:101 ;position: fixed;top: 0; left: 0; bottom: 0; right: 0;
+}
+
+/*全部订单结束*/
+
+
+
+
+
+
+
+/****************************************购物车管理结束***********************************/
+
+
+
+
+
+
+
+
+
+/****************************************用户管理开始***********************************/
+
+/*全部订单开始*/
+
+#forceLogout{
+	display: none;	
+	width: 600px;
+	height: 200px;
+	background-color: #FFFFFF;
+	margin: auto;
+	z-index:101 ;position: fixed;top: 0; left: 0; bottom: 0; right: 0;
+}
+
+/*全部订单结束*/
+
+
+
+
+
+
+
+/****************************************用户管理结束***********************************/
+
+
+
+
+
+
+
+
+/****************************************系统设置开始***********************************/
+
+/*管理员列表开始*/
+
+#deleteManager{
+	display: none;	
+	width: 600px;
+	height: 200px;
+	background-color: #FFFFFF;
+	margin: auto;
+	z-index:101 ;position: fixed;top: 0; left: 0; bottom: 0; right: 0;
+}
+
+
+#addManager{
+	display: none;	
+	float: left;
+	width: 700px;
+	height: 499px;
+	background-color: #FFFFFF;
+	margin: auto;
+	z-index: 101;
+	position: fixed;
+	top: 0;left: 0;bottom: 0;right: 0;	
+}
+#addManager div {
+	float: left;
+	width: 700px;
+	height: 46px;
+	background-color: #178EE0;
+}
+
+#addManager div p{
+	float: left;
+	margin-top: 10px;
+	margin-left: 312px;
+	font-family: "微软雅黑";
+	font-size: 18px;
+	color: #FFFFFF;
+}
+
+#addManager textarea{
+	width: 390px;
+	height: 139px;
+}
+#addManager input[type="text"]{
+	width: 350px;
+	height: 30px;
+}
+
+#addManager tr td select{
+	float: left;
+	width: 350px;
+	height: 30px;
+	margin-left: 10px;
+	margin-top: 9px;
+}
+
+
+
+
+
+
+
+#editManagerDetail{
+	display: none;	
+	float: left;
+	width: 700px;
+	height: 620px;
+	background-color: #FFFFFF;
+	margin: auto;
+	z-index: 101;
+	position: fixed;
+	top: 0;left: 0;bottom: 0;right: 0;	
+}
+#editManagerDetail div {
+	float: left;
+	width: 700px;
+	height: 46px;
+	background-color: #178EE0;
+}
+
+#editManagerDetail div p{
+	float: left;
+	margin-top: 10px;
+	margin-left: 312px;
+	font-family: "微软雅黑";
+	font-size: 18px;
+	color: #FFFFFF;
+}
+
+#editManagerDetail textarea{
+	width: 390px;
+	height: 139px;
+}
+#editManagerDetail input[type="text"]{
+	width: 350px;
+	height: 30px;
+}
+
+#editManagerDetail tr td select{
+	float: left;
+	width: 350px;
+	height: 30px;
+	margin-left: 10px;
+	margin-top: 9px;
+}
+
+
+/*管理员列表结束*/
+
+
+
+
+
+
+/*版本列表开始*/
+
+#deleteVersion{
+	display: none;	
+	width: 600px;
+	height: 200px;
+	background-color: #FFFFFF;
+	margin: auto;
+	z-index:101 ;position: fixed;top: 0; left: 0; bottom: 0; right: 0;
+}
+
+
+#addVersion{
+	display: none;	
+	float: left;
+	width: 700px;
+	height: 590px;
+	background-color: #FFFFFF;
+	margin: auto;
+	z-index: 101;
+	position: fixed;
+	top: 0;left: 0;bottom: 0;right: 0;	
+}
+#addVersion div {
+	float: left;
+	width: 700px;
+	height: 46px;
+	background-color: #178EE0;
+}
+
+#addVersion div p{
+	float: left;
+	margin-top: 10px;
+	margin-left: 312px;
+	font-family: "微软雅黑";
+	font-size: 18px;
+	color: #FFFFFF;
+}
+
+#addVersion textarea{
+	width: 390px;
+	height: 139px;
+}
+#addVersion input[type="text"]{
+	width: 350px;
+	height: 30px;
+}
+
+#addVersion tr td select{
+	float: left;
+	width: 350px;
+	height: 30px;
+	margin-left: 10px;
+	margin-top: 9px;
+	font-family: "微软雅黑";
+	font-size: 16px;
+}
+
+
+
+
+
+
+
+#editVersion{
+	display: none;	
+	float: left;
+	width: 700px;
+	height: 590px;
+	background-color: #FFFFFF;
+	margin: auto;
+	z-index: 101;
+	position: fixed;
+	top: 0;left: 0;bottom: 0;right: 0;	
+}
+#editVersion div {
+	float: left;
+	width: 700px;
+	height: 46px;
+	background-color: #178EE0;
+}
+
+#editVersion div p{
+	float: left;
+	margin-top: 10px;
+	margin-left: 312px;
+	font-family: "微软雅黑";
+	font-size: 18px;
+	color: #FFFFFF;
+}
+
+#editVersion textarea{
+	width: 390px;
+	height: 139px;
+}
+#editVersion input[type="text"]{
+	width: 350px;
+	height: 30px;
+}
+
+#editVersion tr td select{
+	float: left;
+	width: 350px;
+	height: 30px;
+	margin-left: 10px;
+	margin-top: 9px;
+}
+
+
+
+
+/*版本列表结束*/
+
+
+
+
+/****************************************系统设置结束***********************************/

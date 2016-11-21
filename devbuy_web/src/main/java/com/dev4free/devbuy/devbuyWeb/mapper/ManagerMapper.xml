@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dev4free.devbuy.devbuyWeb.mapper.ManagerMapper">
+  <resultMap id="BaseResultMap" type="com.dev4free.devbuy.devbuyWeb.po.Manager">
+    <id column="manager_id" jdbcType="VARCHAR" property="managerId" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="supermanager" jdbcType="VARCHAR" property="supermanager" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="submanager_count" jdbcType="INTEGER" property="submanagerCount" />
+    <result column="parent_manager" jdbcType="VARCHAR" property="parentManager" />
+    <result column="create_time" jdbcType="VARCHAR" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    manager_id, name, password, supermanager, description, submanager_count, parent_manager, 
+    create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from manager
+    where manager_id = #{managerId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from manager
+    where manager_id = #{managerId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.dev4free.devbuy.devbuyWeb.po.Manager">
+    insert into manager (manager_id, name, password, 
+      supermanager, description, submanager_count, 
+      parent_manager, create_time)
+    values (#{managerId,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{supermanager,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, #{submanagerCount,jdbcType=INTEGER}, 
+      #{parentManager,jdbcType=VARCHAR}, #{createTime,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.dev4free.devbuy.devbuyWeb.po.Manager">
+    insert into manager
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="managerId != null">
+        manager_id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="supermanager != null">
+        supermanager,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+      <if test="submanagerCount != null">
+        submanager_count,
+      </if>
+      <if test="parentManager != null">
+        parent_manager,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="managerId != null">
+        #{managerId,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="supermanager != null">
+        #{supermanager,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="submanagerCount != null">
+        #{submanagerCount,jdbcType=INTEGER},
+      </if>
+      <if test="parentManager != null">
+        #{parentManager,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.dev4free.devbuy.devbuyWeb.po.Manager">
+    update manager
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="supermanager != null">
+        supermanager = #{supermanager,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="submanagerCount != null">
+        submanager_count = #{submanagerCount,jdbcType=INTEGER},
+      </if>
+      <if test="parentManager != null">
+        parent_manager = #{parentManager,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where manager_id = #{managerId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.dev4free.devbuy.devbuyWeb.po.Manager">
+    update manager
+    set name = #{name,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      supermanager = #{supermanager,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      submanager_count = #{submanagerCount,jdbcType=INTEGER},
+      parent_manager = #{parentManager,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=VARCHAR}
+    where manager_id = #{managerId,jdbcType=VARCHAR}
+  </update>
+  
+  
+ <select id="selectManagerByUsernameAndPassword" parameterType="com.dev4free.devbuy.devbuyWeb.poCustom.ManagerCustom" resultType="com.dev4free.devbuy.devbuyWeb.poCustom.ManagerCustom">
+ 
+ select * from manager where name=#{name} and password=#{password}
+ 
+ </select>
+  
+</mapper>

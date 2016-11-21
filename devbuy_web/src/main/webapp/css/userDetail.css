@@ -1,0 +1,81 @@
+#userInfoHeader{
+	float: left;
+	width: 1000px;
+	height: 60px;
+	background-color: #178EE0;
+	margin-bottom: 40px;
+}
+
+
+#userInfoHeader p{
+	font-family: "微软雅黑";
+	font-size: 18px;
+	color: #FFFFFF;
+	margin-left: 16px;
+	margin-top: 16px;
+}
+
+
+#userInfo table p {
+	font-family: "微软雅黑";
+	font-size: 16px;
+	color: #464646;
+}
+
+#userInfo table{
+	
+	margin-bottom: 40px;
+}
+
+
+#userInfo input[type = "text"]{
+	width: 305px;
+	height: 30px;
+	font-family: "微软雅黑";
+	font-size: 16px;
+	color: #464646;
+}
+
+
+
+#userInfo img{
+	
+	width: 32px;
+	height: 32px;
+}
+
+#userInfo input[type = "submit"]{
+	
+	width: 152px;
+	height: 30px;
+	background-color: #178EE0;
+	font-family: "微软雅黑";
+	font-size: 16px;
+	color: #FFFFFF;
+	border: none;
+	margin-left: 440px;
+	margin-bottom: 16px;
+	margin-top: 80px;
+}
+
+
+.userInfoSubtitle {
+	
+	font-family: "微软雅黑";
+font-size: 18px;
+color: #178EE0;
+margin-left: 16px;
+border-bottom: #178EE0 1px solid;
+}
+
+#userInfo button{
+	width: 80px;
+	height: 36px;
+	background-color: #178EE0;
+	font-family: "微软雅黑";
+	font-size: 16px;
+	color: #FFFFFF;
+	border: none;
+	margin-bottom: 16px;
+}
+

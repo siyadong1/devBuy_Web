@@ -1,0 +1,333 @@
+
+/*布局管理开始*/
+#templateHeader{
+	float: left;
+	height: 100px;
+	width: 1200px;
+}
+#templateContent{
+	float: left;
+	margin-top: 6px;
+	width: 1200px;
+}
+#templateContentHeader{
+	height: 60px;
+
+}
+#templateContentLeft{
+	width: 184px;
+	height: 660px;
+	margin-top: 16px;
+	float: left;
+	background-color: #F1F5F8;
+}
+#templateContentRight{
+	overflow: auto;
+	overflow-x: hidden;
+	margin-top: 16px;
+	width: 1000px;
+	height: 660px;
+	float: left;
+	margin-left: 16px;
+	background-color: #F1F5F8;
+}
+#templateFooter{
+	margin-left: 300px;
+	margin-top: 10px;
+	height: 100px;
+	width: 600px;
+	float: left;
+	clear: both;
+}
+/*布局管理结束*/
+
+
+
+
+
+
+
+/*头部开始*/
+#templateHeaderTitle{
+	float: left;
+	margin-top: 35px;
+font-family: "微软雅黑";
+font-size: 24px;
+color: #FFFFFF;
+}
+
+#templateHeaderAdmin{
+	margin-top: 30px;
+	margin-left: 350px;
+	float: left;
+}
+
+#templateHeader ul {
+	margin-top: 16px;
+	margin-right: 16px;
+}
+#templateHeader ul li{
+	display: inline-block;
+}
+
+#templateHeader ul li:hover{
+	display: inline-block;
+	background-color: #578EE0;
+	cursor: pointer;
+	height: 100%;
+}
+
+
+#templateHeader ul li img{
+	margin-left: 10px;
+}
+/*头部结束*/
+
+
+
+
+
+/*模板内容区域开始*/
+
+/*模板内容区域头部开始*/
+
+
+#templateContentHeader ul{
+	height: 100%;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
+#templateContentHeader ul li{
+	float: left;
+	margin-right: 1px;
+	display: inline-block;
+	width: 16.581%;
+	height: 100%;
+	background-color: #178EE0;
+}
+
+
+
+#templateContentHeader ul li a{
+	font-family: "微软雅黑";
+	text-decoration: none;
+	padding: 10px;
+	
+	float: left;
+	margin-left: 50px;
+	font-size: 18px;
+	margin-top: 10px;
+	
+}
+
+
+#templateContentHeader ul li a:hover{
+	text-decoration: none;
+	font-family: "微软雅黑";
+	padding: 10px;
+	background-color: #FFFFFF;
+	color: #178EE0;
+	float: left;
+	margin-left: 50px;
+	font-size: 18px;
+	margin-top: 10px;
+	
+}
+
+.templateContentHeaderTabColor{
+
+	color: #FFFFFF;
+
+}
+
+.templateContentHeaderTab{
+	text-decoration: none;
+	font-family: "微软雅黑";
+	padding: 10px;
+	background-color: #FFFFFF;
+	color: #178EE0;
+	float: left;
+	margin-left: 50px;
+	font-size: 18px;
+	margin-top: 10px;
+}
+
+
+
+
+/*模板内容区域头部结束*/
+
+/*模板内容区域结束*/
+
+
+/*模板尾部开始*/
+
+#templateFooter ul{
+	height: 52px;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
+#templateFooter ul li{
+	float: left;
+	margin-right: 1px;
+	display: inline-block;
+	width: 24.8%;
+	height: 100%;
+	background-color: #178EE0;
+}
+
+
+#templateFooter ul li:hover{
+	float: left;
+	margin-right: 1px;
+	display: inline-block;
+	width: 24.8%;
+	height: 100%;
+	background-color: #FA162A;
+}
+
+
+#templateFooter ul li a{
+	float: left;
+	text-decoration: none;
+	color: #FFFFFF;
+	margin-left: 40px;
+	font-size: 18px;
+	margin-top: 18px;
+	
+}
+#templateFooterWebSiteInfo{
+	
+	font-family: "微软雅黑";
+font-size: 18px;
+color: #FA162A;
+margin-left: 150px;
+margin-top: 16px;
+}
+/*模板尾部结束*/
+
+
+
+/*模板内容左侧开始*/
+
+
+
+#templateContentLeftDiv1{
+	display: block;
+}
+
+
+#templateContentLeftDiv2{
+	display: none;
+}
+
+
+#templateContentLeftDiv3{
+	display: none;
+}
+
+#templateContentLeftDiv4{
+	display: none;
+}
+
+#templateContentLeftDiv5{
+	display: none;
+}
+
+#templateContentLeftDiv6{
+	display: none;
+}
+
+
+#templateContentLeft ul{
+
+	padding: 0px;
+	border-bottom: 10px #FFFFFF solid;
+}
+#templateContentLeft ul:last-child{
+
+	padding: 0px;
+	border-bottom: 0px #FFFFFF solid;
+}
+
+#templateContentLeft ul li{
+	height: 45px;
+	list-style: none;
+	width: 184px;
+}
+
+
+
+#templateContentLeft ul:first-child li:nth-child(2){
+	height: 45px;
+	list-style: none;
+	background-color: #178EE0;
+}
+
+
+
+
+
+
+#templateContentLeft ul:first-child li:nth-child(2) p{
+	list-style: none;
+	color: #FFFFFF;
+	
+	
+}
+
+#templateContentLeft ul li img{
+	margin-top: 6px;
+	float: left;
+	margin-left: 16px;
+}
+
+#templateContentLeft ul li:first-child p{
+	margin-top: 10px;
+	margin-left: 16px;
+	font-family: "微软雅黑";
+	font-size: 18px;
+	color: #000000;
+	float: left;
+}
+
+
+
+
+#templateContentLeft ul li p{
+	margin-top: 10px;
+	margin-left: 64px;
+	font-family: "微软雅黑";
+	font-size: 18px;
+	color: #178EE0;
+	float: left;
+}
+
+
+#templateContentLeft ul li:first-child :hover{
+	margin-top: 10px;
+	margin-left: 16px;
+	font-family: "微软雅黑";
+	font-size: 18px;
+	color: #000000;
+	float: left;
+	background-color: #faf5f8;
+}
+
+#templateContentLeft ul li :hover{
+	margin-top: 10px;
+	margin-left: 64px;
+	font-family: "微软雅黑";
+	font-size: 18px;
+	float: left;
+	list-style: none;
+	color: #FFFFFF;
+	background-color: #178EE0;
+	cursor: pointer;
+}
+
+/*模板内容左侧结束*/
