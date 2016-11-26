@@ -19,7 +19,7 @@
     items_id, itemsname, description, category, items_lb, price, current_price, image, 
     inventory, sales_volume, area, express_fee
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMapCustom">
     select 
     <include refid="Base_Column_List" />
     from items
@@ -207,51 +207,51 @@
   <sql id="query_items_where" >
   	
   	<if test="itemsId != null and itemsId != '' ">
-  		and items_id = #{itemsId}
+  		and items.items_id = #{itemsId}
   	</if>
   
     <if test="itemsname != null and itemsname != '' ">
-  		and itemsname = #{itemsname}
+  		and items.itemsname = #{itemsname}
   	</if>
   
   	 <if test="description != null and description != '' ">
-  		and description = #{description}
+  		and items.description = #{description}
   	</if>
   	
   	  	<if test="category != null and category != '' ">
-  		and category = #{category}
+  		and items.category = #{category}
   	</if>
   	
   	  	<if test="itemsLb != null and itemsLb != '' ">
-  		and items_lb = #{itemsLb}
+  		and items.items_lb = #{itemsLb}
   	</if>
   	
   	  	<if test="price != null and price != '' ">
-  		and price = #{price}
+  		and items.price = #{price}
   	</if>
   	
   	<if test="currentPrice != null and currentPrice != '' ">
-  		and current_price = #{currentPrice}
+  		and items.current_price = #{currentPrice}
   	</if>
   	
   	 <if test="image != null and image != '' ">
-  		and image =  #{image}
+  		and items.image =  #{image}
   	</if>
   
   	 <if test="inventory != null and inventory != '' ">
-  		and inventory =  #{inventory}
+  		and items.inventory =  #{inventory}
   	</if>
   	
   	<if test="salesVolume != null and salesVolume != '' ">
-  		and sales_volume =  #{salesVolume}
+  		and items.sales_volume =  #{salesVolume}
   	</if>
   	
   	 <if test="area != null and area != '' ">
-  		and area = #{area}
+  		and items.area = #{area}
   	</if>
   	  	
   	 <if test="expressFee != null and expressFee != '' ">
-  		and express_fee = #{expressFee}
+  		and items.express_fee = #{expressFee}
   	</if>
   </sql>
   
@@ -259,9 +259,10 @@
   
   <select id="selectSelective" parameterType="com.dev4free.devbuy.devbuyWeb.poCustom.ItemsCustom" resultMap="BaseResultMapCustom" >
   
-  	select * from items 
+  	  	SELECT items.*, classification.cf_name FROM items,classification 
   	<where>
   		<include refid="query_items_where" ></include>
+  		and items.category = classification.category
   	</where>
   
   </select>

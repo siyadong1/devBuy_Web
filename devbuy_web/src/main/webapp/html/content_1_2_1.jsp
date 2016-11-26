@@ -4,12 +4,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
-		<meta charset="UTF-8">
 		<title>类别列表</title>
 		<link rel="stylesheet" href="${devbuy_web_path}/css/content_1_2_1.css" />
 		<link rel="stylesheet" href="${devbuy_web_path}/css/common.css" />
 		<link rel="stylesheet" href="${devbuy_web_path}/css/ui.css" />
 		<script type="text/javascript" src="${devbuy_web_path}/js/jquery-2.1.1.min.js" ></script>
+		<script type="text/javascript" src="${devbuy_web_path}/js/jquery-form.js"></script>  
 	</head>
 	<body>
 		<div id="body">
@@ -26,7 +26,14 @@
 				<button onclick="showAddGoodsDialog('${devbuy_web_path}')"   class="contentButton">添加商品</button>
 				<select class="contentButton" >
 					<c:forEach items="${classificationCustoms }" var="classificationCustom" >
-						<option value="${classificationCustom.category }" >${classificationCustom.cfName }</option>
+						<c:choose >
+						 <c:when  test="${classificationCustom.category == categorySelected}" >
+						  <option value="${classificationCustom.category }"  selected="true" >${classificationCustom.cfName }</option>
+						 </c:when>							
+						 <c:otherwise>
+						  <option value="${classificationCustom.category }" >${classificationCustom.cfName }</option>
+						 </c:otherwise>						
+						</c:choose>
 					</c:forEach>
 					</select>
 				<input type="text" placeholder="搜索商品"></input>
@@ -55,7 +62,7 @@
 					<td><p>${item.inventory}</p></td>
 					<td><p>${item.area}</p></td>
 					<td><p>${item.expressFee}</p></td>
-					<td><button  onclick="showEditGoodsDialog('${devbuy_web_path}','${item.itemsId}')"   >编辑1</button></td>
+					<td><button  onclick="showEditGoodsDialog('${devbuy_web_path}','${item.itemsId}')"   >编辑</button></td>
 				</tr>
 				</c:forEach>
 			</table>
@@ -65,9 +72,7 @@
 	
 	
 	<script type="text/javascript">
-				
 		$("select").change(function(){
-			var selected = $("select").val();
 			$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/selectItemSelective.action?category=" + $("select").val());
 		}  );
 	</script>

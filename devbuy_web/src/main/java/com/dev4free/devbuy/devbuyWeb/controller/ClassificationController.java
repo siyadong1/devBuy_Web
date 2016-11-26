@@ -116,10 +116,6 @@ public class ClassificationController {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
-			
-			
-			
 		}
 		
 		

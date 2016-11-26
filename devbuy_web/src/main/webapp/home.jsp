@@ -26,6 +26,7 @@
 	<link rel="stylesheet" href="${devbuy_web_path}/css/ui.css" />
 	<script type="text/javascript" src="${devbuy_web_path}/js/content_1_1_1.js" ></script>
 	<script type="text/javascript" src="${devbuy_web_path}/js/content_1_2_1.js" ></script>
+		<script type="text/javascript" src="${devbuy_web_path}/js/content_1_2_2.js" ></script>
 	<script type="text/javascript" src="${devbuy_web_path}/js/content_1_3_1.js" ></script>
 	<script type="text/javascript" src="${devbuy_web_path}/js/content_1_4_1.js" ></script>
 	<script type="text/javascript" src="${devbuy_web_path}/js/content_1_5_1.js" ></script>
@@ -482,6 +483,12 @@
 							if($(this).attr("class") == "content_1_2_1"){
 								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllItems.action")
 							}
+							
+							
+							if($(this).attr("class") == "content_1_2_2"){
+								$("#templateContentRight").load("${devbuy_web_path}/html/content_1_2_2.jsp #body");
+							}
+							
 							
 					});
 				}

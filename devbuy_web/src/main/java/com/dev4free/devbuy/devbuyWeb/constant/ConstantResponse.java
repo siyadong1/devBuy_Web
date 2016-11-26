@@ -41,6 +41,12 @@ public class ConstantResponse {
 	public static final String 	CONTENT_REQUESTPARAMETER_ERROR = "传入参数不完整!";
 	
 	
+	public static final String 	CODE_UPDATEITEMNAMEEXIT_ERROR = "0000007";
+	public static final String 	CONTENT_UPDATEITEMNAMEEXIT_ERROR = "商品名称已经存在!";
 	
+	
+	
+	public static final String 	CODE_UPDATEITEMNAMEEMPTY_ERROR = "0000008";
+	public static final String 	CONTENT_UPDATEITEMNAMEEMPTY_ERROR = "商品名称不能为空!";
 	
 }

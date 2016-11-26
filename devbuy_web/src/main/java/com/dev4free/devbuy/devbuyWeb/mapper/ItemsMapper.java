@@ -13,7 +13,7 @@ public interface ItemsMapper {
 
     int insertSelective(Items record);
 
-    Items selectByPrimaryKey(String itemsId);
+    ItemsCustom selectByPrimaryKey(String itemsId);
 
     int updateByPrimaryKeySelective(Items record);
 

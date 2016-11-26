@@ -47,12 +47,11 @@
 #pusblishGoods img{
 	
 	width: 160px;
-	height: 131px;
 		margin-left: 440px;
 		margin-top: 16px;
 }
 
-#pusblishGoods input[type = "submit"]{
+#pusblishGoods button{
 	
 	width: 152px;
 	height: 30px;

@@ -26,7 +26,7 @@ public interface ItemsService {
 	/**
 	 * 根据商品的id查询商品的信息
 	 */
-	Items selectItemsByPrimaryKey(String itemsId);
+	ItemsCustom selectItemsByPrimaryKey(String itemsId);
 	
 	
 	
@@ -36,4 +36,12 @@ public interface ItemsService {
 	 * 根据商品的非空字段选择商品
 	 */
 	List<ItemsCustom> selectSelective(ItemsCustom itemsCustom);
+	
+	
+	
+	
+	/**
+	 * 新增商品信息
+	 */
+	void insertItems(Items items);
 }

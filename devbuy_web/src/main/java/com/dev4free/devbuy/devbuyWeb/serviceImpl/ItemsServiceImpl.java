@@ -25,7 +25,7 @@ public class ItemsServiceImpl implements ItemsService{
 		itemsMapper.updateByPrimaryKeySelective(itemsCustom);
 	}
 
-	public Items selectItemsByPrimaryKey(String itemsId) {
+	public ItemsCustom selectItemsByPrimaryKey(String itemsId) {
 		// TODO Auto-generated method stub
 		return itemsMapper.selectByPrimaryKey(itemsId);
 	}
@@ -33,6 +33,12 @@ public class ItemsServiceImpl implements ItemsService{
 	public List<ItemsCustom> selectSelective(ItemsCustom itemsCustom) {
 		// TODO Auto-generated method stub
 		return itemsMapper.selectSelective(itemsCustom);
+	}
+
+	public void insertItems(Items items) {
+		// TODO Auto-generated method stub
+		itemsMapper.insert(items);
+		
 	}
 
 
