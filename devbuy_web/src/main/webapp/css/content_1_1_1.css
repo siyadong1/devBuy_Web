@@ -1,6 +1,6 @@
 /*模板内容右侧开始*/
 /*模板内容右侧头部开始*/
-#ContentRightTitle_1_1_1{
+ #ContentRightTitle_1_1_1{
 	width: 1000px;
 	height: 60px;
 	background-color: #178EE0;
@@ -29,8 +29,8 @@
 		float: left;
 		margin-left: 16px;
 }
-/*模板内容右侧头部结束*/
-/*模板内容右侧条目开始*/
+模板内容右侧头部结束
+模板内容右侧条目开始
 #ContentRight_1_1_1 tr td p:nth-child(2){
 	font-family: "微软雅黑";
 font-size: 16px;
@@ -51,8 +51,8 @@ margin-top: 8px;
 	height: 24px;
 	margin-left: 30px;
 	margin-top: 9px;
-}
-#ContentRight_1_1_1 tr td p{
+} 
+ #ContentRight_1_1_1 tr td p{
 	font-family: "微软雅黑";
 font-size: 16px;
 color: #464646;
@@ -64,8 +64,10 @@ margin-top: 4px;
 float: left;
 margin-left: 48px;
 margin-top: 4px;
-}
-#ContentRight_1_1_1 tr td button{
+width: 32px;
+height: 32px;
+} 
+  #ContentRight_1_1_1 tr td button{
 float: left;
 background-color: #178EE0;
 color: #FFFFFF;
@@ -74,6 +76,6 @@ margin-left: 30px;
 margin-top: 4px;
 font-family: "微软雅黑";
 font-size: 16px;
-}
+}  
 /*模板内容右侧条目结束*/
 /*模板内容右侧结束*/

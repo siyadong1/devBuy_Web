@@ -23,7 +23,7 @@
 }
 #templateContentRight{
 	overflow: auto;
-	overflow-x: hidden;
+	/* overflow-x: hidden; */
 	margin-top: 16px;
 	width: 1000px;
 	height: 660px;

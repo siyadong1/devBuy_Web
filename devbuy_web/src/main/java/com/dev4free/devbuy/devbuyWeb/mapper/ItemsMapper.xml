@@ -177,9 +177,93 @@
   
   
   
-  <select id="selectAllItems" resultType="com.dev4free.devbuy.devbuyWeb.poCustom.ItemsCustom">
-  	select * from items
+  
+  
+  
+    <resultMap id="BaseResultMapCustom" type="com.dev4free.devbuy.devbuyWeb.poCustom.ItemsCustom">
+    <id column="items_id" jdbcType="VARCHAR" property="itemsId" />
+    <result column="itemsname" jdbcType="VARCHAR" property="itemsname" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="category" jdbcType="VARCHAR" property="category" />
+    <result column="items_lb" jdbcType="VARCHAR" property="itemsLb" />
+    <result column="price" jdbcType="VARCHAR" property="price" />
+    <result column="current_price" jdbcType="VARCHAR" property="currentPrice" />
+    <result column="image" jdbcType="VARCHAR" property="image" />
+    <result column="inventory" jdbcType="VARCHAR" property="inventory" />
+    <result column="sales_volume" jdbcType="VARCHAR" property="salesVolume" />
+    <result column="area" jdbcType="VARCHAR" property="area" />
+    <result column="express_fee" jdbcType="VARCHAR" property="expressFee" />
+    <result column="cf_name" jdbcType="VARCHAR" property="cfName" />
+  </resultMap>
+  
+  <select id="selectAllItems" resultMap="BaseResultMapCustom">
+  	SELECT items.*, classification.cf_name FROM items,classification WHERE items.category = classification.category
   </select>
   
+  
+  
+    
+  
+  <sql id="query_items_where" >
+  	
+  	<if test="itemsId != null and itemsId != '' ">
+  		and items_id = #{itemsId}
+  	</if>
+  
+    <if test="itemsname != null and itemsname != '' ">
+  		and itemsname = #{itemsname}
+  	</if>
+  
+  	 <if test="description != null and description != '' ">
+  		and description = #{description}
+  	</if>
+  	
+  	  	<if test="category != null and category != '' ">
+  		and category = #{category}
+  	</if>
+  	
+  	  	<if test="itemsLb != null and itemsLb != '' ">
+  		and items_lb = #{itemsLb}
+  	</if>
+  	
+  	  	<if test="price != null and price != '' ">
+  		and price = #{price}
+  	</if>
+  	
+  	<if test="currentPrice != null and currentPrice != '' ">
+  		and current_price = #{currentPrice}
+  	</if>
+  	
+  	 <if test="image != null and image != '' ">
+  		and image =  #{image}
+  	</if>
+  
+  	 <if test="inventory != null and inventory != '' ">
+  		and inventory =  #{inventory}
+  	</if>
+  	
+  	<if test="salesVolume != null and salesVolume != '' ">
+  		and sales_volume =  #{salesVolume}
+  	</if>
+  	
+  	 <if test="area != null and area != '' ">
+  		and area = #{area}
+  	</if>
+  	  	
+  	 <if test="expressFee != null and expressFee != '' ">
+  		and express_fee = #{expressFee}
+  	</if>
+  </sql>
+  
+  
+  
+  <select id="selectSelective" parameterType="com.dev4free.devbuy.devbuyWeb.poCustom.ItemsCustom" resultMap="BaseResultMapCustom" >
+  
+  	select * from items 
+  	<where>
+  		<include refid="query_items_where" ></include>
+  	</where>
+  
+  </select>
   
 </mapper>

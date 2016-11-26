@@ -24,7 +24,7 @@
 					<table  cellpadding="10px">
 						<tr>
 							<td><p>商品名称</p></td>
-							<td><input type="text" placeholder="金刚葫芦娃" /></td>
+							<td><input type="text" value="${items.itemsname }" /></td>
 						</tr>
 						<tr>
 							<td><p>商品类别</p></td>
@@ -40,25 +40,25 @@
 						
 						<tr>
 							<td><p>商品描述</p></td>
-							<td><textarea></textarea></td>
+							<td><textarea>${items.description }</textarea></td>
 						</tr>
 						
 						
 						
 						<tr>
 							<td><p>原价</p></td>
-							<td><input type="text" /></td>
+							<td><input type="text"  value="${items.price }" /></td>
 						</tr>
 						
 						<tr>
 							<td><p>促销价</p></td>
-							<td><input type="text" /></td>
+							<td><input type="text"   value="${items.currentPrice }" /></td>
 						</tr>
 						
 						
 						<tr>
 							<td><p>库存</p></td>
-							<td><input type="text" /></td>
+							<td><input type="text" value="${items.inventory }"   /></td>
 						</tr>
 						
 						
@@ -66,21 +66,21 @@
 						
 						<tr>
 							<td><p>销量</p></td>
-							<td><input type="text" /></td>
+							<td><input type="text" value="${items.salesVolume }"  /></td>
 						</tr>
 						
 						
 						
 						<tr>
 							<td><p>产地</p></td>
-							<td><input type="text" /></td>
+							<td><input type="text" value="${items.area }"  /></td>
 						</tr>
 						
 						
 						
 						<tr>
 							<td><p>快递费</p></td>
-							<td><input type="text" /></td>
+							<td><input type="text"  value="${items.expressFee }"  /></td>
 						</tr>
 						
 						
@@ -88,13 +88,13 @@
 						
 						<tr>
 							<td><p>商品图片</p></td>
-							<td><input type="file" /></td>
+							<td><input type="file"   /></td>
 						</tr>
 
 					</table>
 											
 						<tr>
-							<td ><img src="img/calabash.png" /></td>
+							<td ><img src="${items.image }"   /></td>
 						</tr>
 
 				</form>

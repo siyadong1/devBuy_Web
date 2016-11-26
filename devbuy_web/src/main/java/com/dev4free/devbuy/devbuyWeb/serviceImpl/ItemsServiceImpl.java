@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.dev4free.devbuy.devbuyWeb.mapper.ItemsMapper;
+import com.dev4free.devbuy.devbuyWeb.po.Items;
 import com.dev4free.devbuy.devbuyWeb.poCustom.ItemsCustom;
 import com.dev4free.devbuy.devbuyWeb.service.ItemsService;
 
@@ -18,5 +19,23 @@ public class ItemsServiceImpl implements ItemsService{
 		// TODO Auto-generated method stub
 		return itemsMapper.selectAllItems();
 	}
+
+	public void updateItemSelect(ItemsCustom itemsCustom) {
+		// TODO Auto-generated method stub
+		itemsMapper.updateByPrimaryKeySelective(itemsCustom);
+	}
+
+	public Items selectItemsByPrimaryKey(String itemsId) {
+		// TODO Auto-generated method stub
+		return itemsMapper.selectByPrimaryKey(itemsId);
+	}
+
+	public List<ItemsCustom> selectSelective(ItemsCustom itemsCustom) {
+		// TODO Auto-generated method stub
+		return itemsMapper.selectSelective(itemsCustom);
+	}
+
+
+
 
 }

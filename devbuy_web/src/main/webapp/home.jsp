@@ -7,7 +7,7 @@
 		<meta charset="UTF-8">
 		<title>devBuy后台管理系统模板</title>
 	<link rel="stylesheet" href="${devbuy_web_path}/css/common.css" />
-	<link rel="stylesheet" href="${devbuy_web_path}/css/content_1_1_1.css" />
+	<link rel="stylesheet" href="${devbuy_web_path}/css/content_1_1_1.css" /> 
 	<link rel="stylesheet" href="${devbuy_web_path}/css/content_1_2_1.css" />
 	<link rel="stylesheet" href="${devbuy_web_path}/css/content_1_2_2.css" />
 	<link rel="stylesheet" href="${devbuy_web_path}/css/content_1_3_1.css" />
@@ -35,6 +35,8 @@
 	<script type="text/javascript" src="${devbuy_web_path}/js/content_6_1_1.js" ></script>
 	<script type="text/javascript" src="${devbuy_web_path}/js/content_6_2_1.js" ></script>
     <script type="text/javascript" src="${devbuy_web_path}/js/jquery-2.1.1.min.js" ></script>
+     <script type="text/javascript" src="${devbuy_web_path}/js/jquery-form.js" ></script>
+         <script type="text/javascript" src="/devbuy_web/js/layer/layer.js"></script>
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -73,7 +75,7 @@
 	$("#templateContentHeaderTab5").removeClass("templateContentHeaderTab");
 	$("#templateContentHeaderTab6").removeClass("templateContentHeaderTab");
 	
-		$("#templateContentRight").load("${devbuy_web_path}/html/content_1_1_1.jsp #body");
+	$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllClassification.action")
 	
 	});	
 		
@@ -471,16 +473,24 @@
 						$(item).click(function(){
 							
 							
-							if($(this).attr("class") == "content_1_2_1"){
-								window.location.href='${devbuy_web_path}/java/manageplatform/queryAllItems.action';
+							
+							if($(this).attr("class") == "content_1_1_1"){
+								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllClassification.action")
 							}
+							
+							
+							if($(this).attr("class") == "content_1_2_1"){
+								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllItems.action")
+							}
+							
 					});
 				}
 			}
 		}	
 		
 
-			//$("#templateContentRight").load("${devbuy_web_path}/html/content_1_1_1.jsp #body");
+		$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllClassification.action")
+
 		
 		
 		
@@ -852,27 +862,6 @@
 			
 	
 	
-	
-	<script type="text/javascript" >
-	
-
-	
-	
-	<c:choose>
-	
-	
-		<c:when test="${templateContentRight == 'content_1_2_1'}">
-		
-		$("#templateContentRight").load("${devbuy_web_path}/html/content_1_2_1.jsp #body", {"param1":"asfdsa"});
-		</c:when>
-		
-		<c:otherwise>
-		$("#templateContentRight").load("${devbuy_web_path}/html/content_1_1_1.jsp #body");
-		</c:otherwise>
-	</c:choose>
-	
-	
-	</script>
 	
 	
 	

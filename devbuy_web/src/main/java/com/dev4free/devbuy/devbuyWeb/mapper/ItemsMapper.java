@@ -23,4 +23,12 @@ public interface ItemsMapper {
     List<ItemsCustom> selectAllItems();
     
     
+    
+    /**
+     * 根据传入的itemsCustom非空字段来进行筛选
+     * @param itemsCustom
+     * @return
+     */
+    List<ItemsCustom> selectSelective(ItemsCustom itemsCustom);
+    
 }

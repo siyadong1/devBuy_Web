@@ -9,6 +9,12 @@ public class Classification {
 
     private String category;
 
+    private String cfCreatetime;
+
+    private String cfModifytime;
+
+    private String cfDes;
+
     public String getCfId() {
         return cfId;
     }
@@ -39,5 +45,29 @@ public class Classification {
 
     public void setCategory(String category) {
         this.category = category == null ? null : category.trim();
+    }
+
+    public String getCfCreatetime() {
+        return cfCreatetime;
+    }
+
+    public void setCfCreatetime(String cfCreatetime) {
+        this.cfCreatetime = cfCreatetime == null ? null : cfCreatetime.trim();
+    }
+
+    public String getCfModifytime() {
+        return cfModifytime;
+    }
+
+    public void setCfModifytime(String cfModifytime) {
+        this.cfModifytime = cfModifytime == null ? null : cfModifytime.trim();
+    }
+
+    public String getCfDes() {
+        return cfDes;
+    }
+
+    public void setCfDes(String cfDes) {
+        this.cfDes = cfDes == null ? null : cfDes.trim();
     }
 }

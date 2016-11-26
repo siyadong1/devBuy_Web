@@ -15,7 +15,7 @@ function showDeleteGoodsDialog(){
 	$("#maskLayer").show();
 }
 
-function showAddGoodsDialog(){
-	$("#templateContentRight").load("./html/content_1_2_2.html #body");
+function showEditGoodsDialog(devbuy_web_path,itemsId){
+	$("#templateContentRight").load( devbuy_web_path + "/java/manageplatform/selectItemByItemId.action?itemsId=" + itemsId);
 }
 

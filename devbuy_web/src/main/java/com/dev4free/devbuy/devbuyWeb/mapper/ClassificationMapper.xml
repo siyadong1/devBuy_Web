@@ -6,11 +6,14 @@
     <result column="cf_name" jdbcType="VARCHAR" property="cfName" />
     <result column="cf_url" jdbcType="VARCHAR" property="cfUrl" />
     <result column="category" jdbcType="VARCHAR" property="category" />
+    <result column="cf_createtime" jdbcType="VARCHAR" property="cfCreatetime" />
+    <result column="cf_modifytime" jdbcType="VARCHAR" property="cfModifytime" />
+    <result column="cf_des" jdbcType="VARCHAR" property="cfDes" />
   </resultMap>
   <sql id="Base_Column_List">
-    cf_id, cf_name, cf_url, category
+    cf_id, cf_name, cf_url, category, cf_createtime, cf_modifytime, cf_des
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMapCustom">
     select 
     <include refid="Base_Column_List" />
     from classification
@@ -22,9 +25,11 @@
   </delete>
   <insert id="insert" parameterType="com.dev4free.devbuy.devbuyWeb.po.Classification">
     insert into classification (cf_id, cf_name, cf_url, 
-      category)
+      category, cf_createtime, cf_modifytime, 
+      cf_des)
     values (#{cfId,jdbcType=VARCHAR}, #{cfName,jdbcType=VARCHAR}, #{cfUrl,jdbcType=VARCHAR}, 
-      #{category,jdbcType=VARCHAR})
+      #{category,jdbcType=VARCHAR}, #{cfCreatetime,jdbcType=VARCHAR}, #{cfModifytime,jdbcType=VARCHAR}, 
+      #{cfDes,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.dev4free.devbuy.devbuyWeb.po.Classification">
     insert into classification
@@ -41,6 +46,15 @@
       <if test="category != null">
         category,
       </if>
+      <if test="cfCreatetime != null">
+        cf_createtime,
+      </if>
+      <if test="cfModifytime != null">
+        cf_modifytime,
+      </if>
+      <if test="cfDes != null">
+        cf_des,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="cfId != null">
@@ -54,6 +68,15 @@
       </if>
       <if test="category != null">
         #{category,jdbcType=VARCHAR},
+      </if>
+      <if test="cfCreatetime != null">
+        #{cfCreatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="cfModifytime != null">
+        #{cfModifytime,jdbcType=VARCHAR},
+      </if>
+      <if test="cfDes != null">
+        #{cfDes,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -69,6 +92,15 @@
       <if test="category != null">
         category = #{category,jdbcType=VARCHAR},
       </if>
+      <if test="cfCreatetime != null">
+        cf_createtime = #{cfCreatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="cfModifytime != null">
+        cf_modifytime = #{cfModifytime,jdbcType=VARCHAR},
+      </if>
+      <if test="cfDes != null">
+        cf_des = #{cfDes,jdbcType=VARCHAR},
+      </if>
     </set>
     where cf_id = #{cfId,jdbcType=VARCHAR}
   </update>
@@ -76,7 +108,97 @@
     update classification
     set cf_name = #{cfName,jdbcType=VARCHAR},
       cf_url = #{cfUrl,jdbcType=VARCHAR},
-      category = #{category,jdbcType=VARCHAR}
+      category = #{category,jdbcType=VARCHAR},
+      cf_createtime = #{cfCreatetime,jdbcType=VARCHAR},
+      cf_modifytime = #{cfModifytime,jdbcType=VARCHAR},
+      cf_des = #{cfDes,jdbcType=VARCHAR}
     where cf_id = #{cfId,jdbcType=VARCHAR}
   </update>
+  
+  
+  
+  
+  
+  
+  
+  
+    <resultMap id="BaseResultMapCustom" type="com.dev4free.devbuy.devbuyWeb.poCustom.ClassificationCustom">
+    <id column="cf_id" jdbcType="VARCHAR" property="cfId" />
+    <result column="cf_name" jdbcType="VARCHAR" property="cfName" />
+    <result column="cf_url" jdbcType="VARCHAR" property="cfUrl" />
+    <result column="category" jdbcType="VARCHAR" property="category" />
+    <result column="cf_createtime" jdbcType="VARCHAR" property="cfCreatetime" />
+    <result column="cf_modifytime" jdbcType="VARCHAR" property="cfModifytime" />
+    <result column="cf_des" jdbcType="VARCHAR" property="cfDes" />
+  </resultMap>
+  
+  
+  <select id="selectAllClassioncation" resultMap="BaseResultMapCustom">
+  	select * from classification
+  </select>
+  
+  
+  
+  <sql id="query_classification_where" >
+  	
+  	<if test="cfId != null and cfId != '' ">
+  		and cf_id = #{cfId}
+  	</if>
+  
+    <if test="cfName != null and cfName != '' ">
+  		and cf_name = #{cfName}
+  	</if>
+  
+  	 <if test="cfUrl != null and cfUrl != '' ">
+  		and cf_url =   #{cfUrl}
+  	</if>
+  	
+  	  	<if test="category != null and category != '' ">
+  		and category =   #{category}
+  	</if>
+  	
+  	  	<if test="cfCreatetime != null and cfCreatetime != '' ">
+  		and cfCreatetime =    #{cfCreatetime}
+  	</if>
+  	
+  	  	<if test="cfModifytime != null and cfModifytime != '' ">
+  		and cfModifytime =   #{cfModifytime}
+  	</if>
+  	
+  	  	<if test="cfDes != null and cfDes != '' ">
+  		and cf_des =    #{cfDes}
+  	</if>
+  	
+  	
+  	
+  </sql>
+  
+  
+  <select id="selectSelective"  resultMap="BaseResultMapCustom" >
+  select * from classification
+  <where>
+  	<include refid="query_classification_where"></include>
+  </where>
+  </select>
+  
+  
+  
+  
+  
+  <delete id="deleteClassificationByIds" parameterType="Object[]" >
+  
+  delete from classification 
+  <where>
+  <if  test="array != null and array.length > 0">
+	<foreach collection="array" item="item" open="and cf_id in (" close=")" separator=",">
+			#{item}
+	</foreach>
+  </if>
+  </where>
+  
+  
+  </delete>
+  
+  
+  
 </mapper>

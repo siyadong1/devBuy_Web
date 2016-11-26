@@ -20,8 +20,8 @@
 	 -->
  <bean id="ManagerService" class="com.dev4free.devbuy.devbuyWeb.serviceImpl.ManagerServiceImpl"></bean>	
 	
+ <bean id="ItemsService" class="com.dev4free.devbuy.devbuyWeb.serviceImpl.ItemsServiceImpl"></bean>		
 	
- <bean id="ItemsServiceImpl" class="com.dev4free.devbuy.devbuyWeb.serviceImpl.ItemsServiceImpl"></bean>		
-		
+ <bean id="queryAllClassification" class="com.dev4free.devbuy.devbuyWeb.serviceImpl.ClassificationServiceImpl"></bean>	
 
 </beans>
