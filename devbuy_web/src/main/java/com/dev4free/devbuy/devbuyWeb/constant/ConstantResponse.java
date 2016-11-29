@@ -5,7 +5,7 @@ public class ConstantResponse {
 	
 	
 	public static final String CODE_NORMAL = "000000";
-	public static final String CONTENT_NORMAL = "正常！s";
+	public static final String CONTENT_NORMAL = "正常！";
 	
 	
 	
@@ -48,5 +48,18 @@ public class ConstantResponse {
 	
 	public static final String 	CODE_UPDATEITEMNAMEEMPTY_ERROR = "0000008";
 	public static final String 	CONTENT_UPDATEITEMNAMEEMPTY_ERROR = "商品名称不能为空!";
+	
+	
+	public static final String 	CODE_DELETEITEMIDEMPTY_ERROR = "0000009";
+	public static final String 	CONTENT_DELETEITEMIDEMPTY_ERROR = "请选择要删除的商品!";
+	
+	
+	
+	public static final String 	CODE_UPDATEBANNERNAMEEMPTY_ERROR = "0000010";
+	public static final String 	CONTENT_UPDATEBANNERNAMEEMPTY_ERROR = "Banner名称不能为空!";
+	
+	
+	public static final String 	CODE_UPDATEBANNERNAMEEXIT_ERROR = "0000011";
+	public static final String 	CONTENT_UPDATEBANNERNAMEXIT_ERROR = "Banner名称已经存在!";
 	
 }

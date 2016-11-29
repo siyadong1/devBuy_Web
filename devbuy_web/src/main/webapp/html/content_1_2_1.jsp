@@ -17,7 +17,7 @@
 			<div id="deleteGoods" >
 				<p style="margin-left: 244px; margin-top: 16px; color: #178EE0; font-size: 18px; font-family: '微软雅黑';"  >确定删除该商品</p>
 				<button  onclick="hideDeleteGoodsDialog()" class="redButton" style="position: absolute; right: 16px; bottom: 50px;">取消</button>
-				<button  onclick="hideDeleteGoodsDialog()" class="blueButton"  style="position: absolute; right: 95px; bottom: 50px;" >确定</button>
+				<button  onclick="confirmDeleteGoodsDialog('${devbuy_web_path}')" class="blueButton"  style="position: absolute; right: 95px; bottom: 50px;" >确定</button>
 			</div>
 				<!--模板内容区域右侧开始-->
 		<div id="ContentRight_1_2_1">
@@ -39,10 +39,10 @@
 				<input type="text" placeholder="搜索商品"></input>
 				<img src="${devbuy_web_path}/img/iv_search_query.png" />
 			</div>
-			
+			<form name="deleteItemsIds" >
 			<table>
 				<tr>
-					<td><input type="checkbox" />  <p id="ContentRightFirtst_1_2_1">全选</p></td>
+					<td><input type="checkbox"  id="ck_content_1_2_1"   />  <p id="ContentRightFirtst_1_2_1">全选</p></td>
 					<td><p>名称</p></td>
 					<td><p>所属类别</p></td>
 					<td><p>促销价</p></td>
@@ -54,7 +54,7 @@
 				</tr>
 				<c:forEach  items="${itemsCustoms }" var="item" >				
 				<tr>
-					<td>  <input type="checkbox" /></td>
+					<td>  <input type="checkbox" class="itemsCK" name="itemsIds"  value="${item.itemsId}" /></td>
 					<td><p>${item.itemsname} </p></td>
 					<td><p title="${item.description}">${item.cfName}</p></td>
 					<td><p>${item.currentPrice}</p></td>
@@ -62,19 +62,50 @@
 					<td><p>${item.inventory}</p></td>
 					<td><p>${item.area}</p></td>
 					<td><p>${item.expressFee}</p></td>
-					<td><button  onclick="showEditGoodsDialog('${devbuy_web_path}','${item.itemsId}')"   >编辑</button></td>
+					<td><button  type="button"   onclick="showEditGoodsDialog('${devbuy_web_path}','${item.itemsId}')"   >编辑</button></td>
 				</tr>
 				</c:forEach>
 			</table>
+			</form>
 		</div>
 		</div>
 	</body>
 	
 	
 	<script type="text/javascript">
+	
+		/* 根据不同的商品类别筛选商品 */
 		$("select").change(function(){
 			$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/selectItemSelective.action?category=" + $("select").val());
 		}  );
 	</script>
+	
+	
+	
+		<script  type="text/javascript" > 
+
+			$(function() {
+		$("#ck_content_1_2_1").change(
+		function(){
+			
+			if($("#ck_content_1_2_1").prop("checked")){
+				  $(".itemsCK").each(function(){
+					   $(this).prop("checked",true);
+					  });
+			}else{
+				 $(".itemsCK").each(function(){
+					 $(this).prop("checked",false);
+					  });
+			}
+		}
+		
+		);			
+			});
+		</script>
+		
+		
+		
+	
+	
 	
 </html>

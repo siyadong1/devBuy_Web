@@ -26,8 +26,9 @@
 	<link rel="stylesheet" href="${devbuy_web_path}/css/ui.css" />
 	<script type="text/javascript" src="${devbuy_web_path}/js/content_1_1_1.js" ></script>
 	<script type="text/javascript" src="${devbuy_web_path}/js/content_1_2_1.js" ></script>
-		<script type="text/javascript" src="${devbuy_web_path}/js/content_1_2_2.js" ></script>
+	<script type="text/javascript" src="${devbuy_web_path}/js/content_1_2_2.js" ></script>
 	<script type="text/javascript" src="${devbuy_web_path}/js/content_1_3_1.js" ></script>
+	<script type="text/javascript" src="${devbuy_web_path}/js/content_1_3_2.js" ></script>
 	<script type="text/javascript" src="${devbuy_web_path}/js/content_1_4_1.js" ></script>
 	<script type="text/javascript" src="${devbuy_web_path}/js/content_1_5_1.js" ></script>
 	<script type="text/javascript" src="${devbuy_web_path}/js/content_2_1_1.js" ></script>
@@ -486,9 +487,30 @@
 							
 							
 							if($(this).attr("class") == "content_1_2_2"){
-								$("#templateContentRight").load("${devbuy_web_path}/html/content_1_2_2.jsp #body");
+								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/selectClassificationForAddGoods.action");
 							}
 							
+							
+							if($(this).attr("class") == "content_1_3_1"){
+								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllBanners.action");
+							}
+
+							
+							if($(this).attr("class") == "content_1_3_2"){
+								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/selectClassificationForAddBanner.action");
+							}
+							
+							if($(this).attr("class") == "content_1_4_1"){
+								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllClassification.action")
+							}
+							
+							if($(this).attr("class") == "content_1_5_1"){
+								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllRecommend.action")
+							}
+							
+							if($(this).attr("class") == "content_1_5_2"){
+								$("#templateContentRight").load("${devbuy_web_path}/html/content_1_5_2.jsp #body")
+							}
 							
 					});
 				}
@@ -631,9 +653,9 @@
 				<li class="content_1_4_1" id="templateContentLeftDiv1_4_2">
 					<p>导航列表</p>
 				</li>
-				<li class="content_1_4_2" id="templateContentLeftDiv1_4_3">
+<!-- 				<li class="content_1_4_2" id="templateContentLeftDiv1_4_3">
 					<p>发布导航</p>
-				</li>
+				</li> -->
 			</ul>
 			<ul>
 				<li id="templateContentLeftDiv1_5_1">

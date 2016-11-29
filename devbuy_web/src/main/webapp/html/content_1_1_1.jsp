@@ -6,7 +6,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>类别列表</title>
-		<%-- <link rel="stylesheet" href="${devbuy_web_path}/css/content_1_1_1.css" />  --%>
+		<link rel="stylesheet" href="${devbuy_web_path}/css/content_1_1_1.css" /> 
 		<link rel="stylesheet" href="${devbuy_web_path}/css/common.css" />
 		<link rel="stylesheet" href="${devbuy_web_path}/css/ui.css" />
 		<script type="text/javascript" src="${devbuy_web_path}/js/jquery-2.1.1.min.js" ></script>

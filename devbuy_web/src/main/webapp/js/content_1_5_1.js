@@ -32,9 +32,8 @@ function showAddRecommendDialog(){
 
 
 
-function showEditRecommendDialog() {
-		$("#templateContentRight").load("./html/content_1_5_2.html #body");
-
+function showEditRecommendDialog(devbuy_web_path,rcId) {
+	$("#templateContentRight").load( devbuy_web_path + "/java/manageplatform/selectRecommendCustomById.action?rcId=" + rcId);
 }
 	
 

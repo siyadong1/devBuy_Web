@@ -6,10 +6,11 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>导航列表</title>
-		<link rel="stylesheet" href="../css/content_1_4_1.css" />
-		<link rel="stylesheet" href="../css/common.css" />
-		<link rel="stylesheet" href="../css/ui.css" />
-		<script type="text/javascript" src="../js/jquery-2.1.1.min.js" ></script>
+		<link rel="stylesheet" href="${devbuy_web_path}/css/content_1_4_1.css" />
+		<link rel="stylesheet" href="${devbuy_web_path}/css/common.css" />
+		<link rel="stylesheet" href="${devbuy_web_path}/css/ui.css" />
+		<script type="text/javascript" src="${devbuy_web_path}/js/jquery-2.1.1.min.js" ></script>
+		<script type="text/javascript" src="${devbuy_web_path}/js/jquery-form.js"></script>
 	</head>
 	<body>
 		
@@ -22,47 +23,6 @@
 				<button  onclick="hideDeleteNavigatorDialog()" class="redButton" style="position: absolute; right: 16px; bottom: 50px;">取消</button>
 				<button  onclick="hideDeleteNavigatorDialog()" class="blueButton"  style="position: absolute; right: 95px; bottom: 50px;" >确定</button>
 			</div>
-		
-			
-			
-						
-			<!--添加商品-->
-			<div id="addNavigator" >
-				<div><p>添加首页导航</p></div>
-				<form>
-					<table  cellspacing="16px">
-						<tr>
-							<td><span class="text16px ">商品名称</span></td>
-							<td><input class="text16px" type="text" id="" placeholder="苹果6s" /></td>
-						</tr>
-
-						<tr>
-							<td><span class="text16px ">描述</span></td>
-							<td><textarea class="text16px"></textarea></td>
-						</tr>
-						<tr>
-							<td><span class="text16px ">是否显示</span></td>
-							<td>
-								<select>
-									<option>是</option>
-									<option>否</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td><span class="text16px ">图标</span></td>
-							<td><input type="file" class="text16px" /></td>
-						</tr>
-					</table>
-				</form>
-				<button   onclick="hideAddNavigatorDialog()" class="redButton" style="position: absolute; right: 16px; bottom: 16px;">取消</button>
-				<button   onclick="hideAddNavigatorDialog()" class="blueButton"  style="position: absolute; right: 95px; bottom: 16px;" >确定</button>	
-			</div>
-			
-			
-			
-			
-			
 				<!--模板内容区域右侧开始-->
 				
 				
@@ -82,8 +42,8 @@
 				<tr>
 					<td>  <input type="checkbox" />  <p id="ContentRightFirtst_1_1_1">全选</p></td>
 					<td><p>名称</p></td>
-					<td><p>所属类别</p></td>
 					<td><p>描述</p></td>
+					<td><p>图片</p></td>
 					<td><p>创建时间</p></td>
 					<td><p>修改时间</p></td>
 					<td><p>操作</p></td>
@@ -93,8 +53,8 @@
 				<tr>
 					<td>  <input type="checkbox" /></td>
 					<td><p>图书</p></td>
-					<td><p>电器</p></td>
 					<td><p title="这是一个图书的类型的分类">这是一本图书</p></td>
+					<td><img  src="../img/iv_book.png"></td>
 					<td><p>2016-09-21  10:10:50</p></td>
 					<td><p>2016-09-21  10:10:50</p></td>
 					<td><button  onclick="showEditNavigatorDialog()" >编辑</button></td>

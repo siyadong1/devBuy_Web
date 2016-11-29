@@ -5,10 +5,13 @@
     <id column="bn_id" jdbcType="VARCHAR" property="bnId" />
     <result column="bn_name" jdbcType="VARCHAR" property="bnName" />
     <result column="bn_url" jdbcType="VARCHAR" property="bnUrl" />
+    <result column="bn_show" jdbcType="VARCHAR" property="bnShow" />
+    <result column="bn_createtime" jdbcType="VARCHAR" property="bnCreatetime" />
+    <result column="bn_modifytime" jdbcType="VARCHAR" property="bnModifytime" />
     <result column="items_id" jdbcType="VARCHAR" property="itemsId" />
   </resultMap>
   <sql id="Base_Column_List">
-    bn_id, bn_name, bn_url, items_id
+    bn_id, bn_name, bn_url, bn_show, bn_createtime, bn_modifytime, items_id
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
@@ -22,8 +25,10 @@
   </delete>
   <insert id="insert" parameterType="com.dev4free.devbuy.devbuyWeb.po.Banner">
     insert into banner (bn_id, bn_name, bn_url, 
+      bn_show, bn_createtime, bn_modifytime, 
       items_id)
     values (#{bnId,jdbcType=VARCHAR}, #{bnName,jdbcType=VARCHAR}, #{bnUrl,jdbcType=VARCHAR}, 
+      #{bnShow,jdbcType=VARCHAR}, #{bnCreatetime,jdbcType=VARCHAR}, #{bnModifytime,jdbcType=VARCHAR}, 
       #{itemsId,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.dev4free.devbuy.devbuyWeb.po.Banner">
@@ -37,6 +42,15 @@
       </if>
       <if test="bnUrl != null">
         bn_url,
+      </if>
+      <if test="bnShow != null">
+        bn_show,
+      </if>
+      <if test="bnCreatetime != null">
+        bn_createtime,
+      </if>
+      <if test="bnModifytime != null">
+        bn_modifytime,
       </if>
       <if test="itemsId != null">
         items_id,
@@ -52,6 +66,15 @@
       <if test="bnUrl != null">
         #{bnUrl,jdbcType=VARCHAR},
       </if>
+      <if test="bnShow != null">
+        #{bnShow,jdbcType=VARCHAR},
+      </if>
+      <if test="bnCreatetime != null">
+        #{bnCreatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="bnModifytime != null">
+        #{bnModifytime,jdbcType=VARCHAR},
+      </if>
       <if test="itemsId != null">
         #{itemsId,jdbcType=VARCHAR},
       </if>
@@ -66,6 +89,15 @@
       <if test="bnUrl != null">
         bn_url = #{bnUrl,jdbcType=VARCHAR},
       </if>
+      <if test="bnShow != null">
+        bn_show = #{bnShow,jdbcType=VARCHAR},
+      </if>
+      <if test="bnCreatetime != null">
+        bn_createtime = #{bnCreatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="bnModifytime != null">
+        bn_modifytime = #{bnModifytime,jdbcType=VARCHAR},
+      </if>
       <if test="itemsId != null">
         items_id = #{itemsId,jdbcType=VARCHAR},
       </if>
@@ -76,7 +108,140 @@
     update banner
     set bn_name = #{bnName,jdbcType=VARCHAR},
       bn_url = #{bnUrl,jdbcType=VARCHAR},
+      bn_show = #{bnShow,jdbcType=VARCHAR},
+      bn_createtime = #{bnCreatetime,jdbcType=VARCHAR},
+      bn_modifytime = #{bnModifytime,jdbcType=VARCHAR},
       items_id = #{itemsId,jdbcType=VARCHAR}
     where bn_id = #{bnId,jdbcType=VARCHAR}
   </update>
+  
+  
+  
+  
+  
+  
+    <resultMap id="BaseResultMapCustom" type="com.dev4free.devbuy.devbuyWeb.poCustom.BannerCustom">
+    <id column="bn_id" jdbcType="VARCHAR" property="bnId" />
+    <result column="bn_name" jdbcType="VARCHAR" property="bnName" />
+    <result column="bn_url" jdbcType="VARCHAR" property="bnUrl" />
+    <result column="bn_show" jdbcType="VARCHAR" property="bnShow" />
+    <result column="bn_createtime" jdbcType="VARCHAR" property="bnCreatetime" />
+    <result column="bn_modifytime" jdbcType="VARCHAR" property="bnModifytime" />
+    <result column="items_id" jdbcType="VARCHAR" property="itemsId" />
+  </resultMap>
+  
+    
+  
+    <resultMap id="BaseResultMapCustomWithItems" type="com.dev4free.devbuy.devbuyWeb.poCustom.BannerCustom">
+    <id column="bn_id" jdbcType="VARCHAR" property="bnId" />
+    <result column="bn_name" jdbcType="VARCHAR" property="bnName" />
+    <result column="bn_url" jdbcType="VARCHAR" property="bnUrl" />
+    <result column="bn_show" jdbcType="VARCHAR" property="bnShow" />
+    <result column="bn_createtime" jdbcType="VARCHAR" property="bnCreatetime" />
+    <result column="bn_modifytime" jdbcType="VARCHAR" property="bnModifytime" />
+    <result column="items_id" jdbcType="VARCHAR" property="itemsId" />
+        <association property="itemsCustom" javaType="com.dev4free.devbuy.devbuyWeb.poCustom.ItemsCustom">
+    	<id column="items_id" jdbcType="VARCHAR" property="itemsId" />
+	    <result column="itemsname" jdbcType="VARCHAR" property="itemsname" />
+	    <result column="description" jdbcType="VARCHAR" property="description" />
+	    <result column="category" jdbcType="VARCHAR" property="category" />
+	    <result column="items_lb" jdbcType="VARCHAR" property="itemsLb" />
+	    <result column="price" jdbcType="VARCHAR" property="price" />
+	    <result column="current_price" jdbcType="VARCHAR" property="currentPrice" />
+	    <result column="image" jdbcType="VARCHAR" property="image" />
+	    <result column="inventory" jdbcType="VARCHAR" property="inventory" />
+	    <result column="sales_volume" jdbcType="VARCHAR" property="salesVolume" />
+	    <result column="area" jdbcType="VARCHAR" property="area" />
+	    <result column="express_fee" jdbcType="VARCHAR" property="expressFee" />
+	    <result column="cf_name" jdbcType="VARCHAR" property="cfName" />
+    </association>
+  </resultMap>
+  
+  
+  
+  
+  
+   <select id="queryAllBanners" resultMap="BaseResultMapCustomWithItems">
+  	SELECT banner.*,items.*,classification.* 
+  	FROM banner,items,classification 
+  	WHERE banner.items_id = items.items_id AND items.category = classification.category
+  </select>
+  
+  
+  
+  
+  
+  
+  <select id="selectBannerCustomByPrimaryKey"  resultMap="BaseResultMapCustomWithItems"  >
+  	  	SELECT banner.*,items.*,classification.* 
+  	FROM banner,items,classification 
+  	WHERE banner.items_id = items.items_id AND items.category = classification.category AND bn_id = #{bnId}
+  </select>
+  
+  
+  <sql id="query_banner_where">
+  	 <if test="bnName != null and bnName != '' ">
+        bn_name = #{bnName,jdbcType=VARCHAR}
+      </if>
+      <if test="bnUrl != null and bnUrl != '' ">
+        bn_url = #{bnUrl,jdbcType=VARCHAR}
+      </if>
+      <if test="bnShow != null and bnShow != '' ">
+        bn_show = #{bnShow,jdbcType=VARCHAR}
+      </if>
+      <if test="bnCreatetime != null and bnCreatetime != '' ">
+        bn_createtime = #{bnCreatetime,jdbcType=VARCHAR}
+      </if>
+      <if test="bnModifytime != null and bnModifytime != '' ">
+        bn_modifytime = #{bnModifytime,jdbcType=VARCHAR}
+      </if>
+      <if test="itemsId != null and itemsId != '' ">
+        items_id = #{itemsId,jdbcType=VARCHAR}
+      </if>
+  	
+  </sql>
+  
+  
+    
+  <select id="selectSelective" parameterType="com.dev4free.devbuy.devbuyWeb.poCustom.BannerCustom" resultMap="BaseResultMapCustom" >
+  
+  	  	SELECT * FROM banner
+  	<where>
+  		<include refid="query_banner_where" ></include>
+  	</where>
+  
+  </select>
+  
+  
+  
+      
+  
+  <delete id="deleteBannerByIds" parameterType="Object[]" >
+  delete from banner 
+  <where>
+  <if  test="array != null and array.length > 0">
+	<foreach collection="array" item="item" open="and bn_id in (" close=")" separator=",">
+			#{item}
+	</foreach>
+  </if>
+  </where>
+  </delete>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 </mapper>

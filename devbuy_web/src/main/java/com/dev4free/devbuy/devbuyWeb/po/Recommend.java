@@ -11,6 +11,12 @@ public class Recommend {
 
     private String rcIslarge;
 
+    private String rcCreatetime;
+
+    private String rcModifytime;
+
+    private String rcShow;
+
     private String itemsId;
 
     public String getRcId() {
@@ -51,6 +57,30 @@ public class Recommend {
 
     public void setRcIslarge(String rcIslarge) {
         this.rcIslarge = rcIslarge == null ? null : rcIslarge.trim();
+    }
+
+    public String getRcCreatetime() {
+        return rcCreatetime;
+    }
+
+    public void setRcCreatetime(String rcCreatetime) {
+        this.rcCreatetime = rcCreatetime == null ? null : rcCreatetime.trim();
+    }
+
+    public String getRcModifytime() {
+        return rcModifytime;
+    }
+
+    public void setRcModifytime(String rcModifytime) {
+        this.rcModifytime = rcModifytime == null ? null : rcModifytime.trim();
+    }
+
+    public String getRcShow() {
+        return rcShow;
+    }
+
+    public void setRcShow(String rcShow) {
+        this.rcShow = rcShow == null ? null : rcShow.trim();
     }
 
     public String getItemsId() {

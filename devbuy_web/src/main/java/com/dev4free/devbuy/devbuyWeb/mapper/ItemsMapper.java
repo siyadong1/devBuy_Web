@@ -31,4 +31,24 @@ public interface ItemsMapper {
      */
     List<ItemsCustom> selectSelective(ItemsCustom itemsCustom);
     
+    
+    
+    
+    
+    /**
+     * 批量删除商品条目
+     * @param itemsIds
+     */
+    void deleteItemsByIds(String[] itemsIds);
+    
+    
+    
+    
+    /**
+     * 只根据items的非空字段查询items这张表
+     * @param itemsCustom
+     * @return
+     */
+    List<ItemsCustom>  selectSelectiveOnlyItems(ItemsCustom itemsCustom);
+    
 }

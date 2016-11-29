@@ -7,10 +7,14 @@
     <result column="rc_name" jdbcType="VARCHAR" property="rcName" />
     <result column="rc_url" jdbcType="VARCHAR" property="rcUrl" />
     <result column="rc_islarge" jdbcType="VARCHAR" property="rcIslarge" />
+    <result column="rc_createtime" jdbcType="VARCHAR" property="rcCreatetime" />
+    <result column="rc_modifytime" jdbcType="VARCHAR" property="rcModifytime" />
+    <result column="rc_show" jdbcType="VARCHAR" property="rcShow" />
     <result column="items_id" jdbcType="VARCHAR" property="itemsId" />
   </resultMap>
   <sql id="Base_Column_List">
-    rc_id, rc_category, rc_name, rc_url, rc_islarge, items_id
+    rc_id, rc_category, rc_name, rc_url, rc_islarge, rc_createtime, rc_modifytime, rc_show, 
+    items_id
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
@@ -24,10 +28,12 @@
   </delete>
   <insert id="insert" parameterType="com.dev4free.devbuy.devbuyWeb.po.Recommend">
     insert into recommend (rc_id, rc_category, rc_name, 
-      rc_url, rc_islarge, items_id
+      rc_url, rc_islarge, rc_createtime, 
+      rc_modifytime, rc_show, items_id
       )
     values (#{rcId,jdbcType=VARCHAR}, #{rcCategory,jdbcType=VARCHAR}, #{rcName,jdbcType=VARCHAR}, 
-      #{rcUrl,jdbcType=VARCHAR}, #{rcIslarge,jdbcType=VARCHAR}, #{itemsId,jdbcType=VARCHAR}
+      #{rcUrl,jdbcType=VARCHAR}, #{rcIslarge,jdbcType=VARCHAR}, #{rcCreatetime,jdbcType=VARCHAR}, 
+      #{rcModifytime,jdbcType=VARCHAR}, #{rcShow,jdbcType=VARCHAR}, #{itemsId,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.dev4free.devbuy.devbuyWeb.po.Recommend">
@@ -47,6 +53,15 @@
       </if>
       <if test="rcIslarge != null">
         rc_islarge,
+      </if>
+      <if test="rcCreatetime != null">
+        rc_createtime,
+      </if>
+      <if test="rcModifytime != null">
+        rc_modifytime,
+      </if>
+      <if test="rcShow != null">
+        rc_show,
       </if>
       <if test="itemsId != null">
         items_id,
@@ -68,6 +83,15 @@
       <if test="rcIslarge != null">
         #{rcIslarge,jdbcType=VARCHAR},
       </if>
+      <if test="rcCreatetime != null">
+        #{rcCreatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="rcModifytime != null">
+        #{rcModifytime,jdbcType=VARCHAR},
+      </if>
+      <if test="rcShow != null">
+        #{rcShow,jdbcType=VARCHAR},
+      </if>
       <if test="itemsId != null">
         #{itemsId,jdbcType=VARCHAR},
       </if>
@@ -88,6 +112,15 @@
       <if test="rcIslarge != null">
         rc_islarge = #{rcIslarge,jdbcType=VARCHAR},
       </if>
+      <if test="rcCreatetime != null">
+        rc_createtime = #{rcCreatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="rcModifytime != null">
+        rc_modifytime = #{rcModifytime,jdbcType=VARCHAR},
+      </if>
+      <if test="rcShow != null">
+        rc_show = #{rcShow,jdbcType=VARCHAR},
+      </if>
       <if test="itemsId != null">
         items_id = #{itemsId,jdbcType=VARCHAR},
       </if>
@@ -100,7 +133,102 @@
       rc_name = #{rcName,jdbcType=VARCHAR},
       rc_url = #{rcUrl,jdbcType=VARCHAR},
       rc_islarge = #{rcIslarge,jdbcType=VARCHAR},
+      rc_createtime = #{rcCreatetime,jdbcType=VARCHAR},
+      rc_modifytime = #{rcModifytime,jdbcType=VARCHAR},
+      rc_show = #{rcShow,jdbcType=VARCHAR},
       items_id = #{itemsId,jdbcType=VARCHAR}
     where rc_id = #{rcId,jdbcType=VARCHAR}
   </update>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    <resultMap id="BaseResultMapCustom" type="com.dev4free.devbuy.devbuyWeb.poCustom.RecommendCustom">
+    <id column="rc_id" jdbcType="VARCHAR" property="rcId" />
+    <result column="rc_category" jdbcType="VARCHAR" property="rcCategory" />
+    <result column="rc_name" jdbcType="VARCHAR" property="rcName" />
+    <result column="rc_url" jdbcType="VARCHAR" property="rcUrl" />
+    <result column="rc_islarge" jdbcType="VARCHAR" property="rcIslarge" />
+    <result column="rc_createtime" jdbcType="VARCHAR" property="rcCreatetime" />
+    <result column="rc_modifytime" jdbcType="VARCHAR" property="rcModifytime" />
+    <result column="rc_show" jdbcType="VARCHAR" property="rcShow" />
+    <result column="items_id" jdbcType="VARCHAR" property="itemsId" />
+  </resultMap>
+  
+  
+  
+  
+  
+
+  
+  
+    
+    <resultMap id="BaseResultMapCustomWithItems" type="com.dev4free.devbuy.devbuyWeb.poCustom.RecommendCustom">
+    <id column="rc_id" jdbcType="VARCHAR" property="rcId" />
+    <result column="rc_category" jdbcType="VARCHAR" property="rcCategory" />
+    <result column="rc_name" jdbcType="VARCHAR" property="rcName" />
+    <result column="rc_url" jdbcType="VARCHAR" property="rcUrl" />
+    <result column="rc_islarge" jdbcType="VARCHAR" property="rcIslarge" />
+    <result column="rc_createtime" jdbcType="VARCHAR" property="rcCreatetime" />
+    <result column="rc_modifytime" jdbcType="VARCHAR" property="rcModifytime" />
+    <result column="rc_show" jdbcType="VARCHAR" property="rcShow" />
+    <result column="items_id" jdbcType="VARCHAR" property="itemsId" />
+    <association property="itemsCustom" javaType="com.dev4free.devbuy.devbuyWeb.poCustom.ItemsCustom">
+    	<id column="items_id" jdbcType="VARCHAR" property="itemsId" />
+	    <result column="itemsname" jdbcType="VARCHAR" property="itemsname" />
+	    <result column="description" jdbcType="VARCHAR" property="description" />
+	    <result column="category" jdbcType="VARCHAR" property="category" />
+	    <result column="items_lb" jdbcType="VARCHAR" property="itemsLb" />
+	    <result column="price" jdbcType="VARCHAR" property="price" />
+	    <result column="current_price" jdbcType="VARCHAR" property="currentPrice" />
+	    <result column="image" jdbcType="VARCHAR" property="image" />
+	    <result column="inventory" jdbcType="VARCHAR" property="inventory" />
+	    <result column="sales_volume" jdbcType="VARCHAR" property="salesVolume" />
+	    <result column="area" jdbcType="VARCHAR" property="area" />
+	    <result column="express_fee" jdbcType="VARCHAR" property="expressFee" />
+	    <result column="cf_name" jdbcType="VARCHAR" property="cfName" />
+    </association>
+  </resultMap>
+  
+  
+  
+    
+    
+   <select id="queryAllRecommend" resultMap="BaseResultMapCustomWithItems">
+  	SELECT recommend.*,items.*,classification.* 
+  	FROM recommend,items,classification 
+  	WHERE recommend.items_id = items.items_id AND items.category = classification.category
+  </select>
+
+
+  
+  
+  
+  
+  
+  <select id="selectRecommendCustomByPrimaryKey"  resultMap="BaseResultMapCustomWithItems"  >
+  	  	SELECT recommend.*,items.*,classification.* 
+  	FROM recommend,items,classification 
+  	WHERE recommend.items_id = items.items_id AND items.category = classification.category AND rc_id = #{rcId}
+  </select>
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
 </mapper>

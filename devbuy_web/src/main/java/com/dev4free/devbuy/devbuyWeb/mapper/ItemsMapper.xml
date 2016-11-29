@@ -267,4 +267,37 @@
   
   </select>
   
+  
+  
+    
+  <select id="selectSelectiveOnlyItems" parameterType="com.dev4free.devbuy.devbuyWeb.poCustom.ItemsCustom" resultMap="BaseResultMapCustom" >
+  
+  	  	SELECT * FROM items
+  	<where>
+  		<include refid="query_items_where" ></include>
+  	</where>
+  
+  </select>
+  
+  
+  
+  
+  
+    
+  
+  <delete id="deleteItemsByIds" parameterType="Object[]" >
+  delete from items 
+  <where>
+  <if  test="array != null and array.length > 0">
+	<foreach collection="array" item="item" open="and items_id in (" close=")" separator=",">
+			#{item}
+	</foreach>
+  </if>
+  </where>
+  </delete>
+  
+  
+  
+  
+  
 </mapper>

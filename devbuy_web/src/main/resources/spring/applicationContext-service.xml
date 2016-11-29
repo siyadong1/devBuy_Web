@@ -18,10 +18,15 @@
 	<!-- 可以扫描controller、service、...
 	这里让扫描controller，指定controller的包
 	 -->
- <bean id="ManagerService" class="com.dev4free.devbuy.devbuyWeb.serviceImpl.ManagerServiceImpl"></bean>	
+ <bean id="managerService" class="com.dev4free.devbuy.devbuyWeb.serviceImpl.ManagerServiceImpl"></bean>	
 	
- <bean id="ItemsService" class="com.dev4free.devbuy.devbuyWeb.serviceImpl.ItemsServiceImpl"></bean>		
+ <bean id="itemsService" class="com.dev4free.devbuy.devbuyWeb.serviceImpl.ItemsServiceImpl"></bean>		
 	
- <bean id="queryAllClassification" class="com.dev4free.devbuy.devbuyWeb.serviceImpl.ClassificationServiceImpl"></bean>	
+ <bean id="classificationService" class="com.dev4free.devbuy.devbuyWeb.serviceImpl.ClassificationServiceImpl"></bean>	
 
+ <bean id="bannerService" class="com.dev4free.devbuy.devbuyWeb.serviceImpl.BannerServiceImpl"></bean>
+ 
+  <bean id="recommendService" class="com.dev4free.devbuy.devbuyWeb.serviceImpl.RecommendServiceImpl"></bean>	
+ 
+ 	
 </beans>

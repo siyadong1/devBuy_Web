@@ -109,41 +109,6 @@
 	margin: auto;
 	z-index:101 ;position: fixed;top: 0; left: 0; bottom: 0; right: 0;
 }
-#addBannerGoods{
-	display: none;	
-	float: left;
-	width: 700px;
-	height: 499px;
-	background-color: #FFFFFF;
-	margin: auto;
-	z-index: 101;
-	position: fixed;
-	top: 0;left: 0;bottom: 0;right: 0;	
-}
-#addBannerGoods div {
-	float: left;
-	width: 700px;
-	height: 46px;
-	background-color: #178EE0;
-}
-
-#addBannerGoods div p{
-	float: left;
-	margin-top: 10px;
-	margin-left: 312px;
-	font-family: "微软雅黑";
-	font-size: 18px;
-	color: #FFFFFF;
-}
-
-#addBannerGoods textarea{
-	width: 390px;
-	height: 139px;
-}
-#addBannerGoods input[type="text"]{
-	width: 350px;
-	height: 30px;
-}
 /*轮播列表结束*/
 /*导航列表开始*/
 #deleteNavigator{
@@ -154,40 +119,6 @@
 	margin: auto;
 	z-index:101 ;position: fixed;top: 0; left: 0; bottom: 0; right: 0;
 }
-#addNavigator{
-	display: none;	
-	float: left;
-	width: 700px;
-	height: 499px;
-	background-color: #FFFFFF;
-	margin: auto;
-	z-index: 101;
-	position: fixed;
-	top: 0;left: 0;bottom: 0;right: 0;	
-}
-#addNavigator div {
-	float: left;
-	width: 700px;
-	height: 46px;
-	background-color: #178EE0;
-}
-
-#addNavigator div p{
-	float: left;
-	margin-top: 10px;
-	margin-left: 312px;
-	font-family: "微软雅黑";
-	font-size: 18px;
-	color: #FFFFFF;
-}
-#addNavigator textarea{
-	width: 390px;
-	height: 139px;
-}
-#addNavigator input[type="text"]{
-	width: 350px;
-	height: 30px;
-}
 /*导航列表结束*/
 /*推荐列表开始*/
 #deleteRecommend{
@@ -197,47 +128,6 @@
 	background-color: #FFFFFF;
 	margin: auto;
 	z-index:101 ;position: fixed;top: 0; left: 0; bottom: 0; right: 0;
-}
-#addRecommend{
-	display: none;	
-	float: left;
-	width: 700px;
-	height: 499px;
-	background-color: #FFFFFF;
-	margin: auto;
-	z-index: 101;
-	position: fixed;
-	top: 0;left: 0;bottom: 0;right: 0;	
-}
-#addRecommend div {
-	float: left;
-	width: 700px;
-	height: 46px;
-	background-color: #178EE0;
-}
-
-#addRecommend div p{
-	float: left;
-	margin-top: 10px;
-	margin-left: 312px;
-	font-family: "微软雅黑";
-	font-size: 18px;
-	color: #FFFFFF;
-}
-#addRecommend textarea{
-	width: 390px;
-	height: 139px;
-}
-#addRecommend input[type="text"]{
-	width: 350px;
-	height: 30px;
-}
-#addRecommend select{
-	
-	width: 350px;
-	height: 30px;
-	font-family: "微软雅黑";
-	font-size: 16px;
 }
 /*推荐列表结束*/
 /****************************************商品管理结束***********************************/

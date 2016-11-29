@@ -20,7 +20,11 @@ public class Constant {
 	 */
 	public static final String IMAGE_ITEMS= "items/" ;
 	/**
-	 * 默认显示哪一个商品分类在用于content_1_2_1.jsp和content_1_2_2.jsp中
+	 * 存放商品分类的图片的子路径
+	 */
+	public static final String IMAGE_BANNER= "banner/" ;
+	/**
+	 * 默认显示哪一个商品分类在用于content_1_2_1.jsp和content_1_2_2.jsp,content_1_3_1.jsp和content_1_3_2.jsp,content_1_5_1.jsp和content_1_5_2.jsp中
 	 */
 	public static final String 	CATEGORYSELECTED = "categorySelected";
 	

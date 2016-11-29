@@ -17,11 +17,20 @@
 			<div id="pusblishRecommend">
 				<!--发布商品头部-->
 				<div id="publishRecommendHeader">
-					<p>添加首页</p>
+					<c:if  test="${updateOrAdd == 'update' }" >
+						<p>修改首页</p>
+					</c:if>
+					<c:if  test="${updateOrAdd == 'add' }" >
+						<p>添加首页</p>
+					</c:if>
 				</div>
 				<!--发布商品内容区域-->
 				<form>
 					<table  cellpadding="10px">
+						<tr>
+							<td><p>推荐名称</p></td>
+							<td><input type="text" value="${recommendCustom.rcName }" /></td>
+						</tr>
 						<tr>
 							<td><p>商品名称</p></td>
 							<td><input type="text" placeholder="电脑" /></td>
@@ -78,7 +87,12 @@
 				
 			<tr>
 					<td >
-						<input  type="submit" />
+						<c:if  test="${updateOrAdd == 'update' }" >
+							<button  type="button"   onclick="confirmUpdateRecommendAndUpdateItems('${devbuy_web_path}')"   >确定修改 </button>
+						</c:if>
+						<c:if  test="${updateOrAdd == 'add' }" >
+							<button  type="button"  onclick="confirmAddRecommendAndAddItems('${devbuy_web_path}')"    >确定添加 </button>
+						</c:if>
 					</td>
 			</tr>
 				

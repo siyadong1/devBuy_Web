@@ -4,7 +4,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
-		<meta charset="UTF-8">
 		<title>发布商品</title>
 		<link rel="stylesheet" href="${devbuy_web_path}/css/content_1_2_2.css" />
 		<link rel="stylesheet" href="${devbuy_web_path}/css/common.css" />
@@ -21,7 +20,12 @@
 			<div id="pusblishGoods">
 				<!--发布商品头部-->
 				<div id="publishGoodsHeader">
-					<p>发布商品</p>
+					<c:if test="${updateOrAdd == 'update' }" >
+						<p>修改商品</p>
+					</c:if>
+					<c:if test="${updateOrAdd == 'add' }" >
+						<p>发布商品</p>
+					</c:if>
 				</div>
 				<!--发布商品内容区域-->
 				<form name="updateGoods"  encType="multipart/form-data" method="post"    >
@@ -115,21 +119,22 @@
 				
 					<tr>
 						<td >
+						<c:if test="${updateOrAdd == 'update' }" >
 							<button onclick="updateItems('${devbuy_web_path}')" >确定修改</button>
+						</c:if>
+						
+						<c:if test="${updateOrAdd == 'add' }" >
+							<button onclick="addItems('${devbuy_web_path}')" >确定添加</button>
+						</c:if>
 						</td>
 					</tr>
-				
 			</div>
-			
-			
-			
-			
-			
 		</div>
-		
-		
-		
-		
-		
 	</body>
+	
+	
+	
+	
+	
+	
 </html>

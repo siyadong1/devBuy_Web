@@ -23,7 +23,7 @@ public class StringUtils {
 	 */
 	public static boolean isEmpty(String string){
 		
-		return string == "" || string == null ? true :false;
+		return string.equals("") || string == null ? true :false;
 	}
 	
 	

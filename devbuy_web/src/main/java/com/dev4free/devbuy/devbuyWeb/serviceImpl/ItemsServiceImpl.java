@@ -41,6 +41,16 @@ public class ItemsServiceImpl implements ItemsService{
 		
 	}
 
+	public void deleteItemsByIds(String[] itemsIds) {
+		// TODO Auto-generated method stub
+		itemsMapper.deleteItemsByIds(itemsIds);
+	}
+
+	public List<ItemsCustom> selectSelectiveOnlyItems(ItemsCustom itemsCustom) {
+		// TODO Auto-generated method stub
+		return itemsMapper.selectSelectiveOnlyItems(itemsCustom);
+	}
+
 
 
 

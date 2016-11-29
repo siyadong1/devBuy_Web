@@ -33,7 +33,7 @@ public interface ItemsService {
 	
 	
 	/**
-	 * 根据商品的非空字段选择商品
+	 * 根据商品的非空字段选择商品还会关联classification这张表进行关联查询
 	 */
 	List<ItemsCustom> selectSelective(ItemsCustom itemsCustom);
 	
@@ -44,4 +44,24 @@ public interface ItemsService {
 	 * 新增商品信息
 	 */
 	void insertItems(Items items);
+	
+	
+	
+	
+	
+	/**
+	 * 批量删除商品条目
+	 */
+	void deleteItemsByIds(String[] itemsIds);	
+	
+	
+	
+	
+	/**
+	 * 根据商品的非空字段选择商品,只对items这张表进行查询
+	 * @param itemsCustom
+	 * @return
+	 */
+	List<ItemsCustom> selectSelectiveOnlyItems(ItemsCustom itemsCustom);
+	
 }

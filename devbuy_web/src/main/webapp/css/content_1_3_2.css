@@ -35,7 +35,7 @@
 	height: 164px;
 }
 
-#selectContent_1_3_2{
+#selectContent_1_3_2,#selectContent_1_3_2_classification{
 	width: 305px;
 	height: 30px;
 	font-family: "微软雅黑";
@@ -47,12 +47,11 @@
 #pusblishBannerGoods img{
 	
 	width: 160px;
-	height: 131px;
 		margin-left: 440px;
 		margin-top: 16px;
 }
 
-#pusblishBannerGoods input[type = "submit"]{
+#pusblishBannerGoods button{
 	
 	width: 152px;
 	height: 30px;
