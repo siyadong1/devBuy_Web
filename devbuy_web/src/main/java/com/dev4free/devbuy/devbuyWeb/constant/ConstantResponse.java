@@ -62,4 +62,24 @@ public class ConstantResponse {
 	public static final String 	CODE_UPDATEBANNERNAMEEXIT_ERROR = "0000011";
 	public static final String 	CONTENT_UPDATEBANNERNAMEXIT_ERROR = "Banner名称已经存在!";
 	
+	
+	
+	public static final String 	CODE_UPDATERECOMMENDNAMEEMPTY_ERROR = "0000012";
+	public static final String 	CONTENT_UPDATERECOMMENDNAMEEMPTY_ERROR = "推荐名称不能为空!";
+	
+	
+	
+	
+	public static final String 	CODE_UPDATERECOMMENDCATEGORYEMPTY_ERROR = "0000013";
+	public static final String 	CONTENT_UPDATERECOMMENDCATEGORYEMPTY_ERROR = "推荐类别不能为空!";
+	
+	
+	
+	
+	
+	
+	public static final String 	CODE_UPDATERECOMMENDNAMEEXIT_ERROR = "0000014";
+	public static final String 	CONTENT_UPDATERECOMMENDNAMEXIT_ERROR = "推荐名称已经存在!";
+	
+	
 }

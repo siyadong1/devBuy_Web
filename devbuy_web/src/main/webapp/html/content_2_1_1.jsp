@@ -6,10 +6,11 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>全部订单/类别列表</title>
-		<link rel="stylesheet" href="../css/content_2_1_1.css" />
-		<link rel="stylesheet" href="../css/common.css" />
-		<link rel="stylesheet" href="../css/ui.css" />
-		<script type="text/javascript" src="../js/jquery-2.1.1.min.js" ></script>
+		<link rel="stylesheet" href="${devbuy_web_path}/css/content_2_1_1.css" />
+		<link rel="stylesheet" href="${devbuy_web_path}/css/common.css" />
+		<link rel="stylesheet" href="${devbuy_web_path}/css/ui.css" />
+		<script type="text/javascript" src="${devbuy_web_path}/js/jquery-2.1.1.min.js" ></script>
+		<script type="text/javascript" src="${devbuy_web_path}/js/jquery-form.js"></script> 
 	</head>
 	<body>
 		

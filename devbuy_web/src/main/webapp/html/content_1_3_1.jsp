@@ -35,7 +35,7 @@
 			
 			
 		
-		<form name="deleteBannerIds" >
+		<form name="deleteBannerIds"     >
 		
 			<table>
 				<tr>

@@ -15,6 +15,6 @@ function showDeleteAllOrderDialog(){
 }
 
 function showAllOrderDialog(){
-	$("#templateContentRight").load("./html/orderDetail.html #body");
+	$("#templateContentRight").load("/devbuy_web/html/orderDetail.jsp #body");
 }
 

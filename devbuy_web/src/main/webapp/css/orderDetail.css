@@ -1,4 +1,4 @@
-#publishRecommendHeader{
+#publishGoodsHeader{
 	float: left;
 	width: 1000px;
 	height: 60px;
@@ -6,7 +6,7 @@
 }
 
 
-#publishRecommendHeader p{
+#publishGoodsHeader p{
 	font-family: "微软雅黑";
 	font-size: 18px;
 	color: #FFFFFF;
@@ -14,14 +14,14 @@
 	margin-top: 16px;
 }
 
-#pusblishRecommend table p {
+#pusblishGoods table p {
 	font-family: "微软雅黑";
 	font-size: 16px;
 	color: #464646;
 }
 
 
-#pusblishRecommend input[type = "text"]{
+#pusblishGoods input[type = "text"]{
 	width: 305px;
 	height: 30px;
 	font-family: "微软雅黑";
@@ -29,13 +29,13 @@
 	color: #464646;
 }
 
-#pusblishRecommend textarea{
+#pusblishGoods textarea{
 	
 	width: 305px;
 	height: 164px;
 }
 
-#selectContent_1_5_2_isLarge,#selectContent_1_5_2_show,#selectContent_1_5_2_category{
+#selectContent_1_2_2{
 	width: 305px;
 	height: 30px;
 	font-family: "微软雅黑";
@@ -44,14 +44,14 @@
 }
 
 
-#pusblishRecommend img{
+#pusblishGoods img{
 	
 	width: 160px;
 		margin-left: 440px;
 		margin-top: 16px;
 }
 
-#pusblishRecommend button{
+#pusblishGoods button{
 	
 	width: 152px;
 	height: 30px;
@@ -62,5 +62,5 @@
 	border: none;
 	margin-left: 440px;
 	margin-bottom: 16px;
-	margin-top: 16px;
+	margin-top: 80px;
 }

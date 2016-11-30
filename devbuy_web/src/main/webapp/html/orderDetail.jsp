@@ -1,9 +1,16 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>   
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<title>发布商品</title>
-		<link rel="stylesheet" href="../css/content_1_2_2.css" />
+				<link rel="stylesheet" href="${devbuy_web_path}/css/orderDetail.css" />
+		<link rel="stylesheet" href="${devbuy_web_path}/css/common.css" />
+		<link rel="stylesheet" href="${devbuy_web_path}/css/ui.css" />
+		<script type="text/javascript" src="${devbuy_web_path}/js/jquery-2.1.1.min.js" ></script>
+		<script type="text/javascript" src="${devbuy_web_path}/js/jquery-form.js"></script>  
 	</head>
 	<body>
 		<div id="body">
@@ -104,43 +111,23 @@
 							<td><p>联系电话</p></td>
 							<td><input type="text" value="15288888888" /></td>
 						</tr>
-						
-						
-						
-						
-						
-						
-						
 						<tr>
 							<td><p>商品图片</p></td>
 							<td><input type="file" /></td>
 						</tr>
 
 					</table>
-											
 						<tr>
 							<td ><img src="img/calabash.png" /></td>
 						</tr>
-
 				</form>
-				
 					<tr>
 						<td >
-							<input  type="submit"  value="确定" />
+							<button type="button">确定</button>
 						</td>
 					</tr>
-				
 			</div>
-			
-			
-			
-			
-			
 		</div>
-		
-		
-		
-		
 		
 	</body>
 </html>

@@ -17,6 +17,7 @@
 	<link rel="stylesheet" href="${devbuy_web_path}/css/content_1_5_1.css" />
 	<link rel="stylesheet" href="${devbuy_web_path}/css/content_1_5_2.css" />
 	<link rel="stylesheet" href="${devbuy_web_path}/css/content_2_1_1.css" />
+	<link rel="stylesheet" href="${devbuy_web_path}/css/content_2_6_1.css" />
 	<link rel="stylesheet" href="${devbuy_web_path}/css/content_3_1_1.css" />
 	<link rel="stylesheet" href="${devbuy_web_path}/css/content_4_1_1.css" />
 	<link rel="stylesheet" href="${devbuy_web_path}/css/content_6_1_1.css" />
@@ -31,7 +32,9 @@
 	<script type="text/javascript" src="${devbuy_web_path}/js/content_1_3_2.js" ></script>
 	<script type="text/javascript" src="${devbuy_web_path}/js/content_1_4_1.js" ></script>
 	<script type="text/javascript" src="${devbuy_web_path}/js/content_1_5_1.js" ></script>
+	<script type="text/javascript" src="${devbuy_web_path}/js/content_1_5_2.js" ></script>
 	<script type="text/javascript" src="${devbuy_web_path}/js/content_2_1_1.js" ></script>
+	<script type="text/javascript" src="${devbuy_web_path}/js/content_2_6_1.js" ></script>
 	<script type="text/javascript" src="${devbuy_web_path}/js/content_3_1_1.js" ></script>
 	<script type="text/javascript" src="${devbuy_web_path}/js/content_4_1_1.js" ></script>
 	<script type="text/javascript" src="${devbuy_web_path}/js/content_6_1_1.js" ></script>
@@ -363,6 +366,19 @@
 	
 	
 	
+	$("#templateContentLeftDiv2_6_1").click(function(){
+		
+		if($("#templateContentLeftDiv2_6_2").is(':hidden')){
+			$("#templateContentLeftDiv2_6_2").show();
+			$("#templateContentLeftDiv2_6_1 > img").attr("src","${devbuy_web_path}/img/iv_open.png");
+		}else{
+			$("#templateContentLeftDiv2_6_2").hide();
+			$("#templateContentLeftDiv2_6_1 > img").attr("src","${devbuy_web_path}/img/iv_close.png");
+		}
+		
+	});
+	
+	
 	
 	
 	
@@ -475,7 +491,7 @@
 						$(item).click(function(){
 							
 							
-							
+							/* 商品管理开始 */
 							if($(this).attr("class") == "content_1_1_1"){
 								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllClassification.action")
 							}
@@ -509,8 +525,23 @@
 							}
 							
 							if($(this).attr("class") == "content_1_5_2"){
-								$("#templateContentRight").load("${devbuy_web_path}/html/content_1_5_2.jsp #body")
+								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/selectClassificationForAddRecommend.action")
 							}
+							/* 商品管理结束 */
+							
+							
+							
+							/* 订单管理开始 */
+							
+							if($(this).attr("class") == "content_2_6_1"){
+								$("#templateContentRight").load("/devbuy_web/html/content_2_6_1.jsp #body")
+							}
+							/* 订单管理结束 */
+							
+							
+							
+							
+							
 							
 					});
 				}
@@ -719,6 +750,15 @@
 				</li>
 				<li  class="content_2_5_1" id="templateContentLeftDiv2_5_2">
 					<p>订单列表</p>
+				</li>
+			</ul>
+			<ul>
+				<li id="templateContentLeftDiv2_6_1">
+					<img   src="${devbuy_web_path}/img/iv_open.png" />
+					<p>订单类型</p>
+				</li>
+				<li  class="content_2_6_1" id="templateContentLeftDiv2_6_2">
+					<p>类型列表</p>
 				</li>
 			</ul>
 			</div>

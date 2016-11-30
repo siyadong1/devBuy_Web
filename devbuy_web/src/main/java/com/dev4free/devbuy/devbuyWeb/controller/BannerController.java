@@ -120,7 +120,7 @@ public class BannerController {
 		
 		
 //		判断banner是否为空
-		if (bannerCustom == null) {
+		if (bannerCustom == null|| itemsCustom == null) {
 			entityResponse.setCode(ConstantResponse.CODE_REQUESTPARAMETER_ERROR);
 			entityResponse.setMessage(ConstantResponse.CONTENT_REQUESTPARAMETER_ERROR);
 			return entityResponse;
@@ -229,7 +229,7 @@ public class BannerController {
 		EntityResponse entityResponse = new EntityResponse(ConstantResponse.CODE_NORMAL,ConstantResponse.CONTENT_NORMAL);
 		
 //		判断banner是否为空
-		if (bannerCustom == null) {
+		if (bannerCustom == null|| itemsCustom == null) {
 			entityResponse.setCode(ConstantResponse.CODE_REQUESTPARAMETER_ERROR);
 			entityResponse.setMessage(ConstantResponse.CONTENT_REQUESTPARAMETER_ERROR);
 			return entityResponse;

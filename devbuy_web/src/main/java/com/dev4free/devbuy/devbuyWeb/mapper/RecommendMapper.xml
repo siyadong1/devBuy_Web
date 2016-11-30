@@ -224,7 +224,73 @@
   
 
   
+   
+  <sql id="query_recommend_where">
+      <if test="rcId != null and rcId != '' ">
+        rc_id = #{rcId,jdbcType=VARCHAR}
+      </if>
+      
+  	   <if test="rcCategory != null and rcCategory != '' ">
+        rc_category = #{rcCategory,jdbcType=VARCHAR}
+      </if>
+      
+  	   <if test="rcName != null and rcName != '' ">
+        rc_name = #{rcName,jdbcType=VARCHAR}
+      </if>
+      
+  	   <if test="rcUrl != null and rcUrl != '' ">
+        rc_url = #{rcUrl,jdbcType=VARCHAR}
+      </if>
+      
+  	   <if test="rcIslarge != null and rcIslarge != '' ">
+        rc_islarge = #{rcIslarge,jdbcType=VARCHAR}
+      </if>
+      
+  	   <if test="rcCreatetime != null and rcCreatetime != '' ">
+        rc_createtime = #{rcCreatetime,jdbcType=VARCHAR}
+      </if>
+      
+  	   <if test="rcModifytime != null and rcModifytime != '' ">
+        rc_modifytime = #{rcModifytime,jdbcType=VARCHAR}
+      </if>
+      
+  	   <if test="rcShow != null and rcShow != '' ">
+        rc_show = #{rcShow,jdbcType=VARCHAR}
+      </if>
+      
+  	   <if test="itemsId != null and itemsId != '' ">
+        items_id = #{itemsId,jdbcType=VARCHAR}
+      </if>
+      
+  </sql>
   
+  
+    
+  <select id="selectSelective" parameterType="com.dev4free.devbuy.devbuyWeb.poCustom.RecommendCustom" resultMap="BaseResultMapCustom" >
+  
+  	  	SELECT * FROM recommend
+  	<where>
+  		<include refid="query_recommend_where" ></include>
+  	</where>
+  
+  </select>
+  
+  
+  
+  
+    
+      
+  
+  <delete id="deleteRecommendByIds" parameterType="Object[]" >
+  delete from recommend 
+  <where>
+  <if  test="array != null and array.length > 0">
+	<foreach collection="array" item="item" open="and rc_id in (" close=")" separator=",">
+			#{item}
+	</foreach>
+  </if>
+  </where>
+  </delete>
   
   
   

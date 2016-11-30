@@ -38,4 +38,27 @@ public interface RecommendMapper {
      * @return
      */
     RecommendCustom selectRecommendCustomByPrimaryKey(String rmId);
+    
+    
+    
+    
+    
+    /**
+     * 根据非空字段查询Recommend信息
+     * @param recommendCustom
+     * @return
+     */
+    List<RecommendCustom> selectSelective(RecommendCustom recommendCustom);
+    
+    
+    
+    
+    
+    /**
+     * 根据recommend的id。批量删除recommend
+     * @param rcids
+     */
+    void deleteRecommendByIds(String[] rcids);
+    
+    
 }

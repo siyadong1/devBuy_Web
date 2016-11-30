@@ -1,0 +1,65 @@
+/*模板内容右侧开始*/
+/*模板内容右侧头部开始*/
+#ContentRightTitle_2_6_1{
+	width: 1000px;
+	height: 60px;
+	background-color: #178EE0;
+}
+#ContentRightTitle_2_6_1 button:first-child{
+	margin-top: 15px;
+	float: left;
+	margin-left: 64px;
+}  
+#ContentRightTitle_2_6_1 button {
+		margin-top: 15px;
+	float: left;
+	margin-left: 16px;
+}
+/*模板内容右侧头部结束*/
+/*模板内容右侧条目开始*/
+#ContentRight_2_6_1 tr td p:nth-child(2){
+	font-family: "微软雅黑";
+font-size: 16px;
+color: #464646;
+float: left;
+margin-left: 16px;
+margin-top: 8px;
+}
+#ContentRight_2_6_1 tr td{
+	height: 42px;
+	width: 139.2px;
+	background-color: #FFFFFF;
+	border-right: 1px #178EE0 solid;
+}
+#ContentRight_2_6_1 tr td input{
+	float: left;
+	width: 24px;
+	height: 24px;
+	margin-left: 30px;
+	margin-top: 9px;
+}
+#ContentRight_2_6_1 tr td p{
+	font-family: "微软雅黑";
+font-size: 16px;
+color: #464646;
+float: left;
+margin-left: 48px;
+margin-top: 4px;
+}
+#ContentRight_2_6_1 tr td img{
+float: left;
+margin-left: 48px;
+margin-top: 4px;
+}
+#ContentRight_2_6_1 tr td button{
+float: left;
+background-color: #178EE0;
+color: #FFFFFF;
+height: 30px;
+margin-left: 30px;
+margin-top: 4px;
+font-family: "微软雅黑";
+font-size: 16px;
+}
+/*模板内容右侧条目结束*/
+/*模板内容右侧结束*/
