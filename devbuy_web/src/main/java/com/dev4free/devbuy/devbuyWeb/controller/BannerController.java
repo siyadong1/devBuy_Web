@@ -102,7 +102,6 @@ public class BannerController {
 		modelAndView.addObject("updateOrAdd", "add");
 		modelAndView.setViewName("html/content_1_3_2");
 		return modelAndView;
-		
 	}
 	
 	

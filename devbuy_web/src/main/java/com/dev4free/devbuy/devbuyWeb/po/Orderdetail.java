@@ -40,4 +40,15 @@ public class Orderdetail {
     public void setItemsNum(String itemsNum) {
         this.itemsNum = itemsNum == null ? null : itemsNum.trim();
     }
+
+	@Override
+	public String toString() {
+		return "Orderdetail [detailsId=" + detailsId + ", ordersId=" + ordersId + ", itemsId=" + itemsId + ", itemsNum="
+				+ itemsNum + "]";
+	}
+    
+    
+    
+    
+    
 }

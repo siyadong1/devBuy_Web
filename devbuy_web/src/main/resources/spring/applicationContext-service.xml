@@ -26,7 +26,12 @@
 
  <bean id="bannerService" class="com.dev4free.devbuy.devbuyWeb.serviceImpl.BannerServiceImpl"></bean>
  
-  <bean id="recommendService" class="com.dev4free.devbuy.devbuyWeb.serviceImpl.RecommendServiceImpl"></bean>	
+ <bean id="recommendService" class="com.dev4free.devbuy.devbuyWeb.serviceImpl.RecommendServiceImpl"></bean>	
+  
+ <bean id="orderStatusService" class="com.dev4free.devbuy.devbuyWeb.serviceImpl.OrderStatusServiceImpl"></bean>	
+ 
+ 
+ <bean id="ordersService" class="com.dev4free.devbuy.devbuyWeb.serviceImpl.OrdersServiceImpl"></bean>	
  
  	
 </beans>

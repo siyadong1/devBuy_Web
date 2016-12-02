@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dev4free.devbuy.devbuyWeb.mapper.OrderstatusMapper">
+  <resultMap id="BaseResultMap" type="com.dev4free.devbuy.devbuyWeb.po.Orderstatus">
+    <id column="os_id" jdbcType="VARCHAR" property="osId" />
+    <result column="os_name" jdbcType="VARCHAR" property="osName" />
+    <result column="os_code" jdbcType="VARCHAR" property="osCode" />
+    <result column="os_description" jdbcType="VARCHAR" property="osDescription" />
+    <result column="os_createtime" jdbcType="VARCHAR" property="osCreatetime" />
+    <result column="os_modifytime" jdbcType="VARCHAR" property="osModifytime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    os_id, os_name, os_code, os_description, os_createtime, os_modifytime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from orderstatus
+    where os_id = #{osId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from orderstatus
+    where os_id = #{osId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.dev4free.devbuy.devbuyWeb.po.Orderstatus">
+    insert into orderstatus (os_id, os_name, os_code, 
+      os_description, os_createtime, os_modifytime
+      )
+    values (#{osId,jdbcType=VARCHAR}, #{osName,jdbcType=VARCHAR}, #{osCode,jdbcType=VARCHAR}, 
+      #{osDescription,jdbcType=VARCHAR}, #{osCreatetime,jdbcType=VARCHAR}, #{osModifytime,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.dev4free.devbuy.devbuyWeb.po.Orderstatus">
+    insert into orderstatus
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="osId != null">
+        os_id,
+      </if>
+      <if test="osName != null">
+        os_name,
+      </if>
+      <if test="osCode != null">
+        os_code,
+      </if>
+      <if test="osDescription != null">
+        os_description,
+      </if>
+      <if test="osCreatetime != null">
+        os_createtime,
+      </if>
+      <if test="osModifytime != null">
+        os_modifytime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="osId != null">
+        #{osId,jdbcType=VARCHAR},
+      </if>
+      <if test="osName != null">
+        #{osName,jdbcType=VARCHAR},
+      </if>
+      <if test="osCode != null">
+        #{osCode,jdbcType=VARCHAR},
+      </if>
+      <if test="osDescription != null">
+        #{osDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="osCreatetime != null">
+        #{osCreatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="osModifytime != null">
+        #{osModifytime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.dev4free.devbuy.devbuyWeb.po.Orderstatus">
+    update orderstatus
+    <set>
+      <if test="osName != null">
+        os_name = #{osName,jdbcType=VARCHAR},
+      </if>
+      <if test="osCode != null">
+        os_code = #{osCode,jdbcType=VARCHAR},
+      </if>
+      <if test="osDescription != null">
+        os_description = #{osDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="osCreatetime != null">
+        os_createtime = #{osCreatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="osModifytime != null">
+        os_modifytime = #{osModifytime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where os_id = #{osId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.dev4free.devbuy.devbuyWeb.po.Orderstatus">
+    update orderstatus
+    set os_name = #{osName,jdbcType=VARCHAR},
+      os_code = #{osCode,jdbcType=VARCHAR},
+      os_description = #{osDescription,jdbcType=VARCHAR},
+      os_createtime = #{osCreatetime,jdbcType=VARCHAR},
+      os_modifytime = #{osModifytime,jdbcType=VARCHAR}
+    where os_id = #{osId,jdbcType=VARCHAR}
+  </update>
+  
+  
+    <resultMap id="BaseResultMapCustom" type="com.dev4free.devbuy.devbuyWeb.poCustom.OrderStatusCustom">
+    <id column="os_id" jdbcType="VARCHAR" property="osId" />
+    <result column="os_name" jdbcType="VARCHAR" property="osName" />
+    <result column="os_code" jdbcType="VARCHAR" property="osCode" />
+    <result column="os_description" jdbcType="VARCHAR" property="osDescription" />
+    <result column="os_createtime" jdbcType="VARCHAR" property="osCreatetime" />
+    <result column="os_modifytime" jdbcType="VARCHAR" property="osModifytime" />
+  </resultMap>
+  
+  
+  
+  <select id="queryAllOrderStatus"   resultMap="BaseResultMapCustom"  >
+  select * from orderstatus
+  </select>
+  
+  
+  
+  
+  
+  
+  
+  
+   
+  <sql id="query_orderstatus_where">
+  	 <if test="osId != null and osId != '' ">
+        os_id = #{osId,jdbcType=VARCHAR}
+      </if>
+      <if test="osName != null and osName != '' ">
+        os_name = #{osName,jdbcType=VARCHAR}
+      </if>
+      <if test="osCode != null and osCode != '' ">
+        os_code = #{osCode,jdbcType=VARCHAR}
+      </if>
+      <if test="osDescription != null and osDescription != '' ">
+        os_description = #{osDescription,jdbcType=VARCHAR}
+      </if>
+      <if test="osCreatetime != null and osCreatetime != '' ">
+        os_createtime = #{osCreatetime,jdbcType=VARCHAR}
+      </if>
+      <if test="osModifytime != null and osModifytime != '' ">
+        os_modifytime = #{osModifytime,jdbcType=VARCHAR}
+      </if>
+  </sql>
+  
+  
+  
+  <select id="selectSelective"  parameterType="com.dev4free.devbuy.devbuyWeb.poCustom.OrderStatusCustom"  resultMap="BaseResultMapCustom"  >
+    	 SELECT * FROM orderstatus
+  	<where>
+  		<include refid="query_orderstatus_where" ></include>
+  	</where>
+  </select>
+  
+  
+  
+  
+  
+  
+        
+  
+  <delete id="deleteOrderStatusByIds" parameterType="Object[]" >
+  delete from orderstatus 
+  <where>
+  <if  test="array != null and array.length > 0">
+	<foreach collection="array" item="item" open="and os_id in (" close=")" separator=",">
+			#{item}
+	</foreach>
+  </if>
+  </where>
+  </delete>
+  
+  
+  
+  
+  
+  
+  
+  
+</mapper>

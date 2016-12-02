@@ -17,11 +17,16 @@
 	<link rel="stylesheet" href="${devbuy_web_path}/css/content_1_5_1.css" />
 	<link rel="stylesheet" href="${devbuy_web_path}/css/content_1_5_2.css" />
 	<link rel="stylesheet" href="${devbuy_web_path}/css/content_2_1_1.css" />
+	<link rel="stylesheet" href="${devbuy_web_path}/css/content_2_2_1.css" />
+	<link rel="stylesheet" href="${devbuy_web_path}/css/content_2_3_1.css" />
+	<link rel="stylesheet" href="${devbuy_web_path}/css/content_2_4_1.css" />
+	<link rel="stylesheet" href="${devbuy_web_path}/css/content_2_5_1.css" />
 	<link rel="stylesheet" href="${devbuy_web_path}/css/content_2_6_1.css" />
 	<link rel="stylesheet" href="${devbuy_web_path}/css/content_3_1_1.css" />
 	<link rel="stylesheet" href="${devbuy_web_path}/css/content_4_1_1.css" />
 	<link rel="stylesheet" href="${devbuy_web_path}/css/content_6_1_1.css" />
 	<link rel="stylesheet" href="${devbuy_web_path}/css/content_6_2_1.css" />
+	<link rel="stylesheet" href="${devbuy_web_path}/css/orderDetail.css" />
 	<link rel="stylesheet" href="${devbuy_web_path}/css/userDetail.css" />
 	<link rel="stylesheet" href="${devbuy_web_path}/css/home.css" />
 	<link rel="stylesheet" href="${devbuy_web_path}/css/ui.css" />
@@ -34,6 +39,10 @@
 	<script type="text/javascript" src="${devbuy_web_path}/js/content_1_5_1.js" ></script>
 	<script type="text/javascript" src="${devbuy_web_path}/js/content_1_5_2.js" ></script>
 	<script type="text/javascript" src="${devbuy_web_path}/js/content_2_1_1.js" ></script>
+	<script type="text/javascript" src="${devbuy_web_path}/js/content_2_2_1.js" ></script>
+	<script type="text/javascript" src="${devbuy_web_path}/js/content_2_3_1.js" ></script>
+	<script type="text/javascript" src="${devbuy_web_path}/js/content_2_4_1.js" ></script>
+	<script type="text/javascript" src="${devbuy_web_path}/js/content_2_5_1.js" ></script>
 	<script type="text/javascript" src="${devbuy_web_path}/js/content_2_6_1.js" ></script>
 	<script type="text/javascript" src="${devbuy_web_path}/js/content_3_1_1.js" ></script>
 	<script type="text/javascript" src="${devbuy_web_path}/js/content_4_1_1.js" ></script>
@@ -99,7 +108,7 @@
 	$("#templateContentHeaderTab4").removeClass("templateContentHeaderTab");
 	$("#templateContentHeaderTab5").removeClass("templateContentHeaderTab");
 	$("#templateContentHeaderTab6").removeClass("templateContentHeaderTab");
-		$("#templateContentRight").load("${devbuy_web_path}/html/content_2_1_1.jsp #body");
+	$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllOrders.action")
 		});		
 		
 		
@@ -533,8 +542,38 @@
 							
 							/* 订单管理开始 */
 							
+							if($(this).attr("class") == "content_2_1_1"){
+								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllOrders.action")
+							}
+							
+							
+							
+							if($(this).attr("class") == "content_2_2_1"){
+								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/selectSelectiveOrders.action?state=0")
+							}
+							
+							
+							
+							
+							if($(this).attr("class") == "content_2_3_1"){
+								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/selectSelectiveOrders.action?state=1")
+							}
+							
+							
+							
+							
+							if($(this).attr("class") == "content_2_4_1"){
+								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/selectSelectiveOrders.action?state=2")
+							}
+							
+							
+							if($(this).attr("class") == "content_2_5_1"){
+								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/selectSelectiveOrders.action?state=4")
+							}
+							
+							
 							if($(this).attr("class") == "content_2_6_1"){
-								$("#templateContentRight").load("/devbuy_web/html/content_2_6_1.jsp #body")
+								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllOrderStatus.action")
 							}
 							/* 订单管理结束 */
 							

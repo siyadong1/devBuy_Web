@@ -4,30 +4,30 @@
 
 
 
-function hideDeleteAllOrderDialog() {
-	$("#deleteAllOrder").hide();
+function hideDeleteWaitShipmentOrderDialog() {
+	$("#deleteWaitShipmentOrder").hide();
 	$("#maskLayer").hide();
 }
 	
-function showDeleteAllOrderDialog(){
-	$("#deleteAllOrder").show();
+function showDeleteWaitShipmentOrderDialog(){
+	$("#deleteWaitShipmentOrder").show();
 	$("#maskLayer").show();
 }
 
-function showEditAllOrderDialog(devbuy_web_path,ordersId){
+function showEditWaitShipmentOrderDialog(devbuy_web_path,ordersId){
 	$("#templateContentRight").load( devbuy_web_path + "/java/manageplatform/selectOrderStatusForUpdateOrders.action?ordersId=" + ordersId);
 }
 
 
-function  confirmHideDeleteAllOrderDialog(devbuy_web_path){
+function  confirmHideDeleteWaitShipmentOrderDialog(devbuy_web_path){
 	
-	$("#deleteAllOrder").hide();
+	$("#deleteWaitShipmentOrder").hide();
 	$("#maskLayer").hide();
 
 	var index = layer.load(1, {
 		  shade: [0.1,'#fff'] //0.1透明度的白色背景
 		});
-	 var form = $("form[name=deleteAllOrdersIds]");  
+	 var form = $("form[name=deleteWaitShipmentOrdersIds]");  
      var options  = {    
          url:devbuy_web_path + '/java/manageplatform/deleteOrdersByIds.action',    
          type:'post',    

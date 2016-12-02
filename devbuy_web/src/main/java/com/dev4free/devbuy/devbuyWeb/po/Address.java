@@ -80,4 +80,15 @@ public class Address {
     public void setDefaultAddress(String defaultAddress) {
         this.defaultAddress = defaultAddress == null ? null : defaultAddress.trim();
     }
+
+	@Override
+	public String toString() {
+		return "Address [addressId=" + addressId + ", userId=" + userId + ", consigneeName=" + consigneeName
+				+ ", phoneNumber=" + phoneNumber + ", province=" + province + ", city=" + city + ", detailAddress="
+				+ detailAddress + ", defaultAddress=" + defaultAddress + "]";
+	}
+    
+    
+    
+    
 }

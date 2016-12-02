@@ -76,10 +76,22 @@ public class ConstantResponse {
 	
 	
 	
-	
-	
 	public static final String 	CODE_UPDATERECOMMENDNAMEEXIT_ERROR = "0000014";
 	public static final String 	CONTENT_UPDATERECOMMENDNAMEXIT_ERROR = "推荐名称已经存在!";
 	
 	
+	
+	
+	public static final String 	CODE_UPDATEORDERSTATUSNAMEEXIT_ERROR = "0000015";
+	public static final String 	CONTENT_UPDATEORDERSTATUSNAMEEXIT_ERROR = "订单状态名称已经存在!";
+	
+	
+	
+	public static final String 	CODE_UPDATEORDERSTATUSCODEEXIT_ERROR = "0000016";
+	public static final String 	CONTENT_UPDATEORDERSTATUSCODEEXIT_ERROR = "订单状态码已经存在!";
+	
+	
+	
+	public static final String 	CODE_DELETEORDERSEMPTY_ERROR = "00000017";
+	public static final String 	CONTENT_DELETEORDERSEMPTY_ERROR = "请选择要删除的订单!";
 }

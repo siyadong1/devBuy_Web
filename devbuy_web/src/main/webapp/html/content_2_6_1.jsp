@@ -14,7 +14,6 @@
 		<script type="text/javascript" src="${devbuy_web_path}/js/jquery-form.js"></script>  
 	</head>
 	<body>
-		
 
 		<div id="body">
 			
@@ -22,142 +21,96 @@
 			<div id="deleteOrderStatus" >
 				<p style="margin-left: 244px; margin-top: 16px; color: #178EE0; font-size: 18px; font-family: '微软雅黑';"  >确定删除该订单状态</p>
 				<button  onclick="hideDeleteOrderStatusDialog()" class="redButton" style="position: absolute; right: 16px; bottom: 50px;">取消</button>
-				<button  onclick="hideDeleteOrderStatusDialog()" class="blueButton"  style="position: absolute; right: 95px; bottom: 50px;" >确定</button>
+				<button  onclick="confirmHideDeleteOrderStatusDialog('${devbuy_web_path}')" class="blueButton"  style="position: absolute; right: 95px; bottom: 50px;" >确定</button>
 			</div>
 		
 			
 			
 						
-			<!--添加商品-->
+			<!--添加订单状态-->
 			<div id="addOrderStatus" >
-				<div><p>添加订单状态</p></div>
-				<form>
+				<div><p id="updateOrAddOrderStatusTitle">添加订单状态</p></div>
+				<form  name="updateOrderStatusAndAddOrderStatus" >
 					<table  cellspacing="16px">
 						<tr>
-							<td><span class="text16px ">商品名称</span></td>
-							<td><input class="text16px" type="text" id="" placeholder="苹果6s" /></td>
+							<td><input type="hidden"  name="osId" id="osId"   /></td>
+							<td><input type="hidden"  name="add" id="updateOrAddOrderStatusFlag"   /></td>
+						</tr>
+						<tr>
+							<td><span class="text16px ">状态名</span></td>
+							<td><input class="text16px" type="text"  placeholder="请输入状态名称" name="osName" id="osName"   /></td>
+						</tr>
+						<tr>
+							<td><span class="text16px ">状态码</span></td>
+							<td><input class="text16px" type="text"  placeholder="请输入状态码"  name="osCode"  id="osCode" /></td>
 						</tr>
 						<tr>
 							<td><span class="text16px ">描述</span></td>
-							<td><textarea class="text16px"></textarea></td>
-						</tr>
-						<tr>
-							<td><span class="text16px ">所属类别</span></td>
-							<td>
-								<select>
-									<option>旅游</option>
-									<option>图书</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td><span class="text16px ">是否显示</span></td>
-							<td>
-								<select>
-									<option>是</option>
-									<option>否</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td><span class="text16px ">是否大图</span></td>
-							<td>
-								<select>
-									<option>是</option>
-									<option>否</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td><span class="text16px ">图标</span></td>
-							<td><input type="file" class="text16px" /></td>
+							<td><textarea name="osDescription"  id="osDescription"  class="text16px"></textarea></td>
 						</tr>
 					</table>
 				</form>
 				<button   onclick="hideAddOrderStatusDialog()" class="redButton" style="position: absolute; right: 16px; bottom: 16px;">取消</button>
-				<button   onclick="hideAddOrderStatusDialog()" class="blueButton"  style="position: absolute; right: 95px; bottom: 16px;" >确定</button>	
+				<button   onclick="confirmHideAddOrderStatusDialog('${devbuy_web_path}')" class="blueButton"  style="position: absolute; right: 95px; bottom: 16px;" >确定</button>	
 			</div>
-			
-			
-			
-			
-			
 				<!--模板内容区域右侧开始-->
-				
-				
-				
-				
-				
-				
-				
 		<div id="ContentRight_2_6_1">
 			<div id="ContentRightTitle_2_6_1">
 				<button onclick="showDeleteOrderStatusDialog()" class="contentButton" id="btnDeleteClass" >删除订单状态</button>
 				<button onclick="showAddOrderStatusDialog()"   class="contentButton">添加订单状态</button>
 			</div>
-			
-			
+			<form  name="deleteOrderStatusIds" >
 			<table>
 				<tr>
-					<td>  <input type="checkbox" />  <p id="ContentRightFirtst_1_1_1">全选</p></td>
-					<td><p>名称</p></td>
-					<td><p>所属类别</p></td>
+					<td>  <input type="checkbox"  id="ck_content_2_6_1"   />  <p id="ContentRightFirtst_1_1_1">全选</p></td>
+					<td><p>状态名称</p></td>
+					<td><p>状态码</p></td>
 					<td><p>描述</p></td>
-					<td><p>是否大图</p></td>
 					<td><p>创建时间</p></td>
 					<td><p>修改时间</p></td>
 					<td><p>操作</p></td>
 				</tr>
-				
-				
+				<c:forEach  items="${orderStatusCustoms}"   var="orderStatusCustom" >
 				<tr>
-					<td>  <input type="checkbox" /></td>
-					<td><p>爱旅游</p></td>
-					<td><p>旅游</p></td>
-					<td><p title="喜欢旅游的...">喜欢旅游的...</p></td>
-					<td><p>是</p></td>
-					<td><p>2016-09-21  10:10:50</p></td>
-					<td><p>2016-09-21  10:10:50</p></td>
-					<td><button  onclick="showEditOrderStatusDialog()" >编辑</button></td>
+					<td>  <input type="checkbox" class="orderStatusCK"    name="osIds" value="${orderStatusCustom.osId }"     /></td>
+					<td><p>${orderStatusCustom.osName }</p></td>
+					<td><p>${orderStatusCustom.osCode }</p></td>
+					<td><p title="${orderStatusCustom.osDescription }">${orderStatusCustom.osDescription }</p></td>
+					<td><p>${orderStatusCustom.osCreatetime }</p></td>
+					<td><p>${orderStatusCustom.osModifytime }</p></td>
+					<td><button   type="button"   onclick="showEditOrderStatusDialog('${devbuy_web_path}','${orderStatusCustom.osName }','${orderStatusCustom.osCode }','${orderStatusCustom.osDescription }','${orderStatusCustom.osId }')" >编辑</button></td>
 				</tr>
-				
-				
-				
-				<tr>
-					<td>  <input type="checkbox" /></td>
-					<td><p>爱旅游</p></td>
-					<td><p>旅游</p></td>
-					<td><p title="喜欢旅游的...">喜欢旅游的...</p></td>
-					<td><p>是</p></td>
-					<td><p>2016-09-21  10:10:50</p></td>
-					<td><p>2016-09-21  10:10:50</p></td>
-					<td><button  onclick="showEditOrderStatusDialog()" >编辑</button></td>
-				</tr>
-				
-				
-				
-				<tr>
-					<td>  <input type="checkbox" /></td>
-					<td><p>爱旅游</p></td>
-					<td><p>旅游</p></td>
-					<td><p title="喜欢旅游的...">喜欢旅游的...</p></td>
-					<td><p>是</p></td>
-					<td><p>2016-09-21  10:10:50</p></td>
-					<td><p>2016-09-21  10:10:50</p></td>
-					<td><button  onclick="showEditOrderStatusDialog()" >编辑</button></td>
-				</tr>
-				
-				
-				
-				
-				
-				
-				
-				
+				</c:forEach>
 			</table>
+			</form>
 		</div>
 		</div>
-
-
 	</body>
+	
+	
+	
+	
+		
+	
+	<script  type="text/javascript" >
+	
+	
+	 $("#ck_content_2_6_1").change(function(){
+		 
+			if($("#ck_content_2_6_1").prop("checked")){
+				  $(".orderStatusCK").each(function(){
+					   $(this).prop("checked",true);
+					  });
+			}else{
+				 $(".orderStatusCK").each(function(){
+					 $(this).prop("checked",false);
+					  });
+			}
+	 } );
+	
+	</script>
+	
+	
+	
+	
 </html>

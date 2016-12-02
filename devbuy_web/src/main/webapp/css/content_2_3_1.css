@@ -1,28 +1,28 @@
 /*模板内容右侧开始*/
 /*模板内容右侧头部开始*/
-#ContentRightTitle_2_1_1{
+#ContentRightTitle_2_3_1{
 	width: 1000px;
 	height: 60px;
 	background-color: #178EE0;
 }
-#ContentRightTitle_2_1_1 button:first-child{
+#ContentRightTitle_2_3_1 button:first-child{
 	margin-top: 15px;
 	float: left;
 	margin-left: 64px;
 }  
-#ContentRightTitle_2_1_1 button {
+#ContentRightTitle_2_3_1 button {
 		margin-top: 15px;
 	float: left;
 	margin-left: 16px;
 }
-#ContentRightTitle_2_1_1 select {
+#ContentRightTitle_2_3_1 select {
 		margin-top: 15px;
 	float: left;
 	margin-left: 16px;
 }
 
 
-#ContentRightTitle_2_1_1 input {
+#ContentRightTitle_2_3_1 input {
 		margin-top: 15px;
 	height: 25px;
 	margin-left: 82px;
@@ -31,14 +31,14 @@
 	border-radius: 5px;
 	float: left;
 }
-#ContentRightTitle_2_1_1 img {
+#ContentRightTitle_2_3_1 img {
 		margin-top: 15px;
 		float: left;
 		margin-left: 16px;
 }
 /*模板内容右侧头部结束*/
 /*模板内容右侧条目开始*/
-#ContentRight_2_1_1 tr td p:nth-child(2){
+#ContentRight_2_3_1 tr td p:nth-child(2){
 	font-family: "微软雅黑";
 font-size: 16px;
 color: #464646;
@@ -49,21 +49,21 @@ margin-top: 10px;
 
 
 
-#ContentRight_2_1_1 tr td{
+#ContentRight_2_3_1 tr td{
 	height: 42px;
 	width: 94px;
 	float: left;
 	background-color: #FFFFFF;
 	border-right: 1px #178EE0 solid;
 }
-#ContentRight_2_1_1 tr td input{
+#ContentRight_2_3_1 tr td input{
 	float: left;
 	width: 24px;
 	height: 24px;
 	margin-left: 10px;
 	margin-top: 9px;
 }
-#ContentRight_2_1_1 tr td p{
+#ContentRight_2_3_1 tr td p{
 	font-family: "微软雅黑";
 font-size: 14px;
 color: #464646;
@@ -71,7 +71,7 @@ float: left;
 margin-left: 10px;
 margin-top: 5px;
 }
-#ContentRight_2_1_1 tr td button{
+#ContentRight_2_3_1 tr td button{
 float: left;
 background-color: #178EE0;
 color: #FFFFFF;

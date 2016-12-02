@@ -158,6 +158,63 @@
 /*全部订单结束*/
 
 
+/*代付款订单开始*/
+
+#deleteWaitPayOrder{
+	display: none;	
+	width: 600px;
+	height: 200px;
+	background-color: #FFFFFF;
+	margin: auto;
+	z-index:101 ;position: fixed;top: 0; left: 0; bottom: 0; right: 0;
+}
+
+/*代付款订单结束*/
+
+
+/*代发货订单开始*/
+
+#deleteWaitShipmentOrder{
+	display: none;	
+	width: 600px;
+	height: 200px;
+	background-color: #FFFFFF;
+	margin: auto;
+	z-index:101 ;position: fixed;top: 0; left: 0; bottom: 0; right: 0;
+}
+
+/*代发货订单结束*/
+
+
+
+/*代收货订单开始*/
+
+#deleteWaitReceiveOrder{
+	display: none;	
+	width: 600px;
+	height: 200px;
+	background-color: #FFFFFF;
+	margin: auto;
+	z-index:101 ;position: fixed;top: 0; left: 0; bottom: 0; right: 0;
+}
+
+/*代收货订单结束*/
+
+
+/*取消订单开始*/
+
+#deleteCancelOrder{
+	display: none;	
+	width: 600px;
+	height: 200px;
+	background-color: #FFFFFF;
+	margin: auto;
+	z-index:101 ;position: fixed;top: 0; left: 0; bottom: 0; right: 0;
+}
+
+/*取消订单结束*/
+
+
 
 /*订单状态开始*/
 #deleteOrderStatus{
@@ -210,9 +267,6 @@
 	font-size: 16px;
 }
 /*订单状态结束*/
-
-
-
 
 
 

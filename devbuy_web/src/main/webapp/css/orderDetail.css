@@ -1,4 +1,4 @@
-#publishGoodsHeader{
+#updateOrderStatusHeader{
 	float: left;
 	width: 1000px;
 	height: 60px;
@@ -6,7 +6,7 @@
 }
 
 
-#publishGoodsHeader p{
+#updateOrderStatusHeader p{
 	font-family: "微软雅黑";
 	font-size: 18px;
 	color: #FFFFFF;
@@ -14,14 +14,14 @@
 	margin-top: 16px;
 }
 
-#pusblishGoods table p {
+#updateOrderStatus table p {
 	font-family: "微软雅黑";
 	font-size: 16px;
 	color: #464646;
 }
 
 
-#pusblishGoods input[type = "text"]{
+#updateOrderStatus input[type = "text"]{
 	width: 305px;
 	height: 30px;
 	font-family: "微软雅黑";
@@ -29,13 +29,13 @@
 	color: #464646;
 }
 
-#pusblishGoods textarea{
+#updateOrderStatus textarea{
 	
 	width: 305px;
 	height: 164px;
 }
 
-#selectContent_1_2_2{
+#select_orderdetail{
 	width: 305px;
 	height: 30px;
 	font-family: "微软雅黑";
@@ -44,14 +44,14 @@
 }
 
 
-#pusblishGoods img{
+#updateOrderStatus img{
 	
 	width: 160px;
 		margin-left: 440px;
 		margin-top: 16px;
 }
 
-#pusblishGoods button{
+#updateOrderStatus button{
 	
 	width: 152px;
 	height: 30px;
