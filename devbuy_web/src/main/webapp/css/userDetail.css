@@ -79,3 +79,16 @@ border-bottom: #178EE0 1px solid;
 	margin-bottom: 16px;
 }
 
+#submitButton{
+	width: 80px;
+	height: 36px;
+	background-color: #178EE0;
+	font-family: "微软雅黑";
+	font-size: 16px;
+	color: #FFFFFF;
+	border: none;
+	margin-left: 440px;
+	margin-bottom: 16px;
+	margin-top: 16px;
+}
+

@@ -126,4 +126,69 @@
       default_address = #{defaultAddress,jdbcType=VARCHAR}
     where address_id = #{addressId,jdbcType=VARCHAR}
   </update>
+  
+  
+  
+  
+  
+  
+    <resultMap id="BaseResultMapCustom" type="com.dev4free.devbuy.devbuyWeb.poCustom.AddressCustom">
+    <id column="address_id" jdbcType="VARCHAR" property="addressId" />
+    <result column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="consignee_name" jdbcType="VARCHAR" property="consigneeName" />
+    <result column="phone_number" jdbcType="VARCHAR" property="phoneNumber" />
+    <result column="province" jdbcType="VARCHAR" property="province" />
+    <result column="city" jdbcType="VARCHAR" property="city" />
+    <result column="detail_address" jdbcType="VARCHAR" property="detailAddress" />
+    <result column="default_address" jdbcType="VARCHAR" property="defaultAddress" />
+  </resultMap>
+  
+  
+  
+  
+  
+  
+  <sql id="query_address_where">
+
+  	 <if test="addressId != null and addressId != '' ">
+        AND address_id = #{addressId,jdbcType=VARCHAR}
+      </if>
+      <if test="userId != null and userId != '' ">
+       AND user_id = #{userId,jdbcType=VARCHAR}
+      </if>
+      <if test="consigneeName != null and consigneeName != '' ">
+       AND consignee_name = #{consigneeName,jdbcType=VARCHAR}
+      </if>
+      <if test="phoneNumber != null and phoneNumber != '' ">
+       AND phone_number = #{phoneNumber,jdbcType=VARCHAR}
+      </if>
+      <if test="province != null and province != '' ">
+       AND province = #{province,jdbcType=VARCHAR}
+      </if>
+      <if test="city != null and city != '' ">
+       AND city = #{city,jdbcType=VARCHAR}
+      </if>
+  	      <if test="detailAddress != null and detailAddress != '' ">
+       AND detail_address = #{detailAddress,jdbcType=VARCHAR}
+      </if>
+  	      <if test="defaultAddress != null and defaultAddress != '' ">
+       AND default_address = #{defaultAddress,jdbcType=VARCHAR}
+      </if>
+  	
+  	
+  </sql>
+  
+  
+  
+  
+  <select id="selcetSelective" parameterType="com.dev4free.devbuy.devbuyWeb.poCustom.AddressCustom"  resultMap="BaseResultMapCustom" >
+  select * from address
+  <where>
+  	<include refid="query_address_where" ></include>
+  </where>
+  </select>
+
+  
+  
+  
 </mapper>

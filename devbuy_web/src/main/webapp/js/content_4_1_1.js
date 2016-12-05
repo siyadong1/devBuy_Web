@@ -4,14 +4,61 @@
 
 
 
-function hideForceLogoutDialog() {
-			
-	$("#forceLogout").hide();
+function hideDeleteUserListDialog() {
+	
+	$("#deleteUserList").hide();
 	$("#maskLayer").hide();
 }
+
+
+
+
+function confirmHideDeleteUserListDialog(devbuy_web_path) {
+	$("#deleteUserList").hide();
+	$("#maskLayer").hide();
 	
-function showForceLogoutDialog(){
-	$("#forceLogout").show();
+	var index = layer.load(1, {
+		  shade: [0.1,'#fff'] //0.1透明度的白色背景
+		});
+	 var form = $("form[name=deleteUserByIds]");  
+   var options  = {    
+       url:devbuy_web_path + '/java/manageplatform/deleteUserByIds.action',    
+       type:'post',    
+       success:function(data)    
+       {   
+      	 layer.close(index);    
+           if(data.code != "000000"){  
+               var message = data.message;  
+               layer.alert(message, {icon: 2});
+           }else{
+          	 var message = data.message;  
+          	 layer.msg(message,{time:1000}); 
+					$("#templateContentRight").load(devbuy_web_path + "/java/manageplatform/queryAllUsers.action")
+           } 
+       } ,
+	     error:function(data)    
+	     {    
+		 	 layer.close(index);    
+	         layer.alert("连接服务器失败！", {icon: 2});
+	     }
+
+   };    
+   form.ajaxSubmit(options);  
+	
+	
+	
+	
+	
+	
+}
+	
+
+
+
+
+
+function showDeleteUserListDialog(){
+	$("#deleteUserList").show();
 	$("#maskLayer").show();
 }
 
@@ -20,29 +67,7 @@ function showForceLogoutDialog(){
 
 
 
-function showUserDetailDialog() {
-		$("#templateContentRight").load("./html/userDetail.html #body");
-
-}
-	
-function goToOrder(){
-		$("#templateContentLeftDiv2").show();
-	$("#templateContentHeaderTab2").addClass("templateContentHeaderTab");
-	$("#templateContentLeftDiv1").hide();
-	$("#templateContentLeftDiv3").hide();
-	$("#templateContentLeftDiv4").hide();
-	$("#templateContentLeftDiv5").hide();
-	$("#templateContentLeftDiv6").hide();
-	$("#templateContentHeaderTab2").addClass("templateContentHeaderTab");
-	$("#templateContentHeaderTab3").removeClass("templateContentHeaderTab");
-	$("#templateContentHeaderTab4").removeClass("templateContentHeaderTab");
-	$("#templateContentHeaderTab5").removeClass("templateContentHeaderTab");
-	$("#templateContentHeaderTab6").removeClass("templateContentHeaderTab");
-	$("#templateContentHeaderTab1").removeClass("templateContentHeaderTab");
-		$("#templateContentRight").load("./html/content_2_1_1.html #body");
+function showUserDetailDialog(devbuy_web_path,userId) {
+	$("#templateContentRight").load( devbuy_web_path + "/java/manageplatform/queryUserDetail.action?userId=" + userId);
 }
 
-function goToAddress(){
-	$("#templateContentRight").load("./html/userAddress.html #body");
-	
-}

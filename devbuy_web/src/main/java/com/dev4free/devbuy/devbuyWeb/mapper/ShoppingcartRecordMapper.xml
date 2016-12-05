@@ -79,4 +79,95 @@
       items_num = #{itemsNum,jdbcType=VARCHAR}
     where cart_id = #{cartId,jdbcType=VARCHAR}
   </update>
+  
+  
+  
+  
+  
+  
+    <resultMap id="BaseResultMapCustom" type="com.dev4free.devbuy.devbuyWeb.poCustom.ShoppingcartRecordCustom">
+    <id column="cart_id" jdbcType="VARCHAR" property="cartId" />
+    <result column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="items_id" jdbcType="VARCHAR" property="itemsId" />
+    <result column="items_num" jdbcType="VARCHAR" property="itemsNum" />
+  </resultMap>
+  
+  
+  
+    
+    <resultMap id="BaseResultMapCustomWithAssociation" type="com.dev4free.devbuy.devbuyWeb.poCustom.ShoppingcartRecordCustom"  extends="BaseResultMapCustom">
+    <association  property="userCustom" javaType="com.dev4free.devbuy.devbuyWeb.poCustom.UserCustom">
+        <id column="user_id" jdbcType="CHAR" property="userId" />
+	    <result column="username" jdbcType="VARCHAR" property="username" />
+	    <result column="password" jdbcType="VARCHAR" property="password" />
+	    <result column="avatar" jdbcType="VARCHAR" property="avatar" />
+	    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+	    <result column="regtime" jdbcType="CHAR" property="regtime" />
+	    <result column="gender" jdbcType="VARCHAR" property="gender" />
+    </association>
+    <association  property="itemsCustom" javaType="com.dev4free.devbuy.devbuyWeb.poCustom.ItemsCustom">
+	        <result column="itemsname" jdbcType="VARCHAR" property="itemsname" />
+		    <result column="description" jdbcType="VARCHAR" property="description" />
+		    <result column="category" jdbcType="VARCHAR" property="category" />
+		    <result column="items_lb" jdbcType="VARCHAR" property="itemsLb" />
+		    <result column="price" jdbcType="VARCHAR" property="price" />
+		    <result column="current_price" jdbcType="VARCHAR" property="currentPrice" />
+		    <result column="image" jdbcType="VARCHAR" property="image" />
+		    <result column="inventory" jdbcType="VARCHAR" property="inventory" />
+		    <result column="sales_volume" jdbcType="VARCHAR" property="salesVolume" />
+		    <result column="area" jdbcType="VARCHAR" property="area" />
+		    <result column="express_fee" jdbcType="VARCHAR" property="expressFee" />
+		    <result column="cf_name" jdbcType="VARCHAR" property="cfName" />
+    </association>
+  </resultMap>
+  
+  
+  
+  <select  id="queryAllShoppingcartRecord" resultMap="BaseResultMapCustomWithAssociation">
+  
+SELECT shoppingcart_record.*,`user`.*,items.* 
+FROM shoppingcart_record,`user`,items 
+WHERE shoppingcart_record.user_id = `user`.user_id 
+AND shoppingcart_record.items_id = items.items_id
+  </select>
+  
+  
+  
+  
+  <select id="selectShoppingcartRecordCustomByPrimaryKey"  resultMap="BaseResultMapCustomWithAssociation"  >
+  
+SELECT shoppingcart_record.*,`user`.*,items.*,classification.* 
+FROM shoppingcart_record,`user`,items,classification 
+WHERE shoppingcart_record.user_id = `user`.user_id 
+AND shoppingcart_record.items_id = items.items_id 
+AND items.category = classification.category
+AND	shoppingcart_record.cart_id = #{cartId}
+  
+  
+  </select>
+  
+  
+  
+  
+  
+  
+    
+      
+  
+  <delete id="deleteShoppingcartRecordByIds" parameterType="Object[]" >
+  delete from shoppingcart_record 
+  <where>
+  <if  test="array != null and array.length > 0">
+	<foreach collection="array" item="item" open="and cart_id in (" close=")" separator=",">
+			#{item}
+	</foreach>
+  </if>
+  </where>
+  </delete>
+  
+  
+  
+  
+  
+  
 </mapper>

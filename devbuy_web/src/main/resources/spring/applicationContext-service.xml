@@ -30,8 +30,13 @@
   
  <bean id="orderStatusService" class="com.dev4free.devbuy.devbuyWeb.serviceImpl.OrderStatusServiceImpl"></bean>	
  
- 
  <bean id="ordersService" class="com.dev4free.devbuy.devbuyWeb.serviceImpl.OrdersServiceImpl"></bean>	
+ 
+ <bean id="shoppingcartRecordService" class="com.dev4free.devbuy.devbuyWeb.serviceImpl.ShoppingcartRecordServiceImpl"></bean>	
+ 
+ <bean id="userService" class="com.dev4free.devbuy.devbuyWeb.serviceImpl.UserServiceImpl"></bean>	
+ 
+ <bean id="addressService" class="com.dev4free.devbuy.devbuyWeb.serviceImpl.AddressServiceImpl"></bean>	
  
  	
 </beans>

@@ -114,4 +114,55 @@
       gender = #{gender,jdbcType=VARCHAR}
     where user_id = #{userId,jdbcType=CHAR}
   </update>
+  
+  
+  
+  
+  
+  
+    <resultMap id="BaseResultMapCustom" type="com.dev4free.devbuy.devbuyWeb.poCustom.UserCustom">
+    <id column="user_id" jdbcType="CHAR" property="userId" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="avatar" jdbcType="VARCHAR" property="avatar" />
+    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+    <result column="regtime" jdbcType="CHAR" property="regtime" />
+    <result column="gender" jdbcType="VARCHAR" property="gender" />
+    <result column="balance" jdbcType="VARCHAR" property="balance" />
+  </resultMap>
+  
+  
+  
+  <select  id="queryAllUsers"   resultMap="BaseResultMapCustom"  >
+  
+  SELECT `user`.*,wallet.* FROM `user`, wallet WHERE `user`.user_id = wallet.user_id
+  	
+  </select>
+  
+  
+        
+  
+  <delete id="deleteUserByIds" parameterType="Object[]" >
+  delete from user 
+  <where>
+  <if  test="array != null and array.length > 0">
+	<foreach collection="array" item="item" open="and user_id in (" close=")" separator=",">
+			#{item}
+	</foreach>
+  </if>
+  </where>
+  </delete>
+  
+    
+  
+  <select  id="queryUsersByPrimarykey"   resultMap="BaseResultMapCustom"  >
+  
+  SELECT `user`.*,wallet.* FROM `user`, wallet WHERE `user`.user_id = wallet.user_id 
+  AND `user`.user_id = #{userId}
+	  	
+  </select>
+  
+  
+  
+  
 </mapper>

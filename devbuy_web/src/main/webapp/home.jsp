@@ -28,6 +28,7 @@
 	<link rel="stylesheet" href="${devbuy_web_path}/css/content_6_2_1.css" />
 	<link rel="stylesheet" href="${devbuy_web_path}/css/orderDetail.css" />
 	<link rel="stylesheet" href="${devbuy_web_path}/css/userDetail.css" />
+	<link rel="stylesheet" href="${devbuy_web_path}/css/shoppingCarDetail.css" />	
 	<link rel="stylesheet" href="${devbuy_web_path}/css/home.css" />
 	<link rel="stylesheet" href="${devbuy_web_path}/css/ui.css" />
 	<script type="text/javascript" src="${devbuy_web_path}/js/content_1_1_1.js" ></script>
@@ -126,7 +127,7 @@
 	$("#templateContentHeaderTab4").removeClass("templateContentHeaderTab");
 	$("#templateContentHeaderTab5").removeClass("templateContentHeaderTab");
 	$("#templateContentHeaderTab6").removeClass("templateContentHeaderTab");
-		$("#templateContentRight").load("${devbuy_web_path}/html/content_3_1_1.jsp #body");
+	$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllShoppingcartRecord.action")
 		});		
 		
 		
@@ -144,7 +145,7 @@
 	$("#templateContentHeaderTab1").removeClass("templateContentHeaderTab");
 	$("#templateContentHeaderTab5").removeClass("templateContentHeaderTab");
 	$("#templateContentHeaderTab6").removeClass("templateContentHeaderTab");
-		$("#templateContentRight").load("${devbuy_web_path}/html/content_4_1_1.jsp #body");
+	$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllUsers.action")
 		});		
 		
 		
@@ -580,6 +581,18 @@
 							
 							
 							
+							/* 购物车管理开始 */
+							if($(this).attr("class") == "content_3_1_1"){
+								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllShoppingcartRecord.action")
+							}
+							/* 购物车管理结束 */
+							
+							
+							/* 用户管理开始 */
+							if($(this).attr("class") == "content_4_1_1"){
+								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllUsers.action")
+							}
+							/* 用户管理结束 */
 							
 							
 					});
@@ -833,11 +846,11 @@
 					<p>用户管理</p>
 				</li>
 				<li class="content_4_1_1" id="templateContentLeftDiv4_1_2">
-					<p>在线用户</p>
-				</li>
-				<li class="content_4_1_2" id="templateContentLeftDiv4_1_3">
 					<p>用户列表</p>
 				</li>
+<!-- 				<li class="content_4_1_2" id="templateContentLeftDiv4_1_3">
+					<p>用户列表</p>
+				</li> -->
 			</ul>
 			</div>
 			<!--用户管理结束-->

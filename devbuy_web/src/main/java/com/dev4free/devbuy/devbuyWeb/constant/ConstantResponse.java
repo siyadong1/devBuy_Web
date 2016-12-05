@@ -94,4 +94,6 @@ public class ConstantResponse {
 	
 	public static final String 	CODE_DELETEORDERSEMPTY_ERROR = "00000017";
 	public static final String 	CONTENT_DELETEORDERSEMPTY_ERROR = "请选择要删除的订单!";
+	
+	
 }

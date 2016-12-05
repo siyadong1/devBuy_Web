@@ -219,22 +219,22 @@
   
     <sql id="query_orders_where">
   	 <if test="ordersId != null and ordersId != '' ">
-        orders_id = #{ordersId,jdbcType=VARCHAR}
+       AND orders_id = #{ordersId,jdbcType=VARCHAR}
       </if>
       <if test="userId != null and userId != '' ">
-        user_id = #{userId,jdbcType=VARCHAR}
+       AND user_id = #{userId,jdbcType=VARCHAR}
       </if>
       <if test="addressId != null and addressId != '' ">
-        address_id = #{addressId,jdbcType=VARCHAR}
+       AND address_id = #{addressId,jdbcType=VARCHAR}
       </if>
       <if test="createTime != null and createTime != '' ">
-        create_time = #{createTime,jdbcType=VARCHAR}
+       AND create_time = #{createTime,jdbcType=VARCHAR}
       </if>
       <if test="sum != null and sum != '' ">
-        sum = #{sum,jdbcType=VARCHAR}
+       AND sum = #{sum,jdbcType=VARCHAR}
       </if>
       <if test="state != null and state != '' ">
-        state = #{state,jdbcType=VARCHAR}
+       AND state = #{state,jdbcType=VARCHAR}
       </if>
   </sql>
   
@@ -252,24 +252,23 @@
   AND orderdetail.items_id = items.items_id 
   AND classification.category = items.category 
   AND orders.state = orderstatus.os_code
-  AND orders.state = #{state}
   <if test="ordersId != null and ordersId != '' ">
-  AND orders_id = #{ordersId,jdbcType=VARCHAR}
+  AND orders.orders_id = #{ordersId,jdbcType=VARCHAR}
    </if>
    <if test="userId != null and userId != '' ">
-  AND user_id = #{userId,jdbcType=VARCHAR}
+  AND orders.user_id = #{userId,jdbcType=VARCHAR}
    </if>
    <if test="addressId != null and addressId != '' ">
-  AND address_id = #{addressId,jdbcType=VARCHAR}
+  AND orders.address_id = #{addressId,jdbcType=VARCHAR}
    </if>
    <if test="createTime != null and createTime != '' ">
-  AND create_time = #{createTime,jdbcType=VARCHAR}
+  AND orders.create_time = #{createTime,jdbcType=VARCHAR}
    </if>
    <if test="sum != null and sum != '' ">
-  AND sum = #{sum,jdbcType=VARCHAR}
+  AND orders.sum = #{sum,jdbcType=VARCHAR}
    </if>
    <if test="state != null and state != '' ">
-   AND state = #{state,jdbcType=VARCHAR}
+   AND orders.state = #{state,jdbcType=VARCHAR}
    </if>
   </select>
   

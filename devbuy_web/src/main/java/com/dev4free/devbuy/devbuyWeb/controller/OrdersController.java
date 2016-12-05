@@ -142,22 +142,34 @@ public class OrdersController {
 	 * @return
 	 */
 	@RequestMapping("/selectSelectiveOrders.action")
-	public ModelAndView selectSelectiveOrders(OrdersCustom ordersCustom){
+	public ModelAndView selectSelectiveOrders(OrdersCustom ordersCustom,String tag){
 		
 		List<OrdersCustom> ordersCustoms = ordersService.selectSelectiveOrders(ordersCustom);
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("ordersCustoms",ordersCustoms);
 		
-		if (ordersCustom.getState().equals(Constant.ORDERS_STATE_WAIT_FOR_PAYMENT)) {
-			modelAndView.setViewName("html/content_2_2_1");
-		}else if (ordersCustom.getState().equals(Constant.ORDERS_STATE_WAIT_FOR_SHIPMENT)){
-			modelAndView.setViewName("html/content_2_3_1");
-		}else if (ordersCustom.getState().equals(Constant.ORDERS_STATE_WAIT_FOR_RECEIVING)){
-			modelAndView.setViewName("html/content_2_4_1");
-		}else if (ordersCustom.getState().equals(Constant.ORDERS_STATE_CANCELED)){
-			modelAndView.setViewName("html/content_2_5_1");
+		
+		if (!StringUtils.isEmpty(tag) && tag.equals("userOrder")) {
+			
+			//从商户信息跳转过来的查看该商户对于的订单
+			modelAndView.setViewName("html/content_2_1_1");
+			return modelAndView;
 		}
 		
+		
+		if (ordersCustom.getState() != null) {
+			if (ordersCustom.getState().equals(Constant.ORDERS_STATE_WAIT_FOR_PAYMENT)) {
+				modelAndView.setViewName("html/content_2_2_1");
+			}else if (ordersCustom.getState().equals(Constant.ORDERS_STATE_WAIT_FOR_SHIPMENT)){
+				modelAndView.setViewName("html/content_2_3_1");
+			}else if (ordersCustom.getState().equals(Constant.ORDERS_STATE_WAIT_FOR_RECEIVING)){
+				modelAndView.setViewName("html/content_2_4_1");
+			}else if (ordersCustom.getState().equals(Constant.ORDERS_STATE_CANCELED)){
+				modelAndView.setViewName("html/content_2_5_1");
+			}	
+		}else {
+			modelAndView.setViewName("html/content_2_1_1");
+		}
 		
 		return modelAndView;
 	}

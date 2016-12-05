@@ -316,7 +316,7 @@
 
 /*全部订单开始*/
 
-#forceLogout{
+#deleteUserList{
 	display: none;	
 	width: 600px;
 	height: 200px;

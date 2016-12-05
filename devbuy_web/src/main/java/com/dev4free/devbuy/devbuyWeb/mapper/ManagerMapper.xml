@@ -129,9 +129,7 @@
   
   
  <select id="selectManagerByUsernameAndPassword" parameterType="com.dev4free.devbuy.devbuyWeb.poCustom.ManagerCustom" resultType="com.dev4free.devbuy.devbuyWeb.poCustom.ManagerCustom">
- 
  select * from manager where name=#{name} and password=#{password}
- 
  </select>
   
 </mapper>
