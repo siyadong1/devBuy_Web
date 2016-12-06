@@ -96,4 +96,15 @@ public class ConstantResponse {
 	public static final String 	CONTENT_DELETEORDERSEMPTY_ERROR = "请选择要删除的订单!";
 	
 	
+	public static final String 	CODE_ADDAPPVERSIONNAME_ERROR = "0000018";
+	public static final String 	CONTENT_ADDAPPVERSIONNAME_ERROR = "版本名称已存在!";
+	
+	
+	public static final String 	CODE_ADDAPPVERSIONVERSIONNAME_ERROR = "0000019";
+	public static final String 	CONTENT_ADDAPPVERSIONVERSIONNAME_ERROR = "版本名已存在!";
+	
+	
+	public static final String 	CODE_ADDAPPVERSIONVERSIONCODE_ERROR = "0000020";
+	public static final String 	CONTENT_ADDAPPVERSIONVERSIONCODE_ERROR = "版本号已存在!";
+	
 }

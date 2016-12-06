@@ -28,6 +28,7 @@
 	<link rel="stylesheet" href="${devbuy_web_path}/css/content_6_2_1.css" />
 	<link rel="stylesheet" href="${devbuy_web_path}/css/orderDetail.css" />
 	<link rel="stylesheet" href="${devbuy_web_path}/css/userDetail.css" />
+	<link rel="stylesheet" href="${devbuy_web_path}/css/userAddress.css" />
 	<link rel="stylesheet" href="${devbuy_web_path}/css/shoppingCarDetail.css" />	
 	<link rel="stylesheet" href="${devbuy_web_path}/css/home.css" />
 	<link rel="stylesheet" href="${devbuy_web_path}/css/ui.css" />
@@ -164,6 +165,7 @@
 	$("#templateContentHeaderTab1").removeClass("templateContentHeaderTab");
 	$("#templateContentHeaderTab6").removeClass("templateContentHeaderTab");
 		$("#templateContentRight").load("${devbuy_web_path}/html/content_5_1_1.jsp #body");
+
 			});	
 		
 		
@@ -594,6 +596,20 @@
 							}
 							/* 用户管理结束 */
 							
+							
+							
+							/* 网站管理开始 */
+							if($(this).attr("class") == "content_5_1_1"){
+								$("#templateContentRight").load("${devbuy_web_path}/html/content_5_1_1.jsp #body");						
+								/* 网站管理结束 */
+							}
+							
+							
+							/* 系统设置开始 */
+							if($(this).attr("class") == "content_6_2_1"){
+								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllAppversion.action");
+							/* 系统设置结束 */
+							}
 							
 					});
 				}

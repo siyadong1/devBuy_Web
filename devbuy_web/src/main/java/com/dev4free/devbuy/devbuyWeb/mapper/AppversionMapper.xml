@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dev4free.devbuy.devbuyWeb.mapper.AppversionMapper">
+  <resultMap id="BaseResultMap" type="com.dev4free.devbuy.devbuyWeb.po.Appversion">
+    <id column="appversion_id" jdbcType="VARCHAR" property="appversionId" />
+    <result column="appversion_name" jdbcType="VARCHAR" property="appversionName" />
+    <result column="appversion_version_code" jdbcType="VARCHAR" property="appversionVersionCode" />
+    <result column="appversion_version_name" jdbcType="VARCHAR" property="appversionVersionName" />
+    <result column="appversion_show" jdbcType="VARCHAR" property="appversionShow" />
+    <result column="appversion_createtime" jdbcType="VARCHAR" property="appversionCreatetime" />
+    <result column="appversion_modifytime" jdbcType="VARCHAR" property="appversionModifytime" />
+    <result column="appversion_description" jdbcType="VARCHAR" property="appversionDescription" />
+    <result column="appversion_url" jdbcType="VARCHAR" property="appversionUrl" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    appversion_id, appversion_name, appversion_version_code, appversion_version_name, 
+    appversion_show, appversion_createtime, appversion_modifytime, appversion_description, 
+    appversion_url
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from appversion
+    where appversion_id = #{appversionId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from appversion
+    where appversion_id = #{appversionId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.dev4free.devbuy.devbuyWeb.po.Appversion">
+    insert into appversion (appversion_id, appversion_name, appversion_version_code, 
+      appversion_version_name, appversion_show, 
+      appversion_createtime, appversion_modifytime, 
+      appversion_description, appversion_url)
+    values (#{appversionId,jdbcType=VARCHAR}, #{appversionName,jdbcType=VARCHAR}, #{appversionVersionCode,jdbcType=VARCHAR}, 
+      #{appversionVersionName,jdbcType=VARCHAR}, #{appversionShow,jdbcType=VARCHAR}, 
+      #{appversionCreatetime,jdbcType=VARCHAR}, #{appversionModifytime,jdbcType=VARCHAR}, 
+      #{appversionDescription,jdbcType=VARCHAR}, #{appversionUrl,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.dev4free.devbuy.devbuyWeb.po.Appversion">
+    insert into appversion
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="appversionId != null">
+        appversion_id,
+      </if>
+      <if test="appversionName != null">
+        appversion_name,
+      </if>
+      <if test="appversionVersionCode != null">
+        appversion_version_code,
+      </if>
+      <if test="appversionVersionName != null">
+        appversion_version_name,
+      </if>
+      <if test="appversionShow != null">
+        appversion_show,
+      </if>
+      <if test="appversionCreatetime != null">
+        appversion_createtime,
+      </if>
+      <if test="appversionModifytime != null">
+        appversion_modifytime,
+      </if>
+      <if test="appversionDescription != null">
+        appversion_description,
+      </if>
+      <if test="appversionUrl != null">
+        appversion_url,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="appversionId != null">
+        #{appversionId,jdbcType=VARCHAR},
+      </if>
+      <if test="appversionName != null">
+        #{appversionName,jdbcType=VARCHAR},
+      </if>
+      <if test="appversionVersionCode != null">
+        #{appversionVersionCode,jdbcType=VARCHAR},
+      </if>
+      <if test="appversionVersionName != null">
+        #{appversionVersionName,jdbcType=VARCHAR},
+      </if>
+      <if test="appversionShow != null">
+        #{appversionShow,jdbcType=VARCHAR},
+      </if>
+      <if test="appversionCreatetime != null">
+        #{appversionCreatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="appversionModifytime != null">
+        #{appversionModifytime,jdbcType=VARCHAR},
+      </if>
+      <if test="appversionDescription != null">
+        #{appversionDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="appversionUrl != null">
+        #{appversionUrl,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.dev4free.devbuy.devbuyWeb.po.Appversion">
+    update appversion
+    <set>
+      <if test="appversionName != null">
+        appversion_name = #{appversionName,jdbcType=VARCHAR},
+      </if>
+      <if test="appversionVersionCode != null">
+        appversion_version_code = #{appversionVersionCode,jdbcType=VARCHAR},
+      </if>
+      <if test="appversionVersionName != null">
+        appversion_version_name = #{appversionVersionName,jdbcType=VARCHAR},
+      </if>
+      <if test="appversionShow != null">
+        appversion_show = #{appversionShow,jdbcType=VARCHAR},
+      </if>
+      <if test="appversionCreatetime != null">
+        appversion_createtime = #{appversionCreatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="appversionModifytime != null">
+        appversion_modifytime = #{appversionModifytime,jdbcType=VARCHAR},
+      </if>
+      <if test="appversionDescription != null">
+        appversion_description = #{appversionDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="appversionUrl != null">
+        appversion_url = #{appversionUrl,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where appversion_id = #{appversionId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.dev4free.devbuy.devbuyWeb.po.Appversion">
+    update appversion
+    set appversion_name = #{appversionName,jdbcType=VARCHAR},
+      appversion_version_code = #{appversionVersionCode,jdbcType=VARCHAR},
+      appversion_version_name = #{appversionVersionName,jdbcType=VARCHAR},
+      appversion_show = #{appversionShow,jdbcType=VARCHAR},
+      appversion_createtime = #{appversionCreatetime,jdbcType=VARCHAR},
+      appversion_modifytime = #{appversionModifytime,jdbcType=VARCHAR},
+      appversion_description = #{appversionDescription,jdbcType=VARCHAR},
+      appversion_url = #{appversionUrl,jdbcType=VARCHAR}
+    where appversion_id = #{appversionId,jdbcType=VARCHAR}
+  </update>
+  
+  
+  
+  
+      <resultMap id="BaseResultMapCustom" type="com.dev4free.devbuy.devbuyWeb.poCustom.AppversionCustom">
+    <id column="appversion_id" jdbcType="VARCHAR" property="appversionId" />
+    <result column="appversion_name" jdbcType="VARCHAR" property="appversionName" />
+    <result column="appversion_version_code" jdbcType="VARCHAR" property="appversionVersionCode" />
+    <result column="appversion_version_name" jdbcType="VARCHAR" property="appversionVersionName" />
+    <result column="appversion_show" jdbcType="VARCHAR" property="appversionShow" />
+    <result column="appversion_createtime" jdbcType="VARCHAR" property="appversionCreatetime" />
+    <result column="appversion_modifytime" jdbcType="VARCHAR" property="appversionModifytime" />
+    <result column="appversion_description" jdbcType="VARCHAR" property="appversionDescription" />
+    <result column="appversion_url" jdbcType="VARCHAR" property="appversionUrl" />
+  </resultMap>
+  
+    <select id="queryAllAppversion"  resultMap="BaseResultMapCustom" >
+  	select * from appversion
+  </select>
+  
+  
+  
+    <sql id="query_appversion_where">
+      <if test="appversionId != null and appversionId != '' ">
+        and appversion_id = #{appversionId,jdbcType=VARCHAR}
+      </if>
+      <if test="appversionName != null and appversionName != '' ">
+        and appversion_name = #{appversionName,jdbcType=VARCHAR}
+      </if>
+      <if test="appversionVersionCode != null and appversionVersionCode != '' ">
+        and appversion_version_code = #{appversionVersionCode,jdbcType=VARCHAR}
+      </if>
+      <if test="appversionVersionName != null and appversionVersionName != '' ">
+        and appversion_version_name = #{appversionVersionName,jdbcType=VARCHAR}
+      </if>
+      <if test="appversionShow != null and appversionShow != '' ">
+        and appversion_show = #{appversionShow,jdbcType=VARCHAR}
+      </if>
+      <if test="appversionCreatetime != null and appversionCreatetime != '' ">
+        and appversion_createtime = #{appversionCreatetime,jdbcType=VARCHAR}
+      </if>
+      <if test="appversionModifytime != null and appversionModifytime != '' ">
+        and appversion_modifytime = #{appversionModifytime,jdbcType=VARCHAR}
+      </if>
+      <if test="appversionDescription != null and appversionDescription != '' ">
+        and appversion_description = #{appversionDescription,jdbcType=VARCHAR}
+      </if>
+      <if test="appversionUrl != null and appversionUrl != '' ">
+        and appversion_url = #{appversionUrl,jdbcType=VARCHAR}
+      </if>
+  </sql>
+  
+
+
+
+    
+  <select id="selectSelective" parameterType="com.dev4free.devbuy.devbuyWeb.poCustom.AppversionCustom" resultMap="BaseResultMapCustom" >
+  	  	SELECT * FROM appversion
+  	<where>
+  		<include refid="query_appversion_where" ></include>
+  	</where>
+  </select>
+  
+  
+        
+  
+  <delete id="deleteAppversionByIds" parameterType="Object[]" >
+  delete from appversion 
+  <where>
+  <if  test="array != null and array.length > 0">
+	<foreach collection="array" item="item" open="and appversion_id in (" close=")" separator=",">
+			#{item}
+	</foreach>
+  </if>
+  </where>
+  </delete>
+  
+  
+  
+  
+  
+  
+  
+</mapper>

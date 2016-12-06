@@ -38,5 +38,7 @@
  
  <bean id="addressService" class="com.dev4free.devbuy.devbuyWeb.serviceImpl.AddressServiceImpl"></bean>	
  
+ <bean id="appversionService" class="com.dev4free.devbuy.devbuyWeb.serviceImpl.AppversionServiceImpl"></bean>	
+ 
  	
 </beans>

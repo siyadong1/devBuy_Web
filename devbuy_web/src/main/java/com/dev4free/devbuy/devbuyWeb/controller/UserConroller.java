@@ -97,5 +97,34 @@ public class UserConroller {
 			modelAndView.setViewName("html/userDetail");
 			return modelAndView;
 		}
+		
+		
+		
+		
+		
+		
+		
+		/**
+		 * 查询用户详情和用户的所有收货地址
+		 * @param userId
+		 * @return
+		 */
+		@RequestMapping("/queryUserAddress.action")
+		public ModelAndView queryUserAddress(String userId){
+			UserCustom userCustoms = userService.queryUsersByPrimarykey(userId);
+			AddressCustom addressCustom = new AddressCustom();
+			addressCustom.setUserId(userId);
+			List<AddressCustom> addressCustoms = addressService.selcetSelective(addressCustom);
+			ModelAndView modelAndView = new ModelAndView();
+			modelAndView.addObject("addressCustoms",addressCustoms);
+			modelAndView.addObject("userCustoms",userCustoms);
+			modelAndView.setViewName("html/userAddress");
+			return modelAndView;
+		}
+		
+		
+		
+		
+		
 	
 }

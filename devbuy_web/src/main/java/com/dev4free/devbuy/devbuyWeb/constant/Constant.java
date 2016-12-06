@@ -23,6 +23,10 @@ public class Constant {
 	 * 存放商品Banner的图片的子路径
 	 */
 	public static final String IMAGE_BANNER= "banner/" ;
+	/**
+	 * 存放app的子路径
+	 */
+	public static final String IMAGE_APPVERSION= "appversion/" ;
 	
 	
 	/**

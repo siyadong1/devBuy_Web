@@ -144,12 +144,6 @@ public class BannerController {
 		
 //		判断商品名称是否已经存在
 		
-		if (itemsCustom == null) {
-			entityResponse.setCode(ConstantResponse.CODE_REQUESTPARAMETER_ERROR);
-			entityResponse.setMessage(ConstantResponse.CONTENT_REQUESTPARAMETER_ERROR);
-			return entityResponse;	
-		}
-		
 		if (StringUtils.isEmpty(itemsCustom.getItemsname())) {
 			entityResponse.setCode(ConstantResponse.CODE_UPDATEITEMNAMEEMPTY_ERROR);
 			entityResponse.setMessage(ConstantResponse.CONTENT_UPDATEITEMNAMEEMPTY_ERROR);
@@ -254,12 +248,6 @@ public class BannerController {
 		
 		
 //		判断商品名称是否已经存在
-		
-		if (itemsCustom == null) {
-			entityResponse.setCode(ConstantResponse.CODE_REQUESTPARAMETER_ERROR);
-			entityResponse.setMessage(ConstantResponse.CONTENT_REQUESTPARAMETER_ERROR);
-			return entityResponse;	
-		}
 		
 		if (StringUtils.isEmpty(itemsCustom.getItemsname())) {
 			entityResponse.setCode(ConstantResponse.CODE_UPDATEITEMNAMEEMPTY_ERROR);

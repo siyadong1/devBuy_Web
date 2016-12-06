@@ -21,9 +21,8 @@ function goToOrder(devbuy_web,userId){
 	$("#templateContentRight").load(devbuy_web + "/java/manageplatform/selectSelectiveOrders.action?userId=" + userId + "&tag=userOrder")
 }
 
-function goToAddress(){
-	$("#templateContentRight").load("/devbuy_web/html/userAddress.html #body");
-	
+function goToAddress(devbuy_web,userId){
+	$("#templateContentRight").load(devbuy_web + "/java/manageplatform/queryUserAddress.action?userId=" + userId)
 }
 
 

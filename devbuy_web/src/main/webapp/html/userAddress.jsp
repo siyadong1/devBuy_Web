@@ -5,27 +5,27 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>用户详情</title>
-		<link rel="stylesheet" href="${devbuy_web_path}/css/userDetail.css" />
+		<title>收货地址</title>
+		<link rel="stylesheet" href="${devbuy_web_path}/css/userAddress.css" />
 		<link rel="stylesheet" href="${devbuy_web_path}/css/common.css" />
 		<link rel="stylesheet" href="${devbuy_web_path}/css/ui.css" />
 		<script type="text/javascript" src="${devbuy_web_path}/js/jquery-2.1.1.min.js" ></script>
 		<script type="text/javascript" src="${devbuy_web_path}/js/jquery-form.js"></script> 
-		<script type="text/javascript" src="${devbuy_web_path}/js/userDetail.js" ></script>
+		<script type="text/javascript" src="${devbuy_web_path}/js/userAddress.js" ></script>
 	</head>
 	<body>
 		<div id="body">
-			<div id="userInfo">
+			<div id="userAddress">
 				<!--用户信息头部-->
-				<div id="userInfoHeader">
-					<p>用户详情</p>
+				<div id="userAddressHeader">
+					<p>收货地址</p>
 				</div>
 				<!--用户基本信息区域-->
 				<form>
-					<p class="userInfoSubtitle">基本信息</p>
+					<p class="userAddressSubtitle">基本信息</p>
 					<table  cellpadding="10px">
 						<tr>
-							<td><p>用户名</p></td>
+							<td><p>用户姓名</p></td>
 							<td><input type="text" value="${userCustoms.username}" /></td>
 						</tr>
 						<tr>
@@ -36,14 +36,10 @@
 							<td><p>用户昵称</p></td>
 							<td><input type="text" value="${userCustoms.nickname}" /></td>
 						</tr>
-						
 						<tr>
 							<td><p>注册时间</p></td>
 							<td><input type="text" value="${userCustoms.regtime}" /></td>
 						</tr>
-						
-						
-						
 						<tr>
 							<td><p>钱包余额</p></td>
 							<td><input type="text" value="${userCustoms.balance}"/></td>
@@ -56,47 +52,42 @@
 					</table>
 											
 
-
-				<p class="userInfoSubtitle">默认收货地址</p>
+				<c:forEach  items="${addressCustoms}"  var="addressCustom" >
+				<c:if test="${addressCustom.defaultAddress == '0'}" >
+				<p class="userAddressSubtitle">默认收货地址</p>
+				</c:if>
+				
+				<c:if test="${addressCustom.defaultAddress != '0'}" >
+				<p class="userAddressSubtitle">其它收货地址</p>
+				</c:if>
+				
 					<table  cellpadding="10px">
 						<tr>
+							<td><p>省份</p></td>
+							<td><input type="text" value="${addressCustom.province}" /></td>
+						</tr>
+						<tr>
+							<td><p>城市</p></td>
+							<td><input type="text" value="${addressCustom.city}" /></td>
+						</tr>
+						<tr>
 							<td><p>收货地址</p></td>
-							<td><input type="text" value="${addressCustoms.province}${addressCustoms.city}${addressCustoms.detailAddress}" /></td>
+							<td><input type="text" value="${addressCustom.detailAddress}" /></td>
 						</tr>
 						<tr>
 							<td><p>联系人</p></td>
-							<td><input type="text" value="${addressCustoms.consigneeName}" /></td>
+							<td><input type="text" value="${addressCustom.consigneeName}" /></td>
 						</tr>
 						<tr>
 							<td><p>联系电话</p></td>
-							<td><input type="text" value="${addressCustoms.phoneNumber}" /></td>
-						</tr>
-						
-						<tr>
-							<td><p>其它地址</p></td>
-							<td><button type="button"  onclick="goToAddress('${devbuy_web_path}','${userCustoms.userId}')">去查看</button></td>
+							<td><input type="text" value="${addressCustom.phoneNumber}" /></td>
 						</tr>
 					</table>
-											
-
-
-				<p class="userInfoSubtitle">查看订单</p>
-					<table  cellpadding="10px">
-						
-						<tr>
-							<td><p>所有订单</p></td>
-							<td><button  type="button"   onclick="goToOrder('${devbuy_web_path}','${userCustoms.userId}')">去查看</button></td>
-						</tr>
-					</table>
-											
-
-
-
+					</c:forEach>
 				</form>
-				
 					<tr>
-						<td >
-							<button type="button" id="submitButton" onclick="confirmUserDetail('${devbuy_web_path}')"  >确定</button>
+						<td>
+							<button  type="button"    onclick="confirmUserAddress('${devbuy_web_path}')">确定</button>
 						</td>
 					</tr>
 				
