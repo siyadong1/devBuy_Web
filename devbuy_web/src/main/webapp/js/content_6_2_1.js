@@ -34,7 +34,7 @@ function confirmHideAddVersionDialog(devbuy_web_path){
 		});
 	 var form = $("form[name=addVersion]");  
      var options  = {    
-         url:devbuy_web_path + '/java/manageplatform/insertSelective.action',    
+         url:devbuy_web_path + '/java/manageplatform/insertAppversionSelective.action',    
          type:'post',    
          success:function(data)    
          {   

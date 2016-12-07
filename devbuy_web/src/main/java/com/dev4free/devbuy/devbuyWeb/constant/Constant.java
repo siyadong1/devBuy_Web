@@ -11,6 +11,15 @@ public class Constant {
 	 * 图片实际存放路径
 	 */
 	public static final String IMAGE_ROOT_REAL_PATH_WEB= "/usr/local/images/web/" ;
+	
+	
+	/**
+	 * 图片存放路径（服务器端）
+	 */
+	public static final String IMAGE_ROOT_MAPPING_PATH_WEB= "http://www.dev4free.com/devbuy/web/java/images/";
+	
+	
+	
 	/**
 	 * 存放商品分类的图片的子路径
 	 */

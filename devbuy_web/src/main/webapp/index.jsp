@@ -53,6 +53,10 @@
 		}
 		
 		
+		var index = layer.load(1, {
+			  shade: [0.1,'#fff'] //0.1透明度的白色背景
+			});
+		
       return true;				
 				
 	});
@@ -94,11 +98,9 @@
     	    	<div class=" floatLeft marginLeft16px marginTop16px">
     	    		
     	    		
-    	    		<form action="/devbuy_web/java/manageplatform/login.action">
+    	    		<form action="/devbuy_web/java/manageplatform/login.action" method="post">
     	    			
     	    			<h2 id="loginHeader" class="marginBottom16px">devBuy后台管理系统登录界面</h2>
-    	    			
-    	    			
     	    			<span class="text16px marginTop16px ">用户名：</span> <input  id="username"  name="name" type="text"  value="${manager}" placeholder="请输入用户名" class="text16px"/>
     	    			<br /><br />
     	    			<span class="text16px">密码：&nbsp;&nbsp;&nbsp;</span> <input id="password"  name="password"  type="text" placeholder="请输入登录密码" class="text16px"/>

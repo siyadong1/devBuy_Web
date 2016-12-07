@@ -107,4 +107,29 @@ public class ConstantResponse {
 	public static final String 	CODE_ADDAPPVERSIONVERSIONCODE_ERROR = "0000020";
 	public static final String 	CONTENT_ADDAPPVERSIONVERSIONCODE_ERROR = "版本号已存在!";
 	
+	
+	public static final String 	CODE_ADDMANAGERNAMEEXIT_ERROR = "0000021";
+	public static final String 	CONTENT_ADDMANAGERNAMEEXIT_ERROR = "管理员已存在!";
+	
+	
+	public static final String 	CODE_ADDMANAGERPASSWORD_ERROR = "0000022";
+	public static final String 	CONTENT_ADDMANAGERPASSWORD_ERROR = "管理员密码至少为六位!";
+	
+	
+	
+	public static final String 	CODE_DELETEMANAGERNOPRIORITY_ERROR = "0000023";
+	public static final String 	CONTENT_DELETEMANAGERNOPRIORITY_ERROR = "只有admin管理员才有删除权限!";
+	
+	public static final String 	CODE_DELETEMANAGERDELETEADMIN_ERROR = "0000024";
+	public static final String 	CONTENT_DELETEMANAGERDELETEADMIN_ERROR = "不能删除admin这个超级管理员!";
+	
+	
+	
+	public static final String 	CODE_UPDATEMANAGERNOPRIORITY_ERROR = "0000024";
+	public static final String 	CONTENT_UPDATEMANAGERNOPRIORITY_ERROR = "只有admin管理员才有更新权限!";
+	
+	
+	public static final String 	CODE_ADDMANAGERNOPRIORITY_ERROR = "0000025";
+	public static final String 	CONTENT_ADDMANAGERNOPRIORITY_ERROR = "只有超级管理员才有新增权限!";
+	
 }

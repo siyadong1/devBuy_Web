@@ -11,10 +11,6 @@ public class Manager {
 
     private String description;
 
-    private Integer submanagerCount;
-
-    private String parentManager;
-
     private String createTime;
 
     public String getManagerId() {
@@ -55,22 +51,6 @@ public class Manager {
 
     public void setDescription(String description) {
         this.description = description == null ? null : description.trim();
-    }
-
-    public Integer getSubmanagerCount() {
-        return submanagerCount;
-    }
-
-    public void setSubmanagerCount(Integer submanagerCount) {
-        this.submanagerCount = submanagerCount;
-    }
-
-    public String getParentManager() {
-        return parentManager;
-    }
-
-    public void setParentManager(String parentManager) {
-        this.parentManager = parentManager == null ? null : parentManager.trim();
     }
 
     public String getCreateTime() {

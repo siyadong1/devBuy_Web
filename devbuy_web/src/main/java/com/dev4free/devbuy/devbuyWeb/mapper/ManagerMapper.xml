@@ -7,13 +7,10 @@
     <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="supermanager" jdbcType="VARCHAR" property="supermanager" />
     <result column="description" jdbcType="VARCHAR" property="description" />
-    <result column="submanager_count" jdbcType="INTEGER" property="submanagerCount" />
-    <result column="parent_manager" jdbcType="VARCHAR" property="parentManager" />
     <result column="create_time" jdbcType="VARCHAR" property="createTime" />
   </resultMap>
   <sql id="Base_Column_List">
-    manager_id, name, password, supermanager, description, submanager_count, parent_manager, 
-    create_time
+    manager_id, name, password, supermanager, description, create_time
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
@@ -27,11 +24,11 @@
   </delete>
   <insert id="insert" parameterType="com.dev4free.devbuy.devbuyWeb.po.Manager">
     insert into manager (manager_id, name, password, 
-      supermanager, description, submanager_count, 
-      parent_manager, create_time)
+      supermanager, description, create_time
+      )
     values (#{managerId,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{supermanager,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, #{submanagerCount,jdbcType=INTEGER}, 
-      #{parentManager,jdbcType=VARCHAR}, #{createTime,jdbcType=VARCHAR})
+      #{supermanager,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, #{createTime,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.dev4free.devbuy.devbuyWeb.po.Manager">
     insert into manager
@@ -50,12 +47,6 @@
       </if>
       <if test="description != null">
         description,
-      </if>
-      <if test="submanagerCount != null">
-        submanager_count,
-      </if>
-      <if test="parentManager != null">
-        parent_manager,
       </if>
       <if test="createTime != null">
         create_time,
@@ -77,12 +68,6 @@
       <if test="description != null">
         #{description,jdbcType=VARCHAR},
       </if>
-      <if test="submanagerCount != null">
-        #{submanagerCount,jdbcType=INTEGER},
-      </if>
-      <if test="parentManager != null">
-        #{parentManager,jdbcType=VARCHAR},
-      </if>
       <if test="createTime != null">
         #{createTime,jdbcType=VARCHAR},
       </if>
@@ -103,12 +88,6 @@
       <if test="description != null">
         description = #{description,jdbcType=VARCHAR},
       </if>
-      <if test="submanagerCount != null">
-        submanager_count = #{submanagerCount,jdbcType=INTEGER},
-      </if>
-      <if test="parentManager != null">
-        parent_manager = #{parentManager,jdbcType=VARCHAR},
-      </if>
       <if test="createTime != null">
         create_time = #{createTime,jdbcType=VARCHAR},
       </if>
@@ -121,15 +100,81 @@
       password = #{password,jdbcType=VARCHAR},
       supermanager = #{supermanager,jdbcType=VARCHAR},
       description = #{description,jdbcType=VARCHAR},
-      submanager_count = #{submanagerCount,jdbcType=INTEGER},
-      parent_manager = #{parentManager,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=VARCHAR}
     where manager_id = #{managerId,jdbcType=VARCHAR}
   </update>
   
   
+    
  <select id="selectManagerByUsernameAndPassword" parameterType="com.dev4free.devbuy.devbuyWeb.poCustom.ManagerCustom" resultType="com.dev4free.devbuy.devbuyWeb.poCustom.ManagerCustom">
  select * from manager where name=#{name} and password=#{password}
  </select>
+  
+  
+  
+  
+  
+  
+  
+    <resultMap id="BaseResultMapCustom" type="com.dev4free.devbuy.devbuyWeb.poCustom.ManagerCustom">
+    <id column="manager_id" jdbcType="VARCHAR" property="managerId" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="supermanager" jdbcType="VARCHAR" property="supermanager" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="create_time" jdbcType="VARCHAR" property="createTime" />
+  </resultMap>
+  
+  
+  
+  
+  
+  
+  <select id="queryAllManager"  resultMap="BaseResultMapCustom"  >
+  select * from manager
+  </select>
+  
+  
+  
+  <sql id="query_manager_where">
+      <if test="name != null and name != '' ">
+       and name = #{name,jdbcType=VARCHAR}
+      </if>
+      <if test="password != null and password != '' ">
+       and password = #{password,jdbcType=VARCHAR}
+      </if>
+      <if test="supermanager != null and supermanager != '' ">
+       and supermanager = #{supermanager,jdbcType=VARCHAR}
+      </if>
+      <if test="description != null and description != '' ">
+       and description = #{description,jdbcType=VARCHAR}
+      </if>
+      <if test="createTime != null and createTime != '' ">
+       and create_time = #{createTime,jdbcType=VARCHAR}
+      </if>
+  </sql>
+  
+  
+  <select id="selectSelective"   parameterType="com.dev4free.devbuy.devbuyWeb.poCustom.ManagerCustom"  resultMap="BaseResultMapCustom" >
+  select * from manager 
+    <where>
+  		<include refid="query_manager_where" ></include>
+  	</where>
+  </select>
+  
+  
+  
+          
+  
+  <delete id="deleteManagerByIds" parameterType="Object[]" >
+  delete from manager 
+  <where>
+  <if  test="array != null and array.length > 0">
+	<foreach collection="array" item="item" open="and manager_id in (" close=")" separator=",">
+			#{item}
+	</foreach>
+  </if>
+  </where>
+  </delete>
   
 </mapper>

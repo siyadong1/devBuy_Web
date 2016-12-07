@@ -60,8 +60,8 @@ public class AppversionController {
 	 * @param appversionFile
 	 * @return
 	 */
-	@RequestMapping("/insertSelective.action")
-	public @ResponseBody EntityResponse insertSelective(AppversionCustom appversionCustom,MultipartFile appversionFile){
+	@RequestMapping("/insertAppversionSelective.action")
+	public @ResponseBody EntityResponse insertAppversionSelective(AppversionCustom appversionCustom,MultipartFile appversionFile){
 		EntityResponse entityResponse = new EntityResponse(ConstantResponse.CODE_NORMAL,ConstantResponse.CONTENT_NORMAL);
 		//检测非空参数
 		if (appversionCustom == null || appversionFile == null 
@@ -110,7 +110,7 @@ public class AppversionController {
 			if (!uploadFile.exists()) {
 				uploadFile.mkdirs();
 			}
-			appversionCustom.setAppversionUrl(uploadFile.toString());
+			appversionCustom.setAppversionUrl(Constant.IMAGE_ROOT_MAPPING_PATH_WEB + Constant.IMAGE_APPVERSION + appFileNewName);
 			try {
 				appversionFile.transferTo(uploadFile);
 			} catch (IllegalStateException e) {
@@ -230,7 +230,7 @@ public class AppversionController {
 			if (!uploadFile.exists()) {
 				uploadFile.mkdirs();
 			}
-			appversionCustom.setAppversionUrl(uploadFile.toString());
+			appversionCustom.setAppversionUrl(Constant.IMAGE_ROOT_MAPPING_PATH_WEB + Constant.IMAGE_APPVERSION + appFileNewName);
 			try {
 				appversionFile.transferTo(uploadFile);
 			} catch (IllegalStateException e) {

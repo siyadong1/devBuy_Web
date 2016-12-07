@@ -78,6 +78,7 @@
 		/***************************内容区域头部的点击事情，切换Tab条目Start****************************/
 		
 	$("#templateContentHeaderTab1").click(function(){
+	var index = layer.load(1, {shade: [0.1,'#fff'] });
 	$("#templateContentLeftDiv1").show();
 	$("#templateContentLeftDiv2").hide();
 	$("#templateContentLeftDiv3").hide();
@@ -91,12 +92,15 @@
 	$("#templateContentHeaderTab5").removeClass("templateContentHeaderTab");
 	$("#templateContentHeaderTab6").removeClass("templateContentHeaderTab");
 	
-	$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllClassification.action")
+	$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllClassification.action",function(){
+		 layer.close(index);    
+	})
 	
 	});	
 		
 		
 	$("#templateContentHeaderTab2").click(function(){
+		var index = layer.load(1, {shade: [0.1,'#fff'] });
 	$("#templateContentLeftDiv2").show();
 	$("#templateContentHeaderTab2").addClass("templateContentHeaderTab");
 	$("#templateContentLeftDiv1").hide();
@@ -110,11 +114,14 @@
 	$("#templateContentHeaderTab4").removeClass("templateContentHeaderTab");
 	$("#templateContentHeaderTab5").removeClass("templateContentHeaderTab");
 	$("#templateContentHeaderTab6").removeClass("templateContentHeaderTab");
-	$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllOrders.action")
+	$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllOrders.action",function(){
+		 layer.close(index);    
+	})
 		});		
 		
 		
 	$("#templateContentHeaderTab3").click(function(){
+		var index = layer.load(1, {shade: [0.1,'#fff'] });
 	$("#templateContentLeftDiv3").show();
 	$("#templateContentHeaderTab3").addClass("templateContentHeaderTab");
 	$("#templateContentLeftDiv1").hide();
@@ -128,11 +135,14 @@
 	$("#templateContentHeaderTab4").removeClass("templateContentHeaderTab");
 	$("#templateContentHeaderTab5").removeClass("templateContentHeaderTab");
 	$("#templateContentHeaderTab6").removeClass("templateContentHeaderTab");
-	$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllShoppingcartRecord.action")
+	$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllShoppingcartRecord.action",function(){
+		 layer.close(index);    
+	})
 		});		
 		
 		
 	$("#templateContentHeaderTab4").click(function(){
+		var index = layer.load(1, {shade: [0.1,'#fff'] });
 	$("#templateContentLeftDiv4").show();
 	$("#templateContentHeaderTab4").addClass("templateContentHeaderTab");
 	$("#templateContentLeftDiv1").hide();
@@ -146,11 +156,14 @@
 	$("#templateContentHeaderTab1").removeClass("templateContentHeaderTab");
 	$("#templateContentHeaderTab5").removeClass("templateContentHeaderTab");
 	$("#templateContentHeaderTab6").removeClass("templateContentHeaderTab");
-	$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllUsers.action")
+	$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllUsers.action",function(){
+		 layer.close(index);    
+	})
 		});		
 		
 		
 	$("#templateContentHeaderTab5").click(function(){
+		var index = layer.load(1, {shade: [0.1,'#fff'] });
 	$("#templateContentLeftDiv5").show();
 	$("#templateContentHeaderTab5").addClass("templateContentHeaderTab");
 	$("#templateContentLeftDiv1").hide();
@@ -164,13 +177,16 @@
 	$("#templateContentHeaderTab4").removeClass("templateContentHeaderTab");
 	$("#templateContentHeaderTab1").removeClass("templateContentHeaderTab");
 	$("#templateContentHeaderTab6").removeClass("templateContentHeaderTab");
-		$("#templateContentRight").load("${devbuy_web_path}/html/content_5_1_1.jsp #body");
+		$("#templateContentRight").load("${devbuy_web_path}/html/content_5_1_1.jsp #body",function(){
+			 layer.close(index);    
+		});
 
 			});	
 		
 		
 		
 	$("#templateContentHeaderTab6").click(function(){
+		var index = layer.load(1, {shade: [0.1,'#fff'] });
 	$("#templateContentLeftDiv6").show();
 	$("#templateContentHeaderTab6").addClass("templateContentHeaderTab");
 	$("#templateContentLeftDiv1").hide();
@@ -184,7 +200,9 @@
 	$("#templateContentHeaderTab4").removeClass("templateContentHeaderTab");
 	$("#templateContentHeaderTab5").removeClass("templateContentHeaderTab");
 	$("#templateContentHeaderTab1").removeClass("templateContentHeaderTab");
-		$("#templateContentRight").load("${devbuy_web_path}/html/content_6_1_1.jsp #body");
+	$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllManager.action",function(){
+		 layer.close(index);    
+	});
 		});		
 		
 	/***************************内容区域头部的点击事情，切换Tab条目End****************************/
@@ -505,39 +523,63 @@
 							
 							/* 商品管理开始 */
 							if($(this).attr("class") == "content_1_1_1"){
-								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllClassification.action")
+								var index = layer.load(1, {shade: [0.1,'#fff'] });
+								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllClassification.action",function(){
+									 layer.close(index);    
+								})
 							}
 							
 							
 							if($(this).attr("class") == "content_1_2_1"){
-								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllItems.action")
+								var index = layer.load(1, {shade: [0.1,'#fff'] });
+								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllItems.action",function(){
+									 layer.close(index);    
+								})
 							}
 							
 							
 							if($(this).attr("class") == "content_1_2_2"){
-								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/selectClassificationForAddGoods.action");
+								var index = layer.load(1, {shade: [0.1,'#fff'] });
+								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/selectClassificationForAddGoods.action",function(){
+									 layer.close(index);    
+								});
 							}
 							
 							
 							if($(this).attr("class") == "content_1_3_1"){
-								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllBanners.action");
+								var index = layer.load(1, {shade: [0.1,'#fff'] });
+								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllBanners.action",function(){
+									 layer.close(index);    
+								});
 							}
 
 							
 							if($(this).attr("class") == "content_1_3_2"){
-								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/selectClassificationForAddBanner.action");
+								var index = layer.load(1, {shade: [0.1,'#fff'] });
+								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/selectClassificationForAddBanner.action",function(){
+									 layer.close(index);    
+								});
 							}
 							
 							if($(this).attr("class") == "content_1_4_1"){
-								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllClassification.action")
+								var index = layer.load(1, {shade: [0.1,'#fff'] });
+								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllClassification.action",function(){
+									 layer.close(index);    
+								})
 							}
 							
 							if($(this).attr("class") == "content_1_5_1"){
-								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllRecommend.action")
+								var index = layer.load(1, {shade: [0.1,'#fff'] });
+								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllRecommend.action",function(){
+									 layer.close(index);    
+								})
 							}
 							
 							if($(this).attr("class") == "content_1_5_2"){
-								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/selectClassificationForAddRecommend.action")
+								var index = layer.load(1, {shade: [0.1,'#fff'] });
+								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/selectClassificationForAddRecommend.action",function(){
+									 layer.close(index);    
+								})
 							}
 							/* 商品管理结束 */
 							
@@ -546,37 +588,55 @@
 							/* 订单管理开始 */
 							
 							if($(this).attr("class") == "content_2_1_1"){
-								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllOrders.action")
+								var index = layer.load(1, {shade: [0.1,'#fff'] });
+								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllOrders.action",function(){
+									 layer.close(index);    
+								})
 							}
 							
 							
 							
 							if($(this).attr("class") == "content_2_2_1"){
-								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/selectSelectiveOrders.action?state=0")
+								var index = layer.load(1, {shade: [0.1,'#fff'] });
+								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/selectSelectiveOrders.action?state=0",function(){
+									 layer.close(index);    
+								})
 							}
 							
 							
 							
 							
 							if($(this).attr("class") == "content_2_3_1"){
-								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/selectSelectiveOrders.action?state=1")
+								var index = layer.load(1, {shade: [0.1,'#fff'] });
+								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/selectSelectiveOrders.action?state=1",function(){
+									 layer.close(index);    
+								})
 							}
 							
 							
 							
 							
 							if($(this).attr("class") == "content_2_4_1"){
-								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/selectSelectiveOrders.action?state=2")
+								var index = layer.load(1, {shade: [0.1,'#fff'] });
+								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/selectSelectiveOrders.action?state=2",function(){
+									 layer.close(index);    
+								})
 							}
 							
 							
 							if($(this).attr("class") == "content_2_5_1"){
-								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/selectSelectiveOrders.action?state=4")
+								var index = layer.load(1, {shade: [0.1,'#fff'] });
+								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/selectSelectiveOrders.action?state=4",function(){
+									 layer.close(index);    
+								})
 							}
 							
 							
 							if($(this).attr("class") == "content_2_6_1"){
-								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllOrderStatus.action")
+								var index = layer.load(1, {shade: [0.1,'#fff'] });
+								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllOrderStatus.action",function(){
+									 layer.close(index);    
+								})
 							}
 							/* 订单管理结束 */
 							
@@ -585,14 +645,20 @@
 							
 							/* 购物车管理开始 */
 							if($(this).attr("class") == "content_3_1_1"){
-								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllShoppingcartRecord.action")
+								var index = layer.load(1, {shade: [0.1,'#fff'] });
+								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllShoppingcartRecord.action",function(){
+									 layer.close(index);    
+								})
 							}
 							/* 购物车管理结束 */
 							
 							
 							/* 用户管理开始 */
 							if($(this).attr("class") == "content_4_1_1"){
-								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllUsers.action")
+								var index = layer.load(1, {shade: [0.1,'#fff'] });
+								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllUsers.action",function(){
+									 layer.close(index);    
+								})
 							}
 							/* 用户管理结束 */
 							
@@ -600,24 +666,43 @@
 							
 							/* 网站管理开始 */
 							if($(this).attr("class") == "content_5_1_1"){
-								$("#templateContentRight").load("${devbuy_web_path}/html/content_5_1_1.jsp #body");						
+								var index = layer.load(1, {shade: [0.1,'#fff'] });
+								$("#templateContentRight").load("${devbuy_web_path}/html/content_5_1_1.jsp #body",function(){
+									 layer.close(index);    
+								});						
 								/* 网站管理结束 */
 							}
 							
 							
 							/* 系统设置开始 */
-							if($(this).attr("class") == "content_6_2_1"){
-								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllAppversion.action");
-							/* 系统设置结束 */
+							
+							
+							
+							if($(this).attr("class") == "content_6_1_1"){
+								var index = layer.load(1, {shade: [0.1,'#fff'] });
+								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllManager.action",function(){
+									 layer.close(index);    
+								});
 							}
 							
+							
+							
+							if($(this).attr("class") == "content_6_2_1"){
+								var index = layer.load(1, {shade: [0.1,'#fff'] });
+								$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllAppversion.action",function(){
+									 layer.close(index);    
+								});
+							}
+							/* 系统设置结束 */
 					});
 				}
 			}
 		}	
 		
-
-		$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllClassification.action")
+		var index = layer.load(1, {shade: [0.1,'#fff'] });
+		$("#templateContentRight").load("${devbuy_web_path}/java/manageplatform/queryAllClassification.action",function(){
+			 layer.close(index);    
+		})
 
 		
 		
@@ -625,6 +710,9 @@
 		
 		$("#logout").click(function() {
 			
+			var index = layer.load(1, {
+				  shade: [0.1,'#fff'] //0.1透明度的白色背景
+				});
 			
 			window.location.href = "${devbuy_web_path}/java/manageplatform/logout.action"
 			
@@ -941,10 +1029,10 @@
 		<!--模板尾部区域开始-->
 	<div id="templateFooter"  >
 			<ul>
-				<li><a  onclick="goToAboutUs()"  href="#">关于我们</a></li>
-				<li><a  onclick="goToContactUs()" href="#">联系我们</a></li>
-				<li><a  onclick="goToProjectRecruit()" href="#">项目招聘</a></li>
-				<li><a  onclick="goToOtherLink()" href="#">其它链接</a></li>
+				<li><a  onclick="goToAboutUs('${devbuy_web_path}')"  href="#">关于我们</a></li>
+				<li><a  onclick="goToContactUs('${devbuy_web_path}')" href="#">联系我们</a></li>
+				<li><a  onclick="goToProjectRecruit('${devbuy_web_path}')" href="#">项目招聘</a></li>
+				<li><a  onclick="goToOtherLink('${devbuy_web_path}')" href="#">其它链接</a></li>
 			</ul>
 			
 			<p class= "hoverCursorPointer" id="templateFooterWebSiteInfo">网站备案信息：蜀ICP备16009880号</p>
@@ -965,31 +1053,31 @@
 	<script type="text/javascript">
 	
 	
-		function goToAboutUs(){
-			window.location.href='aboutUs.html';
+		function goToAboutUs(devbuy_web_path){
+			window.location.href= devbuy_web_path + '/aboutUs.html';
 		}
 		
 		
 	
 	
-		function goToContactUs(){
-			window.location.href='contactUs.html';
-		}
-		
-		
-		
-	
-	
-		function goToProjectRecruit(){
-			window.location.href='projectRecruit.html';
+		function goToContactUs(devbuy_web_path){
+			window.location.href=devbuy_web_path + '/contactUs.html';
 		}
 		
 		
 		
 	
 	
-		function goToOtherLink(){
-			window.location.href='otherLink.html';
+		function goToProjectRecruit(devbuy_web_path){
+			window.location.href=devbuy_web_path + '/projectRecruit.html';
+		}
+		
+		
+		
+	
+	
+		function goToOtherLink(devbuy_web_path){
+			window.location.href=devbuy_web_path + '/otherLink.html';
 		}
 		
 		

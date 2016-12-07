@@ -106,7 +106,7 @@ public class ClassificationController {
 			if (!uploadFile.exists()) {
 				uploadFile.mkdirs();
 			}
-			classificationCustom.setCfUrl(Constant.IMAGE_ROOT_REAL_PATH_WEB + Constant.IMAGE_CLASSIFICATION + classificationNameNewName);
+			classificationCustom.setCfUrl(Constant.IMAGE_ROOT_MAPPING_PATH_WEB + Constant.IMAGE_CLASSIFICATION + classificationNameNewName);
 			try {
 				cfUrlFile.transferTo(uploadFile);
 			} catch (IllegalStateException e) {
@@ -172,7 +172,7 @@ public class ClassificationController {
 			if (!uploadFile.exists()) {
 				uploadFile.mkdirs();
 			}
-			classificationCustom.setCfUrl(Constant.IMAGE_ROOT_REAL_PATH_WEB + Constant.IMAGE_CLASSIFICATION + classificationNameNewName);
+			classificationCustom.setCfUrl(Constant.IMAGE_ROOT_MAPPING_PATH_WEB + Constant.IMAGE_CLASSIFICATION + classificationNameNewName);
 			try {
 				cfUrlFile.transferTo(uploadFile);
 			} catch (IllegalStateException e) {

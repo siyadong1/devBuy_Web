@@ -6,10 +6,12 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>管理员列表</title>
-		<link rel="stylesheet" href="../css/content_6_1_1.css" />
-		<link rel="stylesheet" href="../css/common.css" />
-		<link rel="stylesheet" href="../css/ui.css" />
-		<script type="text/javascript" src="../js/jquery-2.1.1.min.js" ></script>
+		<link rel="stylesheet" href="${devbuy_web_path}/css/content_6_1_1.css" />
+		<link rel="stylesheet" href="${devbuy_web_path}/css/common.css" />
+		<link rel="stylesheet" href="${devbuy_web_path}/css/ui.css" />
+		<script type="text/javascript" src="${devbuy_web_path}/js/jquery-2.1.1.min.js" ></script>
+		<script type="text/javascript" src="${devbuy_web_path}/js/jquery-form.js"></script> 
+		<script type="text/javascript" src="${devbuy_web_path}/js/content_6_1_1.js" ></script>
 	</head>
 	<body>
 		
@@ -20,7 +22,7 @@
 			<div id="deleteManager" >
 				<p style="margin-left: 244px; margin-top: 16px; color: #178EE0; font-size: 18px; font-family: '微软雅黑';"  >确定删除所选管理员</p>
 				<button  onclick="hideDeleteManagerDialog()" class="redButton" style="position: absolute; right: 16px; bottom: 50px;">取消</button>
-				<button  onclick="hideDeleteManagerDialog()" class="blueButton"  style="position: absolute; right: 95px; bottom: 50px;" >确定</button>
+				<button  onclick="confirmHideDeleteManagerDialog('${devbuy_web_path}')" class="blueButton"  style="position: absolute; right: 95px; bottom: 50px;" >确定</button>
 			</div>
 		
 			
@@ -28,38 +30,39 @@
 			
 				<div id="addManager" >
 				<div><p>添加管理员</p></div>
-				<form>
+				<form name="addManager">
 					<table  cellspacing="16px">
 						<tr>
 							<td><span class="text16px ">账号</span></td>
-							<td><input class="text16px" type="text" id="" placeholder="test1" /></td>
+							<td>
+							<input class="text16px" type="text" id="" placeholder="张三"  name="name"  />
+							<input  type="hidden"   name="currentManager"  value="${manager}" ></input>
+							</td>
 						</tr>
 						<tr>
 							<td><span class="text16px ">密码</span></td>
-							<td><input class="text16px" type="text" id="" placeholder="test1" /></td>
+							<td><input class="text16px" type="text" id="" placeholder="123456" name="password"/></td>
 						</tr>
 
 						<tr>
 							<td><span class="text16px ">描述</span></td>
-							<td><textarea class="text16px"></textarea></td>
+							<td><textarea  name="description" class="text16px"></textarea></td>
 						</tr>
 						<tr>
 							<td><span class="text16px ">是否是超级管理员</span></td>
 							<td>
-								<select>
-									<option>是</option>
-									<option>否</option>
+								<select  name="supermanager" >
+								<c:if test="${manager == 'admin'}">
+									<option  value="0" >是</option>
+								</c:if>
+									<option  value="1">否</option>
 								</select>
 							</td>
-						</tr>
-						<tr>
-							<td><span class="text16px ">父管理员</span></td>
-							<td><input class="text16px" type="text" id="" placeholder="admin" /></td>
 						</tr>
 					</table>
 				</form>
 				<button   onclick="hideAddManagerDialog()" class="redButton" style="position: absolute; right: 16px; bottom: 16px;">取消</button>
-				<button   onclick="hideAddManagerDialog()" class="blueButton"  style="position: absolute; right: 95px; bottom: 16px;" >确定</button>	
+				<button   onclick="confirmHideAddManagerDialog('${devbuy_web_path}')" class="blueButton"  style="position: absolute; right: 95px; bottom: 16px;" >确定</button>	
 			</div>
 			
 			
@@ -72,46 +75,43 @@
 			
 				<div id="editManagerDetail" >
 				<div><p>查看详情</p></div>
-				<form>
+				<form name="editManagerDetail">
 					<table  cellspacing="16px">
 						<tr>
 							<td><span class="text16px ">账号</span></td>
-							<td><input class="text16px" type="text" id="" placeholder="test1" /></td>
+							<td>
+							<input class="text16px" type="text" id="editManagerDetailName" name="name" />
+							<input type="hidden"  id="editManagerDetailManagerId"  name="managerId"  ></input>
+							<input type="hidden"  id="editManagerDetailOldName"  name="oldName"  ></input>
+							<input type="hidden"  value="${manager}"  name="currentManager"  ></input>
+							</td>
 						</tr>
 						<tr>
 							<td><span class="text16px ">密码</span></td>
-							<td><input class="text16px" type="text" id="" placeholder="test1" /></td>
+							<td><input class="text16px" type="text" id="editManagerDetailPassword" name="password"  /></td>
 						</tr>
 
 						<tr>
 							<td><span class="text16px ">描述</span></td>
-							<td><textarea class="text16px"></textarea></td>
+							<td><textarea   id="editManagerDetailDescription" name="description"   class="text16px"></textarea></td>
 						</tr>
 						<tr>
 							<td><span class="text16px ">是否是超级管理员</span></td>
 							<td>
-								<select>
-									<option>是</option>
-									<option>否</option>
+								<select id="editManagerDetailSupermanager" name="supermanager"   >
+									<option value="0" >是</option>
+									<option value="1" >否</option>
 								</select>
 							</td>
 						</tr>
 						<tr>
-							<td><span class="text16px ">父管理员</span></td>
-							<td><input class="text16px" type="text" id="" placeholder="admin" /></td>
-						</tr>
-						<tr>
-							<td><span class="text16px ">子账号个数</span></td>
-							<td><input class="text16px" type="text" id="" placeholder="3" /></td>
-						</tr>
-						<tr>
 							<td><span class="text16px ">注册时间</span></td>
-							<td><input class="text16px" type="text" id="" placeholder="2016-09-22   17:04:23" /></td>
+							<td><input class="text16px" type="text" id="editManagerDetailCreateTime" name="createTime" /></td>
 						</tr>
 					</table>
 				</form>
-				<button   onclick="hideEditManagerDetailDialog()" class="redButton" style="position: absolute; right: 16px; bottom: 16px;">取消</button>
-				<button   onclick="hideEditManagerDetailDialog()" class="blueButton"  style="position: absolute; right: 95px; bottom: 16px;" >确定</button>	
+				<button   type="button"   onclick="hideEditManagerDetailDialog()" class="redButton" style="position: absolute; right: 16px; bottom: 16px;">取消</button>
+				<button   type="button" onclick="confirmHideEditManagerDetailDialog('${devbuy_web_path}')" class="blueButton"  style="position: absolute; right: 95px; bottom: 16px;" >确定</button>	
 			</div>
 			
 			
@@ -134,58 +134,71 @@
 				<button onclick="showDeleteManagerDialog()" class="contentButton" id="btnDeleteClass" >删除</button>
 				<button onclick="showAddManagerDialog()"   class="contentButton">添加</button>
 				<input type="text" placeholder="搜索管理员"></input>
-				<img src="img/iv_search_query.png" />
+				<img src="${devbuy_web_path}/img/iv_search_query.png" />
 			</div>
 			
-			
+			<form name="deleteManagerByids">
 			<table>
 				<tr>
-					<td><input type="checkbox" />  <p id="ContentRightFirtst_1_2_1">全选</p></td>
+					<td>
+					<input type="checkbox"  id="ck_content_6_1_1"    /> 
+					<input type="hidden" name="currentManager"   value="${manager}"  ></input> 
+					<p id="ContentRightFirtst_6_1_1">全选</p></td>
 					<td><p>管理员账号</p></td>
 					<td><p>管理员密码</p></td>
 					<td><p>描述</p></td>
-					<td><p>是否是高级管理员</p></td>
-					<td><p>创建子账号个数</p></td>
-					<td><p>父管理员</p></td>
+					<td><p>高级管理员</p></td>
 					<td><p>创建时间</p></td>
 					<td><p>操作</p></td>
 				</tr>
 				
-				
+				<c:forEach items="${managerCustoms }"  var="managerCustom" >
 				<tr>
-					<td>  <input type="checkbox" /></td>
-					<td><p>admin</p></td>
-					<td><p title="管理员密码">admin</p></td>
-					<td><p>这是超级管理员</p></td>
-					<td><p>是</p></td>
-					<td><p>3</p></td>
-					<td><p>admin</p></td>
-					<td><p>2016-09-21   15:25:25</p></td>
-					<td><button  onclick="showEditManagerDetailDialog()"  >编辑</button></td>
+					<td>  <input type="checkbox"  class="managerCK" name="managerIds"  value="${managerCustom.managerId}"     /></td>
+					<td><p>${managerCustom.name }</p></td>
+					<td><p title="{managerCustom.description }">${managerCustom.password }</p></td>
+					<td><p>${managerCustom.description }</p></td>
+					<c:choose>
+						<c:when  test="${managerCustom.supermanager == '0'}">
+						<td><p>是</p></td>
+						</c:when>
+						<c:otherwise>
+						<td><p>否</p></td>
+						</c:otherwise>
+					</c:choose>
+					
+					<td><p>${managerCustom.createTime }</p></td>
+					<td><button  type="button"  onclick="showEditManagerDetailDialog('${devbuy_web_path}','${managerCustom.managerId }'
+					,'${managerCustom.name }','${managerCustom.password }','${managerCustom.description }','${managerCustom.supermanager }','${managerCustom.createTime }')"  >编辑</button></td>
 				</tr>
-				
-				
-				
-				
-				<tr>
-					<td>  <input type="checkbox" /></td>
-					<td><p>syd</p></td>
-					<td><p title="管理员密码">123456</p></td>
-					<td><p>测试</p></td>
-					<td><p>否</p></td>
-					<td><p>0</p></td>
-					<td><p>admin</p></td>
-					<td><p>2016-09-21   15:25:25</p></td>
-					<td><button  onclick="showEditManagerDetailDialog()"  >编辑</button></td>
-				</tr>
-				
-				
-				
-				
+				</c:forEach>
 			</table>
+			</form>
 		</div>
 		</div>
-
-
 	</body>
+	
+	
+	
+	
+	
+		
+	<script  type="text/javascript" >
+	 $("#ck_content_6_1_1").change(function(){
+		 
+			if($("#ck_content_6_1_1").prop("checked")){
+				  $(".managerCK").each(function(){
+					   $(this).prop("checked",true);
+					  });
+			}else{
+				 $(".managerCK").each(function(){
+					 $(this).prop("checked",false);
+					  });
+			}
+	 } );
+	</script>
+	
+	
+	
+	
 </html>

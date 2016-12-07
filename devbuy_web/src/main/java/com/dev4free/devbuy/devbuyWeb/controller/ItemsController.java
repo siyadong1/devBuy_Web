@@ -170,7 +170,7 @@ public class ItemsController {
 			if (!uploadFile.exists()) {
 				uploadFile.mkdirs();
 			}
-			itemsCustom.setImage(Constant.IMAGE_ROOT_REAL_PATH_WEB + Constant.IMAGE_ITEMS + itemsNameNewName);
+			itemsCustom.setImage(Constant.IMAGE_ROOT_MAPPING_PATH_WEB + Constant.IMAGE_ITEMS + itemsNameNewName);
 			try {
 				itemsNewImage.transferTo(uploadFile);
 			} catch (IllegalStateException e) {
@@ -265,7 +265,7 @@ public class ItemsController {
 			if (!uploadFile.exists()) {
 				uploadFile.mkdirs();
 			}
-			itemsCustom.setImage(Constant.IMAGE_ROOT_REAL_PATH_WEB + Constant.IMAGE_ITEMS + itemsNameNewName);
+			itemsCustom.setImage(Constant.IMAGE_ROOT_MAPPING_PATH_WEB + Constant.IMAGE_ITEMS + itemsNameNewName);
 			try {
 				itemsNewImage.transferTo(uploadFile);
 			} catch (IllegalStateException e) {

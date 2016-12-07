@@ -214,7 +214,7 @@ public class RecommendController {
 			if (!uploadFile.exists()) {
 				uploadFile.mkdirs();
 			}
-			recommendCustom.setRcUrl(Constant.IMAGE_ROOT_REAL_PATH_WEB + Constant.IMAGE_RECOMMEND + recommendImgNewName);
+			recommendCustom.setRcUrl(Constant.IMAGE_ROOT_MAPPING_PATH_WEB + Constant.IMAGE_RECOMMEND + recommendImgNewName);
 			try {
 				recommendNewImage.transferTo(uploadFile);
 			} catch (IllegalStateException e) {
@@ -346,7 +346,7 @@ public class RecommendController {
 			if (!uploadFile.exists()) {
 				uploadFile.mkdirs();
 			}
-			recommendCustom.setRcUrl(Constant.IMAGE_ROOT_REAL_PATH_WEB + Constant.IMAGE_RECOMMEND + recommendImgNewName);
+			recommendCustom.setRcUrl(Constant.IMAGE_ROOT_MAPPING_PATH_WEB + Constant.IMAGE_RECOMMEND + recommendImgNewName);
 			try {
 				recommendNewImage.transferTo(uploadFile);
 			} catch (IllegalStateException e) {

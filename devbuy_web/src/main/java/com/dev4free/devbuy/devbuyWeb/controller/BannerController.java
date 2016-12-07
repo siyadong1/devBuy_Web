@@ -183,7 +183,7 @@ public class BannerController {
 			if (!uploadFile.exists()) {
 				uploadFile.mkdirs();
 			}
-			bannerCustom.setBnUrl(Constant.IMAGE_ROOT_REAL_PATH_WEB + Constant.IMAGE_BANNER + bannerImgNewName);
+			bannerCustom.setBnUrl(Constant.IMAGE_ROOT_MAPPING_PATH_WEB + Constant.IMAGE_BANNER + bannerImgNewName);
 			try {
 				bannerNewImage.transferTo(uploadFile);
 			} catch (IllegalStateException e) {
@@ -285,7 +285,7 @@ public class BannerController {
 			if (!uploadFile.exists()) {
 				uploadFile.mkdirs();
 			}
-			bannerCustom.setBnUrl(Constant.IMAGE_ROOT_REAL_PATH_WEB + Constant.IMAGE_BANNER + bannerImgNewName);
+			bannerCustom.setBnUrl(Constant.IMAGE_ROOT_MAPPING_PATH_WEB + Constant.IMAGE_BANNER + bannerImgNewName);
 			try {
 				bannerNewImage.transferTo(uploadFile);
 			} catch (IllegalStateException e) {
