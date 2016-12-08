@@ -84,7 +84,6 @@
 
   	
   <body class="width1000">
-    
     <div id="contain_border" class="centerCommon" >
     <div id="contain" class="centerCommon">
     	
@@ -105,7 +104,6 @@
     	    			<br /><br />
     	    			<span class="text16px">密码：&nbsp;&nbsp;&nbsp;</span> <input id="password"  name="password"  type="text" placeholder="请输入登录密码" class="text16px"/>
     	    			<br />
-    	    			
     	    			<input   id="reset"   type="button" class="blueButton floatRight marginTop16px hoverCursorPointer" id="reset" value="重置"/>
     	    			<input   id="login"   type="submit" class="redButton floatRight marginRight16px marginTop16px hoverCursorPointer" value="确定"/>
     	    			
@@ -132,7 +130,7 @@
   <script type="text/javascript">
   
   <c:set  var="devbuy_web_path"  value="/devbuy_web"  scope="session"  />
-  	
+	  
   </script>
   
 </html>
