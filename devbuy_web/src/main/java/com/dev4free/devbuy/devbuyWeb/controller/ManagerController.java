@@ -65,9 +65,6 @@ public class ManagerController {
 	
 	
 	
-	
-	
-	
 	/**
 	 * 查询所有的manager信息
 	 * @return

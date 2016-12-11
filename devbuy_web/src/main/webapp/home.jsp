@@ -720,6 +720,18 @@
 		
 		
 		
+		$("#goHome").click(function() {
+			
+			var index = layer.load(1, {
+				  shade: [0.1,'#fff'] //0.1透明度的白色背景
+				});
+			
+			window.location.href = "http://www.dev4free.com/"
+			
+		});
+		
+		
+		
 	
 	/***************************内容区域左侧的点击事情，切换内容区域IFrame的内容End****************************/
 
@@ -754,12 +766,12 @@
 		</div>
 		<div class="floatRight">
 			<ul>
-				<li>
-					<img src="${devbuy_web_path}/img/iv_welcome.png"/>
-					<p class="text16pxWhite marginTop16px">欢迎页</p>
+				<li id="goHome">
+					<img style="width:32px;height:32px"  src="${devbuy_web_path}/img/calabash.png"/>
+					<p class="text16pxWhite marginTop16px">官方网站</p>
 				</li>
 				<li class="marginLeft16px" id="logout">
-					<img src="${devbuy_web_path}/img/iv_logout.png"/>
+					<img  src="${devbuy_web_path}/img/iv_logout.png"/>
 					<p class="text16pxWhite marginTop16px">退出登录</p>
 				</li>
 			</ul>
